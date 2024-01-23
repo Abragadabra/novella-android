@@ -30,9 +30,10 @@
             android:layout_marginRight="200dp"
             android:backgroundTint="#FFC5C5"
             android:hint="@string/start_game"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#695252"
             android:textSize="25sp"
-            app:cornerRadius="14dp"
-            android:textColor="@drawable/button_color"/>
+            app:cornerRadius="14dp" />
 
         <Button
             android:layout_width="match_parent"
@@ -41,10 +42,10 @@
             android:layout_marginRight="200dp"
             android:backgroundTint="#FFC5C5"
             android:hint="@string/exit_game"
-            android:textSize="25sp"
-            app:cornerRadius="14dp"
             android:textColor="@drawable/button_color"
-            />
+            android:textColorHint="#695252"
+            android:textSize="25sp"
+            app:cornerRadius="14dp" />
 
     </LinearLayout>
 
