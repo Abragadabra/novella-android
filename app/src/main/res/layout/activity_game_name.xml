@@ -33,7 +33,8 @@
             android:textColor="@drawable/button_color"
             android:textColorHint="#695252"
             android:textSize="25sp"
-            app:cornerRadius="14dp" />
+            app:cornerRadius="14dp"
+            android:onClick="startGame"/>
 
         <Button
             android:layout_width="match_parent"
