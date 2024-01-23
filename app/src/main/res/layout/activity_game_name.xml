@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/game_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_bold"
+            android:gravity="center"
+            android:text="@string/game_name"
+            android:textColor="#fff"
+            android:textSize="60sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="200dp"
+            android:backgroundTint="#FFC5C5"
+            android:hint="@string/start_game"
+            android:textSize="25sp"
+            app:cornerRadius="14dp"
+            android:textColor="@drawable/button_color"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginRight="200dp"
+            android:backgroundTint="#FFC5C5"
+            android:hint="@string/exit_game"
+            android:textSize="25sp"
+            app:cornerRadius="14dp"
+            android:textColor="@drawable/button_color"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

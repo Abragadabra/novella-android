@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Шесть дней теха</string>
+    <string name="game_name"><u>Шесть дней теха</u></string>
+    <string name="company_name">Abragadabra and MIKKUT</string>
+    <string name="presents_text">Presents</string>
+    <string name="start_game">Начать игру</string>
+    <string name="exit_game">Закрыть игру</string>
+
+</resources>
