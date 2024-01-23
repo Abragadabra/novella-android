@@ -30,11 +30,11 @@
             android:layout_marginRight="200dp"
             android:backgroundTint="#FFC5C5"
             android:hint="@string/start_game"
+            android:onClick="startGame"
             android:textColor="@drawable/button_color"
             android:textColorHint="#695252"
             android:textSize="25sp"
-            app:cornerRadius="14dp"
-            android:onClick="startGame"/>
+            app:cornerRadius="14dp" />
 
         <Button
             android:layout_width="match_parent"
