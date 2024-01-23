@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/disclaimer_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
@@ -17,7 +17,7 @@
         android:padding="10dp"
         android:text="@string/disclaimer_text"
         android:textColor="#fff"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <LinearLayout
         android:id="@+id/buttons"
