@@ -42,11 +42,11 @@
             android:layout_marginRight="200dp"
             android:backgroundTint="#FFC5C5"
             android:hint="@string/exit_game"
+            android:onClick="closeGame"
             android:textColor="@drawable/button_color"
             android:textColorHint="#695252"
             android:textSize="25sp"
-            app:cornerRadius="14dp"
-            android:onClick="closeGame"/>
+            app:cornerRadius="14dp" />
 
     </LinearLayout>
 
