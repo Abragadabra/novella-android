@@ -42,5 +42,16 @@ public class Disclaimer extends AppCompatActivity {
     }
 
     public void startNewGame(View view) {
+        // Новый intent для открытия главного меню
+        Intent intent = new Intent(Disclaimer.this, Gosling.class);
+
+        // Открываем новое активити
+        Disclaimer.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        Disclaimer.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
