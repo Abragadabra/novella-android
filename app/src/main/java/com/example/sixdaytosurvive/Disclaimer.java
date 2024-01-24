@@ -2,6 +2,7 @@ package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -27,6 +28,11 @@ public class Disclaimer extends AppCompatActivity {
     }
 
     public void openMainMenu(View view) {
+        Intent intent = new Intent(Disclaimer.this, MainMenu.class);
+        Disclaimer.this.startActivity(intent);
+        Disclaimer.this.finish();
+
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void startNewGame(View view) {
