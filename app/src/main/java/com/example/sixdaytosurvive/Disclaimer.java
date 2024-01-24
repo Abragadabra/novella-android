@@ -25,4 +25,10 @@ public class Disclaimer extends AppCompatActivity {
         // Задача размеров приложения на весь экран
         getWindow().setFlags(512, 512);
     }
+
+    public void openMainMenu(View view) {
+    }
+
+    public void startNewGame(View view) {
+    }
 }

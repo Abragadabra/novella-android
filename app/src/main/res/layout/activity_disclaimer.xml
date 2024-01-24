@@ -31,20 +31,24 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/agree_button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:backgroundTint="#80FFC5C5"
             android:hint="@string/agree_text"
+            android:onClick="startNewGame"
             android:textColor="@drawable/button_color"
             android:textColorHint="#3D3131"
             android:textSize="25sp"
             app:cornerRadius="14dp" />
 
         <Button
+            android:id="@+id/disagree_button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:backgroundTint="#80FFC5C5"
             android:hint="@string/disagree_text"
+            android:onClick="openMainMenu"
             android:textColor="@drawable/button_color"
             android:textColorHint="#3D3131"
             android:textSize="25sp"
