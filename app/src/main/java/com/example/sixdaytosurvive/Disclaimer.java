@@ -23,15 +23,21 @@ public class Disclaimer extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
 
-        // Задача размеров приложения на весь экран
+        // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
     }
 
     public void openMainMenu(View view) {
+        // Новый intent для открытия главного меню
         Intent intent = new Intent(Disclaimer.this, MainMenu.class);
+
+        // Открываем новое активити
         Disclaimer.this.startActivity(intent);
+
+        // Завершаем текущее активити
         Disclaimer.this.finish();
 
+        // Плавный переход между активити
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 

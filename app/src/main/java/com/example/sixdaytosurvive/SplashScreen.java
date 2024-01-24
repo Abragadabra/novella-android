@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 
 public class SplashScreen extends AppCompatActivity {
+    final int SPLASH_DISPLAY_LENGTH = 2200;     // Длительность заставки в мс
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +24,10 @@ public class SplashScreen extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        // Константа с длительностью SplashScreen
-        final int SPLASH_DISPLAY_LENGTH = 2200;
-
-        // Код, который заствялет приложения заполнять весь экран вместе с элементами управления
+        // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
 
+        // Отложенный запуск перехода на новую активити
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

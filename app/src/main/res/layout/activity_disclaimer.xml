@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/disclaimer_bg">
 
+    <!--  Текстовый блок с текстом дисклеймера  -->
     <TextView
         android:id="@+id/disclaimer_text"
         android:layout_width="match_parent"
@@ -19,6 +20,7 @@
         android:textColor="#2B2B2B"
         android:textSize="15sp" />
 
+    <!--  LinearLayout с кнопками  -->
     <LinearLayout
         android:id="@+id/buttons"
         android:layout_width="match_parent"
@@ -30,6 +32,7 @@
         android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
+        <!--    Кнопка "Я согласен"    -->
         <Button
             android:id="@+id/agree_button"
             android:layout_width="match_parent"
@@ -42,6 +45,7 @@
             android:textSize="25sp"
             app:cornerRadius="14dp" />
 
+        <!--    Кнопка "Я не согласен"    -->
         <Button
             android:id="@+id/disagree_button"
             android:layout_width="match_parent"

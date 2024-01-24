@@ -22,7 +22,7 @@ public class MainMenu extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        // Задача размеров приложения на весь экран
+        // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
     }
 
@@ -32,12 +32,16 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        // Открываем активити с дисклеймером
+        // // Новый intent для открытия главного меню
         Intent intent = new Intent(MainMenu.this, Disclaimer.class);
 
+        // Открываем новое активити
         MainMenu.this.startActivity(intent);
+
+        // Завершаем текущее активити
         MainMenu.this.finish();
 
+        // Плавный переход между активити
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

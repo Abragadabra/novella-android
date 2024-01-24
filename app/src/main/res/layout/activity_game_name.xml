@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg">
 
+    <!--  Основной LinearLayout с меню игры  -->
     <LinearLayout
         android:id="@+id/menu"
         android:layout_width="match_parent"
@@ -12,6 +13,7 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <!--  Заголовок игры  -->
         <TextView
             android:id="@+id/game_name"
             android:layout_width="match_parent"
@@ -22,6 +24,7 @@
             android:textColor="#fff"
             android:textSize="60sp" />
 
+        <!--  Кнопка "Начать игру"  -->
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -36,6 +39,7 @@
             android:textSize="25sp"
             app:cornerRadius="14dp" />
 
+        <!--  Кнопка "Закрыть игру"  -->
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
