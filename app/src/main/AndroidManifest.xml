@@ -13,6 +13,10 @@
         android:theme="@style/Theme.SixDayToSurvive"
         tools:targetApi="31">
         <activity
+            android:name=".FirstDay"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".Disclaimer"
             android:exported="false"
             android:screenOrientation="landscape" />
