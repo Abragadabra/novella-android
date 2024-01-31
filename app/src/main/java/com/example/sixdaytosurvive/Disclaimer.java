@@ -43,7 +43,7 @@ public class Disclaimer extends AppCompatActivity {
 
     public void startNewGame(View view) {
         // Новый intent для открытия главного меню
-        Intent intent = new Intent(Disclaimer.this, Gosling.class);
+        Intent intent = new Intent(Disclaimer.this, FirstDay.class);
 
         // Открываем новое активити
         Disclaimer.this.startActivity(intent);
