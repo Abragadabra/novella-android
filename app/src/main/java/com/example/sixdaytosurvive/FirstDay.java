@@ -2,8 +2,11 @@ package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class FirstDay extends AppCompatActivity {
 
@@ -23,5 +26,10 @@ public class FirstDay extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        // Супер анимация
+        TextView mainText = findViewById(R.id.first_day_text);
+        TypewriterEffect typewriterEffect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 50);
+        typewriterEffect.animateText();
     }
 }
