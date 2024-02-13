@@ -43,5 +43,9 @@ public class Dialogues {
     public static String day2_canteen_sosiska_2 = "Евгей: О! НАКОНЕЦ-ТО НОРМАЛЬНАЯ ЕДАААА! (Он поедает сосиску, смотря на нас)";
     public static String day2_canteen_sosiska_3 = "Ты нормальный вообще? Вкусно?";
     public static String day2_canteen_sosiska_4 = "Евгей: да! АЦТАНЬ!";
+
+    public static String day2_class2_stepanida_1 = "Степанида... Она выглядит грустной, стоит поговорить!";
+    public static String day2_class2_stepanida_2 = "Да не грусти ты, нормально всё будет! Пиво бушь?! Но если без шуток, то забудь просто про него (я зачем-то ПРИОБНЯЛ ЕЁ)";
+    public static String day2_class2_stepanida_2 = "Степанида: Спасибо тебе! Может мне стоит забыть о нём!";
     
 }
