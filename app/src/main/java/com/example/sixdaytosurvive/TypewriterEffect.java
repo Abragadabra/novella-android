@@ -1,13 +1,14 @@
 package com.example.sixdaytosurvive;
 
+import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.widget.TextView;
 
 public class TypewriterEffect {
 
-    private TextView textView;
-    private String text;
-    private long delay;
+    private final TextView textView;    // Текстовое поле
+    private final String text;          // Текст, которы будет анимирован
+    private final long delay;           // Длительность анимации
 
     public TypewriterEffect(TextView textView, String text, long delay) {
         this.textView = textView;
@@ -20,6 +21,7 @@ public class TypewriterEffect {
         animateText(0);
     }
 
+    @SuppressLint("SetTextI18n")
     private void animateText(final int index) {
         if (index < text.length()) {
             textView.setText(textView.getText().toString() + text.charAt(index));

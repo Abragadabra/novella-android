@@ -27,7 +27,7 @@ public class FirstDay extends AppCompatActivity {
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
 
-        // Супер анимация
+        // Анимация текста
         TextView mainText = findViewById(R.id.first_day_text);
         TypewriterEffect typewriterEffect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 50);
         typewriterEffect.animateText();
