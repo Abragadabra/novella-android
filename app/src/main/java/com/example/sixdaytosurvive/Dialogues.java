@@ -26,5 +26,20 @@ public class Dialogues {
     public static String day1_class2_1 = "Началась пара Лососевой (это такой тип преподавателя, которая добрая только внешне, внутри это сущий дьявол), на паре была проверочная";
 
     public static String day1_end_if_jacket_false = "Нафига я сдал куртку в гардероб, тут очередина ещё больше, чем с утра, я тут на час застрял точно, но зато из толпы людей я услышал про зачёт у оладушкина!";
+
+    public static String day2_monolog = "Вторник... ещё один день вникуда, с таким расписанием я так и не отдохну...";
+    public static String day2_stepanida_evlampiy_ssora = "Степанида: Ты меня хоть когда-то слушаешь? Всегда думаешь о себе! Как же ты меня бесишь! Ненавижу!!!";
+    public static String day2_stepanida_evlampiy_ssora_true_1 = "Хватит ссорится! что случилось у вас?";
+    public static String day2_stepanida_evlampiy_ssora_true_2 = "Степанида: Он никогда меня не слушает, он о себе лишь и думает! Я хочу лишь заботы...";
+    public static String day2_stepanida_evlampiy_ssora_true_3 = "Евлампий: неплохо...";
+    public static String day2_stepanida_evlampiy_ssora_true_4 = "Охладитесь, хватит орать, и без вас тошно! Ребятушки, живите дружно!";
+    
+    public static String day2_class1_1 = "Такого эстетичного дизайна не видел никто, Душня поставила мне 5, даже такой душный препод ставит оценки!";
+    public static String day2_canteen_1 = "ха-ха, я поем! Только что мне выбрать в столовой? Тут осталась только сосиска и чесночный багет...";
+    
+    public static String day2_canteen_baget = "Багет как всегда прекрасен... Я бы помер ради такого... Я в париже...";
+    
+    public static String day2_canteen_sosiska = "Я подношу сосиску ко рту... БАМ, и она катится по всей столовой! ЁЛКИ ПАЛКИ!!!";
+    public static String day2_canteen_sosiska = "Евгей: О! НАКОНЕЦ-ТО НОРМАЛЬНАЯ ЕДАААА! (Он поедает сосиску, смотря на нас)";
     
 }
