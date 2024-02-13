@@ -46,6 +46,12 @@ public class Dialogues {
 
     public static String day2_class2_stepanida_1 = "Степанида... Она выглядит грустной, стоит поговорить!";
     public static String day2_class2_stepanida_2 = "Да не грусти ты, нормально всё будет! Пиво бушь?! Но если без шуток, то забудь просто про него (я зачем-то ПРИОБНЯЛ ЕЁ)";
-    public static String day2_class2_stepanida_2 = "Степанида: Спасибо тебе! Может мне стоит забыть о нём!";
+    public static String day2_class2_stepanida_3 = "Степанида: Спасибо тебе! Может мне стоит забыть о нём!";
+
+    public static String day2_class2_evlampiy_1 = "Вы помирились? Приятно снова вас видеть вместе (мне почему-от стало грустно☹️)";
+
+    public static String day2_class23_1 = "Пара оладушкина, этот мужик (я не уверен), тупо сидит и боится студентов, а если к нему подойти, то он трясётся как собака! Слабак";
+    public static String day2_class23_2 = "";
+    
     
 }
