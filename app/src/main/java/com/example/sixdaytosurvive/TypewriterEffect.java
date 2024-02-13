@@ -6,14 +6,19 @@ import android.widget.TextView;
 
 public class TypewriterEffect {
 
-    private final TextView textView;    // Текстовое поле
-    private final String text;          // Текст, которы будет анимирован
-    private final long delay;           // Длительность анимации
+    private final TextView textView;
+    private final String text;
+    private final long delay;
+    private TypewriterListener listener; // Добавляем поле для listener
 
     public TypewriterEffect(TextView textView, String text, long delay) {
         this.textView = textView;
         this.text = text;
         this.delay = delay;
+    }
+
+    public void setListener(TypewriterListener listener) {
+        this.listener = listener;
     }
 
     public void animateText() {
@@ -32,6 +37,10 @@ public class TypewriterEffect {
                     animateText(index + 1);
                 }
             }, delay);
+        } else {
+            if (listener != null) {
+                listener.onAnimationEnd(); // Вызываем обратный вызов
+            }
         }
     }
 }

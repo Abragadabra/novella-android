@@ -7,6 +7,7 @@ import android.animation.AnimatorSet;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FirstDay extends AppCompatActivity {
 
@@ -29,7 +30,13 @@ public class FirstDay extends AppCompatActivity {
 
         // Анимация текста
         TextView mainText = findViewById(R.id.first_day_text);
-        TypewriterEffect typewriterEffect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 50);
+        TypewriterEffect typewriterEffect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 60);
+        typewriterEffect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                Toast.makeText(getApplicationContext(), "Текст закончился", Toast.LENGTH_LONG).show();
+            }
+        });
         typewriterEffect.animateText();
     }
 }
