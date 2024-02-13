@@ -39,7 +39,9 @@ public class Dialogues {
     
     public static String day2_canteen_baget = "Багет как всегда прекрасен... Я бы помер ради такого... Я в париже...";
     
-    public static String day2_canteen_sosiska = "Я подношу сосиску ко рту... БАМ, и она катится по всей столовой! ЁЛКИ ПАЛКИ!!!";
-    public static String day2_canteen_sosiska = "Евгей: О! НАКОНЕЦ-ТО НОРМАЛЬНАЯ ЕДАААА! (Он поедает сосиску, смотря на нас)";
+    public static String day2_canteen_sosiska_1 = "Я подношу сосиску ко рту... БАМ, и она катится по всей столовой! ЁЛКИ ПАЛКИ!!!";
+    public static String day2_canteen_sosiska_2 = "Евгей: О! НАКОНЕЦ-ТО НОРМАЛЬНАЯ ЕДАААА! (Он поедает сосиску, смотря на нас)";
+    public static String day2_canteen_sosiska_3 = "Ты нормальный вообще? Вкусно?";
+    public static String day2_canteen_sosiska_4 = "Евгей: да! АЦТАНЬ!";
     
 }
