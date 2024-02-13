@@ -6,6 +6,9 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +37,11 @@ public class FirstDay extends AppCompatActivity {
         typewriterEffect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                Toast.makeText(getApplicationContext(), "Текст закончился", Toast.LENGTH_LONG).show();
+                // Вызов кнопки "далее"
+                Button nextButton = findViewById(R.id.next_button);
+                Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in);
+                nextButton.setVisibility(View.VISIBLE);
+                nextButton.startAnimation(anim);
             }
         });
         typewriterEffect.animateText();
