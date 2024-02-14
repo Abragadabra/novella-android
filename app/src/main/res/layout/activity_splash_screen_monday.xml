@@ -13,6 +13,7 @@
         android:fontFamily="@font/ubuntu_bold"
         android:gravity="center"
         android:text="@string/day1"
+        android:textColor="#D5D5D5"
         android:textSize="60sp" />
 
     <!--  Слово "Понедельник"  -->
@@ -25,6 +26,7 @@
         android:fontFamily="@font/ubuntu_bold"
         android:gravity="center"
         android:text="@string/monday"
+        android:textColor="#D5D5D5"
         android:textSize="30sp" />
 
 </RelativeLayout>
