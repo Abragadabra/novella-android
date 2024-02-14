@@ -3,10 +3,13 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
 public class Disclaimer extends AppCompatActivity {
+
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,8 @@ public class Disclaimer extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.bg_sound);
     }
 
     public void openMainMenu(View view) {
@@ -42,6 +47,10 @@ public class Disclaimer extends AppCompatActivity {
     }
 
     public void startNewGame(View view) {
+        if (mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
         // Новый intent для открытия главного меню
         Intent intent = new Intent(Disclaimer.this, SplashScreenMonday.class);
 
