@@ -6,17 +6,19 @@ import android.widget.TextView;
 
 public class TypewriterEffect {
 
-    private final TextView textView;
-    private final String text;
-    private final long delay;
-    private TypewriterListener listener; // Добавляем поле для listener
+    private final TextView textView;                // Константа textView
+    private final String text;                      // Текст, который печатается
+    private final long delay;                       // Длительность каждого символа
+    private TypewriterListener listener;            // Слушатель событией
 
+    // Конструктор
     public TypewriterEffect(TextView textView, String text, long delay) {
         this.textView = textView;
         this.text = text;
         this.delay = delay;
     }
 
+    // Установка слушателя
     public void setListener(TypewriterListener listener) {
         this.listener = listener;
     }
