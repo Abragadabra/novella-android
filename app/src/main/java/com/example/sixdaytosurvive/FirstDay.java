@@ -17,17 +17,17 @@ import android.widget.Toast;
 
 public class FirstDay extends AppCompatActivity {
 
-    Button nextButton;
-    Animation anim_button_in;
-    Animation anim_button_out;
-    TextView mainText;
+    Button nextButton;              // Кнопка "далее"
+    Animation anim_button_in;       // Анимация вхождения кнопки
+    Animation anim_button_out;      // Анимация выхода кнопки
+    TextView mainText;              // Поле с текстом
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_day);
 
-        // Кнопка "далее"
+        // Присвоение значений переменным
         nextButton = findViewById(R.id.next_button);
         anim_button_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in);
         anim_button_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out);
@@ -45,16 +45,17 @@ public class FirstDay extends AppCompatActivity {
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
 
-        // Анимация текста
+        // Анимация первой фразы
         TypewriterEffect day1_dialog1_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 60);
         day1_dialog1_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                // Вызов кнопки "далее"
+                // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton.setVisibility(View.VISIBLE);
                 nextButton.startAnimation(anim_button_in);
             }
         });
+        // Старт анимации
         day1_dialog1_effect.animateText();
     }
 
@@ -69,6 +70,7 @@ public class FirstDay extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
                 nextButton.setVisibility(View.INVISIBLE);
             }
 
@@ -78,13 +80,19 @@ public class FirstDay extends AppCompatActivity {
             }
         });
 
+        // Очистка поля текста
         mainText.setText("");
+
+        // Анимация второй фразы
         TypewriterEffect day1_dialog2_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog2, 60);
+
+        // Старт анимции
         day1_dialog2_effect.animateText();
 
         day1_dialog2_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
+                // Меняем фон при завершении анимации
                 RelativeLayout layout = findViewById(R.id.first_day_layout);
                 layout.setBackgroundResource(R.drawable.garderob);
             }
