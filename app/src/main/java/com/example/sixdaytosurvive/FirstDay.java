@@ -87,7 +87,6 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd() {
                 RelativeLayout layout = findViewById(R.id.first_day_layout);
                 layout.setBackgroundResource(R.drawable.garderob);
-                Toast.makeText(getApplicationContext(), "Текст завершился!", Toast.LENGTH_SHORT).show();
             }
         });
 
