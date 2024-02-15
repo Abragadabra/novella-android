@@ -3,7 +3,6 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
@@ -43,9 +42,9 @@ public class Disclaimer extends AppCompatActivity {
     }
 
     public void startNewGame(View view) {
-        if (AudioClass.menuSound.isPlaying()) {
-            AudioClass.menuSound.stop();
-            AudioClass.menuSound.release();
+        if (HelperClass.menuSound.isPlaying()) {
+            HelperClass.menuSound.stop();
+            HelperClass.menuSound.release();
         }
         // Новый intent для открытия главного меню
         Intent intent = new Intent(Disclaimer.this, SplashScreenMonday.class);

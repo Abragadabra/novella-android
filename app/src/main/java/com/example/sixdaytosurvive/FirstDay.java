@@ -2,18 +2,14 @@ package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
-import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+import com.example.sixdaytosurvive.HelperClass;
 
 public class FirstDay extends AppCompatActivity {
 
@@ -103,12 +99,7 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void skipAnimation(View view) {
-        if (day1_dialog1_effect != null && day1_dialog1_effect.animationRunning) {
-            day1_dialog1_effect.completeTextAnimation();
-        }
-
-        if (day1_dialog2_effect != null && day1_dialog2_effect.animationRunning) {
-            day1_dialog2_effect.completeTextAnimation();
-        }
+        HelperClass.stopAnimation(day1_dialog1_effect);
+        HelperClass.stopAnimation(day1_dialog2_effect);
     }
 }
