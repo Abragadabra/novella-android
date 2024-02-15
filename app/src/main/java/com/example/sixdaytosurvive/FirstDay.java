@@ -103,11 +103,11 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void skipAnimation(View view) {
-        if (day1_dialog1_effect.animationRunning) {
+        if (day1_dialog1_effect != null && day1_dialog1_effect.animationRunning) {
             day1_dialog1_effect.completeTextAnimation();
         }
 
-        if (day1_dialog2_effect.animationRunning) {
+        if (day1_dialog2_effect != null && day1_dialog2_effect.animationRunning) {
             day1_dialog2_effect.completeTextAnimation();
         }
     }
