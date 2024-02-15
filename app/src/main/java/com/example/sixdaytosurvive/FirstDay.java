@@ -21,6 +21,8 @@ public class FirstDay extends AppCompatActivity {
     Animation anim_button_in;       // Анимация вхождения кнопки
     Animation anim_button_out;      // Анимация выхода кнопки
     TextView mainText;              // Поле с текстом
+    TypewriterEffect day1_dialog1_effect;
+    TypewriterEffect day1_dialog2_effect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class FirstDay extends AppCompatActivity {
         getWindow().setFlags(512, 512);
 
         // Анимация первой фразы
-        TypewriterEffect day1_dialog1_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 60);
+        day1_dialog1_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 60);
         day1_dialog1_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
@@ -84,7 +86,7 @@ public class FirstDay extends AppCompatActivity {
         mainText.setText("");
 
         // Анимация второй фразы
-        TypewriterEffect day1_dialog2_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog2, 60);
+        day1_dialog2_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog2, 60);
 
         // Старт анимции
         day1_dialog2_effect.animateText();
@@ -98,5 +100,15 @@ public class FirstDay extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void skipAnimation(View view) {
+        if (day1_dialog1_effect.animationRunning) {
+            day1_dialog1_effect.completeTextAnimation();
+        }
+
+        if (day1_dialog2_effect.animationRunning) {
+            day1_dialog2_effect.completeTextAnimation();
+        }
     }
 }

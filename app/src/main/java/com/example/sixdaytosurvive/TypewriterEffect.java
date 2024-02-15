@@ -10,6 +10,7 @@ public class TypewriterEffect {
     private final String text;                      // Текст, который печатается
     private final long delay;                       // Длительность каждого символа
     private TypewriterListener listener;            // Слушатель событией
+    public boolean animationRunning = true;
 
     // Конструктор
     public TypewriterEffect(TextView textView, String text, long delay) {
@@ -28,9 +29,14 @@ public class TypewriterEffect {
         animateText(0);
     }
 
+    public void completeTextAnimation() {
+        animationRunning = false;
+        textView.setText(text);
+    }
+
     @SuppressLint("SetTextI18n")
     private void animateText(final int index) {
-        if (index < text.length()) {
+        if (index < text.length() && animationRunning) {
             textView.setText(textView.getText().toString() + text.charAt(index));
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
