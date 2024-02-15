@@ -101,5 +101,6 @@ public class FirstDay extends AppCompatActivity {
     public void skipAnimation(View view) {
         HelperClass.stopAnimation(day1_dialog1_effect);
         HelperClass.stopAnimation(day1_dialog2_effect);
+        // ТЕСТОВЫЙ КОММЕНТ
     }
 }
