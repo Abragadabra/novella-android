@@ -55,7 +55,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:visibility="invisible"
         android:layout_marginBottom="5dp"
         android:orientation="vertical">
 
@@ -67,11 +66,13 @@
             android:backgroundTint="#ADFFC5C5"
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/fold"
+            android:onClick="takeJacket"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
-            app:cornerRadius="14dp"
-            android:onClick="takeJacket"/>
+            android:visibility="invisible"
+
+            app:cornerRadius="14dp" />
 
         <Button
             android:id="@+id/choice_button_2"
@@ -81,11 +82,13 @@
             android:backgroundTint="#ADFFC5C5"
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/pass"
+            android:onClick="passJacket"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
-            app:cornerRadius="14dp"
-            android:onClick="passJacket"/>
+            android:visibility="invisible"
+
+            app:cornerRadius="14dp" />
 
 
     </LinearLayout>

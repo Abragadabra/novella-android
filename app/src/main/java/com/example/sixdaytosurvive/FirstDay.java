@@ -16,6 +16,8 @@ import android.widget.TextView;
 public class FirstDay extends AppCompatActivity {
 
     Button nextButton;                              // Кнопка "далее"
+    Button takeJacketButton;
+    Button passJacketButton;
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
     Animation anim_button_out_right;                // Анимация выхода кнопки справа
     Animation anim_button_in_left;                  // Анимация входа кнопки слева
@@ -34,6 +36,8 @@ public class FirstDay extends AppCompatActivity {
 
         // Присвоение значений переменным
         nextButton = findViewById(R.id.next_button);
+        takeJacketButton = findViewById(R.id.choice_button_1);
+        passJacketButton = findViewById(R.id.choice_button_2);
 
         anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
         anim_button_out_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
@@ -123,8 +127,11 @@ public class FirstDay extends AppCompatActivity {
                 day1_dialog3_effect.setListener(new TypewriterListener() {
                     @Override
                     public void onAnimationEnd() {
-                        buttonsChoiceLayout.setVisibility(View.VISIBLE);
-                        buttonsChoiceLayout.startAnimation(anim_button_in_left);
+                        takeJacketButton.setVisibility(View.VISIBLE);
+                        passJacketButton.setVisibility(View.VISIBLE);
+
+                        takeJacketButton.startAnimation(anim_button_in_left);
+                        passJacketButton.startAnimation(anim_button_in_left);
                     }
                 });
             }
@@ -139,24 +146,7 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void takeJacket(View view) {
-        buttonsChoiceLayout.startAnimation(anim_button_out_left);
-
-        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                buttonsChoiceLayout.setVisibility(View.INVISIBLE);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
+        
     }
 
     public void passJacket(View view) {
