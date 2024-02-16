@@ -12,4 +12,8 @@
     <string name="day1">День 1</string>
     <string name="monday">Понедельник</string>
 
+    <!--  ВЫБОР СОБЫТИЙ 1  -->
+    <string name="fold">Сложить куртку</string>
+    <string name="pass">Сдать в гардероб</string>
+
 </resources>

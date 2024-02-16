@@ -22,9 +22,9 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:onClick="skipAnimation"
         android:background="@drawable/mega_round_text"
         android:fontFamily="@font/ubuntu_bold"
+        android:onClick="skipAnimation"
         android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="25sp" />
@@ -45,5 +45,50 @@
         android:textSize="25sp"
         android:visibility="invisible"
         app:cornerRadius="14dp" />
+
+    <LinearLayout
+        android:id="@+id/choice_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignStart="@id/first_day_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/choice_button_1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#ADFFC5C5"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/fold"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            app:cornerRadius="14dp"
+            android:onClick="takeJacket"/>
+
+        <Button
+            android:id="@+id/choice_button_2"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#ADFFC5C5"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/pass"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            app:cornerRadius="14dp"
+            android:onClick="passJacket"/>
+
+
+    </LinearLayout>
+
 
 </RelativeLayout>

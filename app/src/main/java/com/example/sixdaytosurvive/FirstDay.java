@@ -4,25 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.example.sixdaytosurvive.HelperClass;
 
 public class FirstDay extends AppCompatActivity {
 
     Button nextButton;                              // Кнопка "далее"
     Animation anim_button_in;                       // Анимация вхождения кнопки
     Animation anim_button_out;                      // Анимация выхода кнопки
+    Animation anim_button_in_left;                  // Анимация входа кнопки справа
     TextView mainText;                              // Поле с текстом
     TypewriterEffect day1_dialog1_effect;           // Эффект диалога 1
     TypewriterEffect day1_dialog2_effect;           // Эффект диалога 2
+    TypewriterEffect day1_dialog3_effect;           // Эффект диалога 3
     RelativeLayout relativeLayout;                  // Текущий layout
+    LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +33,12 @@ public class FirstDay extends AppCompatActivity {
 
         // Присвоение значений переменным
         nextButton = findViewById(R.id.next_button);
-        anim_button_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in);
-        anim_button_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out);
+        anim_button_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
+        anim_button_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
+        anim_button_in_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_left);
         mainText = findViewById(R.id.first_day_text);
         relativeLayout = findViewById(R.id.first_day_layout);
+        buttonsChoiceLayout = findViewById(R.id.choice_1);
 
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
@@ -99,6 +103,24 @@ public class FirstDay extends AppCompatActivity {
                 @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
                 @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+                // Очистка поля текста
+                mainText.setText("");
+
+                // Третья фраза главного героя
+                day1_dialog3_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe1, 60);
+
+                // Старт фразы
+                day1_dialog3_effect.animateText();
+
+                // Событие по окончанию анимации третьей фразы
+                day1_dialog3_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        buttonsChoiceLayout.setVisibility(View.VISIBLE);
+                        buttonsChoiceLayout.startAnimation(anim_button_in_left);
+                    }
+                });
             }
         });
 
@@ -107,5 +129,13 @@ public class FirstDay extends AppCompatActivity {
     public void skipAnimation(View view) {
         HelperClass.stopAnimation(day1_dialog1_effect);
         HelperClass.stopAnimation(day1_dialog2_effect);
+        HelperClass.stopAnimation(day1_dialog3_effect);
+    }
+
+    public void takeJacket(View view) {
+
+    }
+
+    public void passJacket(View view) {
     }
 }
