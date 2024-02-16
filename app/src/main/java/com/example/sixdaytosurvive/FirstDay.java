@@ -124,7 +124,7 @@ public class FirstDay extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd() {
                         buttonsChoiceLayout.setVisibility(View.VISIBLE);
-                        buttonsChoiceLayout.startAnimation(anim_button_in_right);
+                        buttonsChoiceLayout.startAnimation(anim_button_in_left);
                     }
                 });
             }
@@ -139,7 +139,24 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void takeJacket(View view) {
+        buttonsChoiceLayout.startAnimation(anim_button_out_left);
 
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                buttonsChoiceLayout.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 
     public void passJacket(View view) {
