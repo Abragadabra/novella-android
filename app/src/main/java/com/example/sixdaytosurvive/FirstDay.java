@@ -2,6 +2,9 @@ package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,12 +16,13 @@ import com.example.sixdaytosurvive.HelperClass;
 
 public class FirstDay extends AppCompatActivity {
 
-    Button nextButton;              // Кнопка "далее"
-    Animation anim_button_in;       // Анимация вхождения кнопки
-    Animation anim_button_out;      // Анимация выхода кнопки
-    TextView mainText;              // Поле с текстом
-    TypewriterEffect day1_dialog1_effect;
-    TypewriterEffect day1_dialog2_effect;
+    Button nextButton;                              // Кнопка "далее"
+    Animation anim_button_in;                       // Анимация вхождения кнопки
+    Animation anim_button_out;                      // Анимация выхода кнопки
+    TextView mainText;                              // Поле с текстом
+    TypewriterEffect day1_dialog1_effect;           // Эффект диалога 1
+    TypewriterEffect day1_dialog2_effect;           // Эффект диалога 2
+    RelativeLayout relativeLayout;                  // Текущий layout
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class FirstDay extends AppCompatActivity {
         anim_button_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in);
         anim_button_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out);
         mainText = findViewById(R.id.first_day_text);
+        relativeLayout = findViewById(R.id.first_day_layout);
 
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
@@ -63,7 +68,7 @@ public class FirstDay extends AppCompatActivity {
         anim_button_out.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
+                // Событие при старте анимации
             }
 
             @Override
@@ -74,7 +79,7 @@ public class FirstDay extends AppCompatActivity {
 
             @Override
             public void onAnimationRepeat(Animation animation) {
-
+                // Событие при повторе анимации
             }
         });
 
@@ -91,8 +96,9 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd() {
                 // Меняем фон при завершении анимации
-                RelativeLayout layout = findViewById(R.id.first_day_layout);
-                layout.setBackgroundResource(R.drawable.garderob);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
         });
 
