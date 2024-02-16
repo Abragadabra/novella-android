@@ -16,9 +16,10 @@ import android.widget.TextView;
 public class FirstDay extends AppCompatActivity {
 
     Button nextButton;                              // Кнопка "далее"
-    Animation anim_button_in;                       // Анимация вхождения кнопки
-    Animation anim_button_out;                      // Анимация выхода кнопки
-    Animation anim_button_in_left;                  // Анимация входа кнопки справа
+    Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
+    Animation anim_button_out_right;                // Анимация выхода кнопки справа
+    Animation anim_button_in_left;                  // Анимация входа кнопки слева
+    Animation anim_button_out_left;                 // Анимация выхода кнопки слева
     TextView mainText;                              // Поле с текстом
     TypewriterEffect day1_dialog1_effect;           // Эффект диалога 1
     TypewriterEffect day1_dialog2_effect;           // Эффект диалога 2
@@ -33,10 +34,15 @@ public class FirstDay extends AppCompatActivity {
 
         // Присвоение значений переменным
         nextButton = findViewById(R.id.next_button);
-        anim_button_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
-        anim_button_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
+
+        anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
+        anim_button_out_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
+
         anim_button_in_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_left);
+        anim_button_out_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_left);
+
         mainText = findViewById(R.id.first_day_text);
+
         relativeLayout = findViewById(R.id.first_day_layout);
         buttonsChoiceLayout = findViewById(R.id.choice_1);
 
@@ -59,7 +65,7 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd() {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton.setVisibility(View.VISIBLE);
-                nextButton.startAnimation(anim_button_in);
+                nextButton.startAnimation(anim_button_in_right);
             }
         });
         // Старт анимации
@@ -68,8 +74,8 @@ public class FirstDay extends AppCompatActivity {
 
     public void nextPhrase(View view) {
         // Прячем кнопку
-        nextButton.startAnimation(anim_button_out);
-        anim_button_out.setAnimationListener(new Animation.AnimationListener() {
+        nextButton.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
                 // Событие при старте анимации
@@ -118,7 +124,7 @@ public class FirstDay extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd() {
                         buttonsChoiceLayout.setVisibility(View.VISIBLE);
-                        buttonsChoiceLayout.startAnimation(anim_button_in_left);
+                        buttonsChoiceLayout.startAnimation(anim_button_in_right);
                     }
                 });
             }
