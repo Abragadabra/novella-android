@@ -26,6 +26,8 @@ public class FirstDay extends AppCompatActivity {
     TypewriterEffect day1_dialog1_effect;           // Эффект диалога 1
     TypewriterEffect day1_dialog2_effect;           // Эффект диалога 2
     TypewriterEffect day1_dialog3_effect;           // Эффект диалога 3
+    TypewriterEffect day1_dialog4_effect;           // Эффект диалога 4
+    TypewriterEffect day1_dialog5_effect;           // Эффект диалога 5
     RelativeLayout relativeLayout;                  // Текущий layout
     LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
 
@@ -78,6 +80,7 @@ public class FirstDay extends AppCompatActivity {
 
     public void nextPhrase(View view) {
         // Прячем кнопку
+        nextButton.setEnabled(false);
         nextButton.startAnimation(anim_button_out_right);
         anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -146,9 +149,62 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void takeJacket(View view) {
-        
+        takeJacketButton.setEnabled(false);
+        passJacketButton.setEnabled(false);
+
+        takeJacketButton.startAnimation(anim_button_out_left);
+        passJacketButton.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                takeJacketButton.setVisibility(View.INVISIBLE);
+                passJacketButton.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        mainText.setText("");
+        day1_dialog4_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant1, 60);
+        day1_dialog4_effect.animateText();
     }
 
     public void passJacket(View view) {
+        takeJacketButton.setEnabled(false);
+        passJacketButton.setEnabled(false);
+
+        takeJacketButton.startAnimation(anim_button_out_left);
+        passJacketButton.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                takeJacketButton.setVisibility(View.INVISIBLE);
+                passJacketButton.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        mainText.setText("");
+        day1_dialog5_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant2_1, 60);
+        day1_dialog5_effect.animateText();
     }
 }
