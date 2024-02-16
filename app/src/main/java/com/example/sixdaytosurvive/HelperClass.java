@@ -4,6 +4,7 @@ import android.media.MediaPlayer;
 
 public class HelperClass {
     public static MediaPlayer menuSound;
+    public static MediaPlayer alarmSound;
 
     public static void stopAnimation(TypewriterEffect typewriterEffect) {
         if (typewriterEffect != null && typewriterEffect.animationRunning) {

@@ -3,13 +3,14 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
 public class SplashScreenMonday extends AppCompatActivity {
 
-    final int SPLASH_DISPLAY_LENGTH = 2200;     // Длительность заставки в мс
+    final int SPLASH_DISPLAY_LENGTH = 4160;     // Длительность заставки в мс
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,9 @@ public class SplashScreenMonday extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        HelperClass.alarmSound = MediaPlayer.create(getApplicationContext(), R.raw.alarm);
+        HelperClass.alarmSound.start();
 
         // Отложенный запуск перехода на новую активити
         new Handler().postDelayed(new Runnable() {
