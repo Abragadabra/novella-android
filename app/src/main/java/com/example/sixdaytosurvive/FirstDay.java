@@ -146,6 +146,8 @@ public class FirstDay extends AppCompatActivity {
         HelperClass.stopAnimation(day1_dialog1_effect);
         HelperClass.stopAnimation(day1_dialog2_effect);
         HelperClass.stopAnimation(day1_dialog3_effect);
+        HelperClass.stopAnimation(day1_dialog4_effect);
+        HelperClass.stopAnimation(day1_dialog5_effect);
     }
 
     public void takeJacket(View view) {
