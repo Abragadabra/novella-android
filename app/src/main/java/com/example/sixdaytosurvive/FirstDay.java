@@ -3,6 +3,7 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,7 @@ public class FirstDay extends AppCompatActivity {
     Button nextButton_11;                             // Кнопка "далее" 11
     Button nextButton_12;                             // Кнопка "далее" 12
     Button nextButton_13;                             // Кнопка "далее" 13
+    Button nextButton_14;                             // Кнопка "далее" 14
 
 
 //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
@@ -66,7 +68,7 @@ public class FirstDay extends AppCompatActivity {
     TypewriterEffect day1_dialog17_effect;           // Эффект диалога 17 (Мы приняли еду)
     TypewriterEffect day1_dialog18_effect;           // Эффект диалога 18 (Мы отказались от еды)
     TypewriterEffect day1_dialog19_effect;           // Эффект диалога 19 (Пара Лососевой)
-    TypewriterEffect day1_dialog20_effect;           // Эффект диалога 19 (Если куртку сдана)
+    TypewriterEffect day1_dialog20_effect;           // Эффект диалога 20 (Если куртку сдана в гардероб)
 
     RelativeLayout relativeLayout;                  // Текущий layout
     LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
@@ -90,13 +92,14 @@ public class FirstDay extends AppCompatActivity {
         nextButton_11 = findViewById(R.id.next_button_11);
         nextButton_12 = findViewById(R.id.next_button_12);
         nextButton_13 = findViewById(R.id.next_button_13);
+        nextButton_14 = findViewById(R.id.next_button_14);
 
 
         takeJacketButton = findViewById(R.id.choice_button_1);
         passJacketButton = findViewById(R.id.choice_button_2);
 
         takeFoodButton = findViewById(R.id.choice_button_3);
-        passFoodButton = findViewById(R.id.choice_button_3);
+        passFoodButton = findViewById(R.id.choice_button_4);
 
 
         anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
@@ -862,7 +865,7 @@ public class FirstDay extends AppCompatActivity {
         // Очистка поля текста
         mainText.setText("");
 
-        // Анимация восьмой фразы
+        // Анимация 19 фразы
         day1_dialog19_effect = new TypewriterEffect(mainText, Dialogues.day1_class2_1, 60);
 
         // Старт анимации
@@ -872,10 +875,105 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog19_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                // Показываем кнопку далее8
-                nextButton_11.setVisibility(View.VISIBLE);
-                nextButton_11.startAnimation(anim_button_in_right);
+                // Показываем кнопку далее13
+                nextButton_13.setVisibility(View.VISIBLE);
+                nextButton_13.startAnimation(anim_button_in_right);
             }
         });
+    }
+
+    //    ---------------------------Гардероб, если у нас куртку в гардеробе)---------------------------
+    public void nextPhrase_13(View view) {
+        // Прячем кнопку
+        nextButton_13.setEnabled(false);
+        nextButton_13.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_13.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Если куртка в гардеробе - ждем
+        if (PlayerData.jacket == false){
+            PlayerData.oladushkinTest = true;
+
+            // Очистка поля текста
+            mainText.setText("");
+
+            // Анимация 19 фразы
+            day1_dialog20_effect = new TypewriterEffect(mainText, Dialogues.day1_end_if_jacket_false, 60);
+
+            // Старт анимации
+            day1_dialog20_effect.animateText();
+
+            // События анимации
+            day1_dialog20_effect.setListener(new TypewriterListener() {
+                @Override
+                public void onAnimationEnd() {
+                    // Показываем кнопку далее14
+                    nextButton_14.setVisibility(View.VISIBLE);
+                    nextButton_14.startAnimation(anim_button_in_right);
+                }
+            });
+        }
+        // Иначе начинается новый день
+        else{
+            nextButton_14.setVisibility(View.VISIBLE);
+            nextButton_14.startAnimation(anim_button_in_right);
+        }
+
+    }
+
+    public void nextPhrase_12(View view) {
+        // Прячем кнопку
+        nextButton_12.setEnabled(false);
+        nextButton_12.startAnimation(anim_button_out_right);
+        setDay2();
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_12.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+    }
+
+    public void setDay2() {
+        // // Новый intent для открытия главного меню
+        Intent intent = new Intent(FirstDay.this, SplashScreenTuesday.class);
+
+        // Открываем новое активити
+        FirstDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        FirstDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
