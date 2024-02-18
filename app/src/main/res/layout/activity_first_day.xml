@@ -183,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
-            android:hint="Ждать очереди"
+            android:hint="@string/pass"
 
             android:backgroundTint="#ADFFC5C5"
             android:fontFamily="@font/ubuntu_bold"
