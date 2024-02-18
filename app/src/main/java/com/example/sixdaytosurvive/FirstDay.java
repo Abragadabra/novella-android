@@ -28,12 +28,16 @@ public class FirstDay extends AppCompatActivity {
     Button nextButton_10;                             // Кнопка "далее" 10
     Button nextButton_11;                             // Кнопка "далее" 11
     Button nextButton_12;                             // Кнопка "далее" 12
+    Button nextButton_13;                             // Кнопка "далее" 13
 
 
 //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
+
+    // Кнопки для выбора действий в гардеробе
     Button takeJacketButton;
     Button passJacketButton;
 
+    // Кнопки для выбора действий в столовой
     Button takeFoodButton;
     Button passFoodButton;
 
@@ -61,7 +65,8 @@ public class FirstDay extends AppCompatActivity {
     TypewriterEffect day1_dialog16_effect;           // Эффект диалога 16 (Дыров предлагает еду)
     TypewriterEffect day1_dialog17_effect;           // Эффект диалога 17 (Мы приняли еду)
     TypewriterEffect day1_dialog18_effect;           // Эффект диалога 18 (Мы отказались от еды)
-
+    TypewriterEffect day1_dialog19_effect;           // Эффект диалога 19 (Пара Лососевой)
+    TypewriterEffect day1_dialog20_effect;           // Эффект диалога 19 (Если куртку сдана)
 
     RelativeLayout relativeLayout;                  // Текущий layout
     LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
@@ -84,6 +89,7 @@ public class FirstDay extends AppCompatActivity {
         nextButton_10 = findViewById(R.id.next_button_10);
         nextButton_11 = findViewById(R.id.next_button_11);
         nextButton_12 = findViewById(R.id.next_button_12);
+        nextButton_13 = findViewById(R.id.next_button_13);
 
 
         takeJacketButton = findViewById(R.id.choice_button_1);
@@ -151,6 +157,8 @@ public class FirstDay extends AppCompatActivity {
         HelperClass.stopAnimation(day1_dialog16_effect);
         HelperClass.stopAnimation(day1_dialog17_effect);
         HelperClass.stopAnimation(day1_dialog18_effect);
+        HelperClass.stopAnimation(day1_dialog19_effect);
+        HelperClass.stopAnimation(day1_dialog20_effect);
 
     }
 
@@ -697,6 +705,7 @@ public class FirstDay extends AppCompatActivity {
         });
     }
 
+    // Столовая и появление выбора
     public void nextPhrase_11(View view) {
         // Прячем кнопку
         nextButton_11.setEnabled(false);
@@ -723,25 +732,26 @@ public class FirstDay extends AppCompatActivity {
         mainText.setText("");
 
         // Анимация восьмой фразы
-        day1_dialog15_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_2, 60);
+        day1_dialog16_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_2, 60);
 
         // Старт анимации
-        day1_dialog15_effect.animateText();
+        day1_dialog16_effect.animateText();
 
         // События анимации
-        day1_dialog15_effect.setListener(new TypewriterListener() {
+        day1_dialog16_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
                 // Показываем кнопки выбора ответа в столовой
                 takeFoodButton.setVisibility(View.VISIBLE);
                 passFoodButton.setVisibility(View.VISIBLE);
-
+                // Начинаем анимации на кнопки выбора ответа в столовой
                 takeFoodButton.startAnimation(anim_button_in_left);
                 passFoodButton.startAnimation(anim_button_in_left);
             }
         });
     }
 
+    // Событие при отказе от еды
     public void passFood(View view) {
         takeFoodButton.setEnabled(false);
         passFoodButton.setEnabled(false);
@@ -783,6 +793,7 @@ public class FirstDay extends AppCompatActivity {
         });
     }
 
+    // Событие при принятии еды
     public void takeFood(View view) {
         takeFoodButton.setEnabled(false);
         passFoodButton.setEnabled(false);
@@ -810,16 +821,60 @@ public class FirstDay extends AppCompatActivity {
 
         // мы ждем очереди
         mainText.setText("");
-        day1_dialog18_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_yes, 60);
-        day1_dialog18_effect.animateText();
+        day1_dialog17_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_yes, 60);
+        day1_dialog17_effect.animateText();
 
         // Показываем кнопку ДАЛЕЕ
-        day1_dialog18_effect.setListener(new TypewriterListener() {
+        day1_dialog17_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_12.setVisibility(View.VISIBLE);
                 nextButton_12.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    //    ---------------------------ВТОРАЯ ПАРА (ЛОСОСЕВА)---------------------------
+
+    public void nextPhrase_12(View view) {
+        // Прячем кнопку
+        nextButton_12.setEnabled(false);
+        nextButton_12.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_12.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog19_effect = new TypewriterEffect(mainText, Dialogues.day1_class2_1, 60);
+
+        // Старт анимации
+        day1_dialog19_effect.animateText();
+
+        // События анимации
+        day1_dialog19_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Показываем кнопку далее8
+                nextButton_11.setVisibility(View.VISIBLE);
+                nextButton_11.startAnimation(anim_button_in_right);
             }
         });
     }

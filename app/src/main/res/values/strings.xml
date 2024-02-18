@@ -16,4 +16,8 @@
     <string name="fold">Сложить куртку</string>
     <string name="pass">Ждать очереди</string>
 
+    <!--  ВЫБОР СОБЫТИЙ 2  -->
+    <string name="takefood">Принять</string>
+    <string name="passfood">Отказаться</string>
+
 </resources>
