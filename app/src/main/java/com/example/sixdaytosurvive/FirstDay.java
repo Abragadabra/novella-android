@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class FirstDay extends AppCompatActivity {
 
-//    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
+    //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
     Button nextButton;                                // Кнопка "далее"
     Button nextButton_2;                              // Кнопка "далее" 2
     Button nextButton_3;                              // Кнопка "далее" 3
@@ -232,7 +232,6 @@ public class FirstDay extends AppCompatActivity {
     }
 
 
-
     // ждём в гардеробе
     public void passJacket(View view) {
         PlayerData.jacket = false;
@@ -318,9 +317,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog6_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                    // По окончанию анимация печатания вызываем кнопку "далее"
-                    nextButton_3.setVisibility(View.VISIBLE);
-                    nextButton_3.startAnimation(anim_button_in_right);
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_3.setVisibility(View.VISIBLE);
+                nextButton_3.startAnimation(anim_button_in_right);
             }
         });
 
@@ -362,9 +361,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog8_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                        // Показываем кнопку далее4
-                        nextButton_4.setVisibility(View.VISIBLE);
-                        nextButton_4.startAnimation(anim_button_in_right);
+                // Показываем кнопку далее4
+                nextButton_4.setVisibility(View.VISIBLE);
+                nextButton_4.startAnimation(anim_button_in_right);
             }
         });
     }
@@ -405,9 +404,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog9_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                        // Показываем кнопку далее5
-                        nextButton_5.setVisibility(View.VISIBLE);
-                        nextButton_5.startAnimation(anim_button_in_right);
+                // Показываем кнопку далее5
+                nextButton_5.setVisibility(View.VISIBLE);
+                nextButton_5.startAnimation(anim_button_in_right);
             }
         });
     }
@@ -448,9 +447,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog10_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                        // Показываем кнопку далее6
-                        nextButton_6.setVisibility(View.VISIBLE);
-                        nextButton_6.startAnimation(anim_button_in_right);
+                // Показываем кнопку далее6
+                nextButton_6.setVisibility(View.VISIBLE);
+                nextButton_6.startAnimation(anim_button_in_right);
             }
         });
     }
@@ -490,9 +489,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog11_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                        // Показываем кнопку далее7
-                        nextButton_7.setVisibility(View.VISIBLE);
-                        nextButton_7.startAnimation(anim_button_in_right);
+                // Показываем кнопку далее7
+                nextButton_7.setVisibility(View.VISIBLE);
+                nextButton_7.startAnimation(anim_button_in_right);
             }
         });
     }
@@ -532,9 +531,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog12_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                        // Показываем кнопку далее8
-                        nextButton_8.setVisibility(View.VISIBLE);
-                        nextButton_8.startAnimation(anim_button_in_right);
+                // Показываем кнопку далее8
+                nextButton_8.setVisibility(View.VISIBLE);
+                nextButton_8.startAnimation(anim_button_in_right);
             }
         });
     }
@@ -574,9 +573,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog5_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                        // Показываем кнопку далее6
-                        nextButton_7.setVisibility(View.VISIBLE);
-                        nextButton_7.startAnimation(anim_button_in_right);
+                // Показываем кнопку далее6
+                nextButton_7.setVisibility(View.VISIBLE);
+                nextButton_7.startAnimation(anim_button_in_right);
             }
         });
     }
@@ -906,7 +905,7 @@ public class FirstDay extends AppCompatActivity {
         });
 
         // Если куртка в гардеробе - ждем
-        if (PlayerData.jacket == false){
+        if (PlayerData.jacket == false) {
             PlayerData.oladushkinTest = true;
 
             // Очистка поля текста
@@ -929,14 +928,16 @@ public class FirstDay extends AppCompatActivity {
             });
         }
         // Иначе начинается новый день
-        else{
+        else {
             nextButton_14.setVisibility(View.VISIBLE);
             nextButton_14.startAnimation(anim_button_in_right);
         }
 
     }
 
-    public void nextPhrase_12(View view) {
+
+
+    public void nextPhrase_14(View view) {
         // Прячем кнопку
         nextButton_12.setEnabled(false);
         nextButton_12.startAnimation(anim_button_out_right);
