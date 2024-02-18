@@ -46,7 +46,7 @@
         android:textSize="25sp"
         android:visibility="invisible"
         app:cornerRadius="14dp" />
-<!--   Кнопка 2     -->
+    <!--   Кнопка 2     -->
     <Button
         android:id="@+id/next_button_2"
         android:layout_width="wrap_content"
@@ -302,10 +302,10 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
-            android:hint="@string/fold"
-
             android:backgroundTint="#ADFFC5C5"
+
             android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/fold"
             android:onClick="takeJacket"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
@@ -318,15 +318,15 @@
 
     <LinearLayout
         android:id="@+id/choice_2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_above="@id/first_day_text"
-    android:layout_alignStart="@id/first_day_text"
-    android:layout_centerHorizontal="true"
-    android:layout_marginStart="5dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignStart="@id/first_day_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/choice_button_3"
@@ -350,10 +350,10 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
-            android:hint="@string/takefood"
-
             android:backgroundTint="#ADFFC5C5"
+
             android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/takefood"
             android:onClick="takeFood"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"

@@ -31,24 +31,29 @@ public class FirstDay extends AppCompatActivity {
     Button nextButton_12;                             // Кнопка "далее" 12
     Button nextButton_13;                             // Кнопка "далее" 13
     Button nextButton_14;                             // Кнопка "далее" 14
-
-
-//    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
+    //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
     // Кнопки для выбора действий в гардеробе
-    Button takeJacketButton;
-    Button passJacketButton;
+    Button takeJacketButton;    // Взять куртку
+    Button passJacketButton;    // Сдать куртку
 
     // Кнопки для выбора действий в столовой
-    Button takeFoodButton;
-    Button passFoodButton;
+    Button takeFoodButton;      // Взять жратву от дырова
+    Button passFoodButton;      // Отказаться от еды и быть сигмой
 
 
+    // ------------------------------ Анимации ------------------------------
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
     Animation anim_button_out_right;                // Анимация выхода кнопки справа
     Animation anim_button_in_left;                  // Анимация входа кнопки слева
     Animation anim_button_out_left;                 // Анимация выхода кнопки слева
+    // ------------------------------ Анимации ------------------------------
+
+
     TextView mainText;                              // Поле с текстом
+
+
+    // ------------------------------ Диалоги ------------------------------
     TypewriterEffect day1_dialog1_effect;           // Эффект диалога 1
     TypewriterEffect day1_dialog2_effect;           // Эффект диалога 2
     TypewriterEffect day1_dialog3_effect;           // Эффект диалога 3
@@ -69,16 +74,17 @@ public class FirstDay extends AppCompatActivity {
     TypewriterEffect day1_dialog18_effect;           // Эффект диалога 18 (Мы отказались от еды)
     TypewriterEffect day1_dialog19_effect;           // Эффект диалога 19 (Пара Лососевой)
     TypewriterEffect day1_dialog20_effect;           // Эффект диалога 20 (Если куртку сдана в гардероб)
+    // ------------------------------ Диалоги ------------------------------
 
-    RelativeLayout relativeLayout;                  // Текущий layout
-    LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
+    // Основной Layout в вёрстке
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_day);
 
-        // Присвоение значений переменным
+        // --------- Получение кнопок "далее" ---------
         nextButton = findViewById(R.id.next_button);
         nextButton_2 = findViewById(R.id.next_button_2);
         nextButton_3 = findViewById(R.id.next_button_3);
@@ -93,25 +99,37 @@ public class FirstDay extends AppCompatActivity {
         nextButton_12 = findViewById(R.id.next_button_12);
         nextButton_13 = findViewById(R.id.next_button_13);
         nextButton_14 = findViewById(R.id.next_button_14);
+        // --------- Получение кнопок "далее" ---------
 
 
+        // ------ Получение кнопок "выбора куртки" ------
         takeJacketButton = findViewById(R.id.choice_button_1);
         passJacketButton = findViewById(R.id.choice_button_2);
+        // ------ Получение кнопок "выбора куртки" ------
 
+
+        // ------ Получение кнопок "выбора еды" ------
         takeFoodButton = findViewById(R.id.choice_button_3);
         passFoodButton = findViewById(R.id.choice_button_4);
+        // ------ Получение кнопок "выбора еды" ------
 
 
+        // ------------------------------ Получение анимации справа экрана ------------------------------
         anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
         anim_button_out_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
+        // ------------------------------ Получение анимации справа экрана ------------------------------
 
+
+        // ------------------------------ Получение анимации слева экрана ------------------------------
         anim_button_in_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_left);
         anim_button_out_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_left);
+        // ------------------------------ Получение анимации слева экрана ------------------------------
 
+        // Получени поля с тектом
         mainText = findViewById(R.id.first_day_text);
 
+        // Получение основной вёрстки
         relativeLayout = findViewById(R.id.first_day_layout);
-        buttonsChoiceLayout = findViewById(R.id.choice_1);
 
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
@@ -126,7 +144,7 @@ public class FirstDay extends AppCompatActivity {
         getWindow().setFlags(512, 512);
 
 
-        // Анимация первой фразы
+        // Анимация первой фразы (мы проснулись в понедельник)
         day1_dialog1_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 60);
         day1_dialog1_effect.setListener(new TypewriterListener() {
             @Override
@@ -162,7 +180,6 @@ public class FirstDay extends AppCompatActivity {
         HelperClass.stopAnimation(day1_dialog18_effect);
         HelperClass.stopAnimation(day1_dialog19_effect);
         HelperClass.stopAnimation(day1_dialog20_effect);
-
     }
 
     // Вроде тут след фраза при нажатии на кнопку (Меняет первый текст на второй)
@@ -179,7 +196,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton.setVisibility(View.INVISIBLE);
+                nextButton.setVisibility(View.GONE);
             }
 
             @Override
@@ -250,8 +267,8 @@ public class FirstDay extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                takeJacketButton.setVisibility(View.INVISIBLE);
-                passJacketButton.setVisibility(View.INVISIBLE);
+                takeJacketButton.setVisibility(View.GONE);
+                passJacketButton.setVisibility(View.GONE);
             }
 
             @Override
@@ -290,7 +307,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_2.setVisibility(View.INVISIBLE);
+                nextButton_2.setVisibility(View.GONE);
 
                 // Меняем фон при завершении анимации
                 @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
@@ -339,7 +356,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_3.setVisibility(View.INVISIBLE);
+                nextButton_3.setVisibility(View.GONE);
             }
 
             @Override
@@ -382,7 +399,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_4.setVisibility(View.INVISIBLE);
+                nextButton_4.setVisibility(View.GONE);
             }
 
             @Override
@@ -425,7 +442,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_5.setVisibility(View.INVISIBLE);
+                nextButton_5.setVisibility(View.GONE);
             }
 
             @Override
@@ -467,7 +484,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_6.setVisibility(View.INVISIBLE);
+                nextButton_6.setVisibility(View.GONE);
             }
 
             @Override
@@ -509,7 +526,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_7.setVisibility(View.INVISIBLE);
+                nextButton_7.setVisibility(View.GONE);
             }
 
             @Override
@@ -556,8 +573,8 @@ public class FirstDay extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                takeJacketButton.setVisibility(View.INVISIBLE);
-                passJacketButton.setVisibility(View.INVISIBLE);
+                takeJacketButton.setVisibility(View.GONE);
+                passJacketButton.setVisibility(View.GONE);
             }
 
             @Override
@@ -593,7 +610,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_8.setVisibility(View.INVISIBLE);
+                nextButton_8.setVisibility(View.GONE);
             }
 
             @Override
@@ -635,7 +652,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_9.setVisibility(View.INVISIBLE);
+                nextButton_9.setVisibility(View.GONE);
             }
 
             @Override
@@ -678,7 +695,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_10.setVisibility(View.INVISIBLE);
+                nextButton_10.setVisibility(View.GONE);
             }
 
             @Override
@@ -721,7 +738,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_11.setVisibility(View.INVISIBLE);
+                nextButton_11.setVisibility(View.GONE);
             }
 
             @Override
@@ -769,8 +786,8 @@ public class FirstDay extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                takeFoodButton.setVisibility(View.INVISIBLE);
-                passFoodButton.setVisibility(View.INVISIBLE);
+                takeFoodButton.setVisibility(View.GONE);
+                passFoodButton.setVisibility(View.GONE);
             }
 
             @Override
@@ -811,8 +828,8 @@ public class FirstDay extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                takeFoodButton.setVisibility(View.INVISIBLE);
-                passFoodButton.setVisibility(View.INVISIBLE);
+                takeFoodButton.setVisibility(View.GONE);
+                passFoodButton.setVisibility(View.GONE);
             }
 
             @Override
@@ -852,7 +869,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_12.setVisibility(View.INVISIBLE);
+                nextButton_12.setVisibility(View.GONE);
             }
 
             @Override
@@ -895,7 +912,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_13.setVisibility(View.INVISIBLE);
+                nextButton_13.setVisibility(View.GONE);
             }
 
             @Override
@@ -936,7 +953,6 @@ public class FirstDay extends AppCompatActivity {
     }
 
 
-
     public void nextPhrase_14(View view) {
         // Прячем кнопку
         nextButton_12.setEnabled(false);
@@ -951,7 +967,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_12.setVisibility(View.INVISIBLE);
+                nextButton_12.setVisibility(View.GONE);
             }
 
             @Override

@@ -18,7 +18,7 @@ public class HelperClass {
 
     // Функция анимации фона
     public static void animBackground(RelativeLayout layout, Drawable bg_out, Drawable bg_in) {
-        TransitionDrawable fade = new TransitionDrawable(new Drawable[] {bg_out, bg_in});
+        TransitionDrawable fade = new TransitionDrawable(new Drawable[]{bg_out, bg_in});
         layout.setBackground(fade);
         fade.startTransition(1000);
     }
