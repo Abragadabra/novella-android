@@ -16,6 +16,8 @@ import android.widget.TextView;
 public class FirstDay extends AppCompatActivity {
 
     Button nextButton;                              // Кнопка "далее"
+    Button nextButton_2;                              // Кнопка "далее" 2
+
     Button takeJacketButton;
     Button passJacketButton;
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
@@ -28,6 +30,7 @@ public class FirstDay extends AppCompatActivity {
     TypewriterEffect day1_dialog3_effect;           // Эффект диалога 3
     TypewriterEffect day1_dialog4_effect;           // Эффект диалога 4
     TypewriterEffect day1_dialog5_effect;           // Эффект диалога 5
+    TypewriterEffect day1_dialog6_effect;           // Эффект диалога 6 (извинение за опоздание)
     RelativeLayout relativeLayout;                  // Текущий layout
     LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
 
@@ -38,6 +41,8 @@ public class FirstDay extends AppCompatActivity {
 
         // Присвоение значений переменным
         nextButton = findViewById(R.id.next_button);
+        nextButton_2 = findViewById(R.id.next_button_2);
+
         takeJacketButton = findViewById(R.id.choice_button_1);
         passJacketButton = findViewById(R.id.choice_button_2);
 
@@ -64,6 +69,7 @@ public class FirstDay extends AppCompatActivity {
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
 
+
         // Анимация первой фразы
         day1_dialog1_effect = new TypewriterEffect(mainText, Dialogues.day1_dialog1, 60);
         day1_dialog1_effect.setListener(new TypewriterListener() {
@@ -78,6 +84,18 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog1_effect.animateText();
     }
 
+    // Скип анимации на каждый диалог
+    public void skipAnimation(View view) {
+        HelperClass.stopAnimation(day1_dialog1_effect);
+        HelperClass.stopAnimation(day1_dialog2_effect);
+        HelperClass.stopAnimation(day1_dialog3_effect);
+        HelperClass.stopAnimation(day1_dialog4_effect);
+        HelperClass.stopAnimation(day1_dialog5_effect);
+        HelperClass.stopAnimation(day1_dialog6_effect);
+
+    }
+
+    // Вроде тут след фраза при нажатии на кнопку (Меняет первый текст на второй)
     public void nextPhrase(View view) {
         // Прячем кнопку
         nextButton.setEnabled(false);
@@ -109,6 +127,7 @@ public class FirstDay extends AppCompatActivity {
         // Старт анимции
         day1_dialog2_effect.animateText();
 
+        // События анимации
         day1_dialog2_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
@@ -142,15 +161,12 @@ public class FirstDay extends AppCompatActivity {
 
     }
 
-    public void skipAnimation(View view) {
-        HelperClass.stopAnimation(day1_dialog1_effect);
-        HelperClass.stopAnimation(day1_dialog2_effect);
-        HelperClass.stopAnimation(day1_dialog3_effect);
-        HelperClass.stopAnimation(day1_dialog4_effect);
-        HelperClass.stopAnimation(day1_dialog5_effect);
-    }
 
+
+    // Берём куртку
     public void takeJacket(View view) {
+        PlayerData.jacket = true;
+
         takeJacketButton.setEnabled(false);
         passJacketButton.setEnabled(false);
 
@@ -175,11 +191,91 @@ public class FirstDay extends AppCompatActivity {
             }
         });
 
+        // Когда мы берем куртку, начинается day1_dialog4_effect
         mainText.setText("");
         day1_dialog4_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant1, 60);
         day1_dialog4_effect.animateText();
+
+        // Показываем кнопку ДАЛЕЕ, когда завершился day1_dialog_4_effect
+        day1_dialog4_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_2.setVisibility(View.VISIBLE);
+                nextButton_2.startAnimation(anim_button_in_right);
+            }
+        });
+
+
     }
 
+    // Событие на кнопку далее_2
+    public void nextPhrase_2(View view) {
+        // Прячем кнопку
+        nextButton_2.setEnabled(false);
+        nextButton_2.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_2.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day1_dialog6_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant2_2, 60);
+
+        // Старт анимции
+        day1_dialog6_effect.animateText();
+
+        // События анимации
+        day1_dialog6_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Меняем фон при завершении анимации
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+                // Очистка поля текста
+                mainText.setText("");
+
+                // Третья фраза главного героя
+                day1_dialog3_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe1, 60);
+
+                // Старт фразы
+                day1_dialog3_effect.animateText();
+
+                // Событие по окончанию анимации третьей фразы
+                day1_dialog3_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        takeJacketButton.setVisibility(View.VISIBLE);
+                        passJacketButton.setVisibility(View.VISIBLE);
+
+                        takeJacketButton.startAnimation(anim_button_in_left);
+                        passJacketButton.startAnimation(anim_button_in_left);
+                    }
+                });
+            }
+        });
+
+    }
+
+    // Не берём куртку
     public void passJacket(View view) {
         takeJacketButton.setEnabled(false);
         passJacketButton.setEnabled(false);
@@ -209,4 +305,6 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog5_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant2_1, 60);
         day1_dialog5_effect.animateText();
     }
+
+
 }
