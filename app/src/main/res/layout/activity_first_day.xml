@@ -98,6 +98,40 @@
         android:visibility="invisible"
         app:cornerRadius="14dp" />
 
+    <Button
+        android:id="@+id/next_button_5"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignEnd="@id/first_day_text"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_5"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignEnd="@id/first_day_text"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_6"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
     <LinearLayout
         android:id="@+id/choice_1"
         android:layout_width="wrap_content"

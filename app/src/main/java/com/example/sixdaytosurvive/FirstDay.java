@@ -19,6 +19,8 @@ public class FirstDay extends AppCompatActivity {
     Button nextButton_2;                              // Кнопка "далее" 2
     Button nextButton_3;                              // Кнопка "далее" 3
     Button nextButton_4;                              // Кнопка "далее" 4
+    Button nextButton_5;                              // Кнопка "далее" 5
+    Button nextButton_6;                              // Кнопка "далее" 6
 
     Button takeJacketButton;
     Button passJacketButton;
@@ -38,6 +40,7 @@ public class FirstDay extends AppCompatActivity {
 
     TypewriterEffect day1_dialog9_effect;           // Эффект диалога 9 (Кастрюлева)
     TypewriterEffect day1_dialog10_effect;           // Эффект диалога 10 (Кастрюлева)
+    TypewriterEffect day1_dialog11_effect;           // Эффект диалога 10 (Кастрюлева)
 
     RelativeLayout relativeLayout;                  // Текущий layout
     LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
@@ -52,6 +55,9 @@ public class FirstDay extends AppCompatActivity {
         nextButton_2 = findViewById(R.id.next_button_2);
         nextButton_3 = findViewById(R.id.next_button_3);
         nextButton_4 = findViewById(R.id.next_button_4);
+        nextButton_5 = findViewById(R.id.next_button_5);
+        nextButton_6 = findViewById(R.id.next_button_6);
+
 
         takeJacketButton = findViewById(R.id.choice_button_1);
         passJacketButton = findViewById(R.id.choice_button_2);
@@ -106,6 +112,7 @@ public class FirstDay extends AppCompatActivity {
         HelperClass.stopAnimation(day1_dialog8_effect);
         HelperClass.stopAnimation(day1_dialog9_effect);
         HelperClass.stopAnimation(day1_dialog10_effect);
+        HelperClass.stopAnimation(day1_dialog11_effect);
 
     }
 
@@ -334,10 +341,150 @@ public class FirstDay extends AppCompatActivity {
                 });
             }
         });
-
     }
 
-    
+    // Событие на нажатие кнопки далее4
+    public void nextPhrase_4(View view) {
+        // Прячем кнопку
+        nextButton_4.setEnabled(false);
+        nextButton_4.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_4.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog9_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant2_5, 60);
+
+        // Старт анимации
+        day1_dialog9_effect.animateText();
+
+        // События анимации
+        day1_dialog9_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                day1_dialog9_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        // Показываем кнопку далее5
+                        nextButton_5.setVisibility(View.VISIBLE);
+                        nextButton_5.startAnimation(anim_button_in_right);
+                    }
+                });
+            }
+        });
+    }
+
+    // Событие при нажатии кнопки далее5
+    public void nextPhrase_5(View view) {
+        // Прячем кнопку
+        nextButton_5.setEnabled(false);
+        nextButton_5.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_5.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog10_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant2_6, 60);
+
+        // Старт анимации
+        day1_dialog10_effect.animateText();
+
+        // События анимации
+        day1_dialog10_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                day1_dialog10_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        // Показываем кнопку далее6
+                        nextButton_6.setVisibility(View.VISIBLE);
+                        nextButton_6.startAnimation(anim_button_in_right);
+                    }
+                });
+            }
+        });
+    }
+
+    public void nextPhrase_6(View view) {
+        // Прячем кнопку
+        nextButton_6.setEnabled(false);
+        nextButton_6.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_6.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog11_effect = new TypewriterEffect(mainText, Dialogues.day1_class1_1, 60);
+
+        // Старт анимации
+        day1_dialog11_effect.animateText();
+
+        // События анимации
+        day1_dialog10_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                day1_dialog11_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        // Показываем кнопку далее6
+//                        nextButton_5.setVisibility(View.VISIBLE);
+//                        nextButton_5.startAnimation(anim_button_in_right);
+                    }
+                });
+            }
+        });
+    }
 
     // Не берём куртку
     public void passJacket(View view) {
