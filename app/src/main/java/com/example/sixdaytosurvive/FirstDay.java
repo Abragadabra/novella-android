@@ -17,6 +17,8 @@ public class FirstDay extends AppCompatActivity {
 
     Button nextButton;                              // Кнопка "далее"
     Button nextButton_2;                              // Кнопка "далее" 2
+    Button nextButton_3;                              // Кнопка "далее" 3
+    Button nextButton_4;                              // Кнопка "далее" 4
 
     Button takeJacketButton;
     Button passJacketButton;
@@ -31,6 +33,12 @@ public class FirstDay extends AppCompatActivity {
     TypewriterEffect day1_dialog4_effect;           // Эффект диалога 4
     TypewriterEffect day1_dialog5_effect;           // Эффект диалога 5
     TypewriterEffect day1_dialog6_effect;           // Эффект диалога 6 (извинение за опоздание)
+    TypewriterEffect day1_dialog7_effect;           // Эффект диалога 7 (Кастрюлева)
+    TypewriterEffect day1_dialog8_effect;           // Эффект диалога 8 (Кастрюлева)
+
+    TypewriterEffect day1_dialog9_effect;           // Эффект диалога 9 (Кастрюлева)
+    TypewriterEffect day1_dialog10_effect;           // Эффект диалога 10 (Кастрюлева)
+
     RelativeLayout relativeLayout;                  // Текущий layout
     LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
 
@@ -42,6 +50,8 @@ public class FirstDay extends AppCompatActivity {
         // Присвоение значений переменным
         nextButton = findViewById(R.id.next_button);
         nextButton_2 = findViewById(R.id.next_button_2);
+        nextButton_3 = findViewById(R.id.next_button_3);
+        nextButton_4 = findViewById(R.id.next_button_4);
 
         takeJacketButton = findViewById(R.id.choice_button_1);
         passJacketButton = findViewById(R.id.choice_button_2);
@@ -92,6 +102,10 @@ public class FirstDay extends AppCompatActivity {
         HelperClass.stopAnimation(day1_dialog4_effect);
         HelperClass.stopAnimation(day1_dialog5_effect);
         HelperClass.stopAnimation(day1_dialog6_effect);
+        HelperClass.stopAnimation(day1_dialog7_effect);
+        HelperClass.stopAnimation(day1_dialog8_effect);
+        HelperClass.stopAnimation(day1_dialog9_effect);
+        HelperClass.stopAnimation(day1_dialog10_effect);
 
     }
 
@@ -224,6 +238,11 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_2.setVisibility(View.INVISIBLE);
+
+                // Меняем фон при завершении анимации
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
             @Override
@@ -245,35 +264,80 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog6_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                // Меняем фон при завершении анимации
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
-                HelperClass.animBackground(relativeLayout, bg1, bg2);
+
 
                 // Очистка поля текста
                 mainText.setText("");
 
                 // Третья фраза главного героя
-                day1_dialog3_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe1, 60);
+                day1_dialog7_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant2_3, 60);
 
                 // Старт фразы
-                day1_dialog3_effect.animateText();
+                day1_dialog7_effect.animateText();
 
-                // Событие по окончанию анимации третьей фразы
-                day1_dialog3_effect.setListener(new TypewriterListener() {
+                // Событие по окончанию анимации фразы
+                day1_dialog7_effect.setListener(new TypewriterListener() {
                     @Override
                     public void onAnimationEnd() {
-                        takeJacketButton.setVisibility(View.VISIBLE);
-                        passJacketButton.setVisibility(View.VISIBLE);
-
-                        takeJacketButton.startAnimation(anim_button_in_left);
-                        passJacketButton.startAnimation(anim_button_in_left);
+                        nextButton_3.setVisibility(View.VISIBLE);
+                        nextButton_3.startAnimation(anim_button_in_right);
                     }
                 });
             }
         });
 
     }
+
+    // Событие на кнопку 3
+    public void nextPhrase_3(View view) {
+        // Прячем кнопку
+        nextButton_3.setEnabled(false);
+        nextButton_3.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_3.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog8_effect = new TypewriterEffect(mainText, Dialogues.day1_warderobe_variant2_4, 60);
+
+        // Старт анимации
+        day1_dialog8_effect.animateText();
+
+        // События анимации
+        day1_dialog8_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                day1_dialog8_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        // Показываем кнопку далее4
+                        nextButton_4.setVisibility(View.VISIBLE);
+                        nextButton_4.startAnimation(anim_button_in_right);
+                    }
+                });
+            }
+        });
+
+    }
+
+    
 
     // Не берём куртку
     public void passJacket(View view) {
