@@ -15,16 +15,29 @@ import android.widget.TextView;
 
 public class FirstDay extends AppCompatActivity {
 
-    Button nextButton;                              // Кнопка "далее"
+//    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
+    Button nextButton;                                // Кнопка "далее"
     Button nextButton_2;                              // Кнопка "далее" 2
     Button nextButton_3;                              // Кнопка "далее" 3
     Button nextButton_4;                              // Кнопка "далее" 4
     Button nextButton_5;                              // Кнопка "далее" 5
     Button nextButton_6;                              // Кнопка "далее" 6
     Button nextButton_7;                              // Кнопка "далее" 7
+    Button nextButton_8;                              // Кнопка "далее" 8
+    Button nextButton_9;                              // Кнопка "далее" 9
+    Button nextButton_10;                             // Кнопка "далее" 10
+    Button nextButton_11;                             // Кнопка "далее" 11
+    Button nextButton_12;                             // Кнопка "далее" 12
 
+
+//    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
     Button takeJacketButton;
     Button passJacketButton;
+
+    Button takeFoodButton;
+    Button passFoodButton;
+
+
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
     Animation anim_button_out_right;                // Анимация выхода кнопки справа
     Animation anim_button_in_left;                  // Анимация входа кнопки слева
@@ -40,8 +53,15 @@ public class FirstDay extends AppCompatActivity {
     TypewriterEffect day1_dialog8_effect;           // Эффект диалога 8 (Кастрюлева)
     TypewriterEffect day1_dialog9_effect;           // Эффект диалога 9 (Кастрюлева)
     TypewriterEffect day1_dialog10_effect;           // Эффект диалога 10 (Кастрюлева)
-    TypewriterEffect day1_dialog11_effect;           // Эффект диалога 10 (Кастрюлева)
-    TypewriterEffect day1_dialog12_effect;           // Эффект диалога 10 (Кастрюлева)
+    TypewriterEffect day1_dialog11_effect;           // Эффект диалога 11 (Кастрюлева)
+    TypewriterEffect day1_dialog12_effect;           // Эффект диалога 12 (Сели на паре Кастрюлевой вместе со Степанидой)
+    TypewriterEffect day1_dialog13_effect;           // Эффект диалога 13 (Засыпаем на паре)
+    TypewriterEffect day1_dialog14_effect;           // Эффект диалога 14 (Конец первой пары... УРА)
+    TypewriterEffect day1_dialog15_effect;           // Эффект диалога 15 (Столовая)
+    TypewriterEffect day1_dialog16_effect;           // Эффект диалога 16 (Дыров предлагает еду)
+    TypewriterEffect day1_dialog17_effect;           // Эффект диалога 17 (Мы приняли еду)
+    TypewriterEffect day1_dialog18_effect;           // Эффект диалога 18 (Мы отказались от еды)
+
 
     RelativeLayout relativeLayout;                  // Текущий layout
     LinearLayout buttonsChoiceLayout;               // Linear с кнопками выбора
@@ -59,10 +79,19 @@ public class FirstDay extends AppCompatActivity {
         nextButton_5 = findViewById(R.id.next_button_5);
         nextButton_6 = findViewById(R.id.next_button_6);
         nextButton_7 = findViewById(R.id.next_button_7);
+        nextButton_8 = findViewById(R.id.next_button_8);
+        nextButton_9 = findViewById(R.id.next_button_9);
+        nextButton_10 = findViewById(R.id.next_button_10);
+        nextButton_11 = findViewById(R.id.next_button_11);
+        nextButton_12 = findViewById(R.id.next_button_12);
 
 
         takeJacketButton = findViewById(R.id.choice_button_1);
         passJacketButton = findViewById(R.id.choice_button_2);
+
+        takeFoodButton = findViewById(R.id.choice_button_3);
+        passFoodButton = findViewById(R.id.choice_button_3);
+
 
         anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
         anim_button_out_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
@@ -116,6 +145,13 @@ public class FirstDay extends AppCompatActivity {
         HelperClass.stopAnimation(day1_dialog10_effect);
         HelperClass.stopAnimation(day1_dialog11_effect);
         HelperClass.stopAnimation(day1_dialog12_effect);
+        HelperClass.stopAnimation(day1_dialog13_effect);
+        HelperClass.stopAnimation(day1_dialog14_effect);
+        HelperClass.stopAnimation(day1_dialog15_effect);
+        HelperClass.stopAnimation(day1_dialog16_effect);
+        HelperClass.stopAnimation(day1_dialog17_effect);
+        HelperClass.stopAnimation(day1_dialog18_effect);
+
     }
 
     // Вроде тут след фраза при нажатии на кнопку (Меняет первый текст на второй)
@@ -485,9 +521,9 @@ public class FirstDay extends AppCompatActivity {
         day1_dialog12_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                        // Показываем кнопку далее7
-                        nextButton_7.setVisibility(View.VISIBLE);
-                        nextButton_7.startAnimation(anim_button_in_right);
+                        // Показываем кнопку далее8
+                        nextButton_8.setVisibility(View.VISIBLE);
+                        nextButton_8.startAnimation(anim_button_in_right);
             }
         });
     }
@@ -534,5 +570,257 @@ public class FirstDay extends AppCompatActivity {
         });
     }
 
+    public void nextPhrase_8(View view) {
+        // Прячем кнопку
+        nextButton_8.setEnabled(false);
+        nextButton_8.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
 
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_8.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog13_effect = new TypewriterEffect(mainText, Dialogues.day1_class1_2, 60);
+
+        // Старт анимации
+        day1_dialog13_effect.animateText();
+
+        // События анимации
+        day1_dialog13_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Показываем кнопку далее8
+                nextButton_9.setVisibility(View.VISIBLE);
+                nextButton_9.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_9(View view) {
+        // Прячем кнопку
+        nextButton_9.setEnabled(false);
+        nextButton_9.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_9.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog14_effect = new TypewriterEffect(mainText, Dialogues.day1_class1_3, 60);
+
+        // Старт анимации
+        day1_dialog14_effect.animateText();
+
+        // События анимации
+        day1_dialog14_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Показываем кнопку далее8
+                nextButton_10.setVisibility(View.VISIBLE);
+                nextButton_10.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    //    ---------------------------СТОЛОВАЯ---------------------------
+    public void nextPhrase_10(View view) {
+        // Прячем кнопку
+        nextButton_10.setEnabled(false);
+        nextButton_10.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_10.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog15_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_1, 60);
+
+        // Старт анимации
+        day1_dialog15_effect.animateText();
+
+        // События анимации
+        day1_dialog15_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Показываем кнопку далее8
+                nextButton_11.setVisibility(View.VISIBLE);
+                nextButton_11.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_11(View view) {
+        // Прячем кнопку
+        nextButton_11.setEnabled(false);
+        nextButton_11.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_11.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация восьмой фразы
+        day1_dialog15_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_2, 60);
+
+        // Старт анимации
+        day1_dialog15_effect.animateText();
+
+        // События анимации
+        day1_dialog15_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Показываем кнопки выбора ответа в столовой
+                takeFoodButton.setVisibility(View.VISIBLE);
+                passFoodButton.setVisibility(View.VISIBLE);
+
+                takeFoodButton.startAnimation(anim_button_in_left);
+                passFoodButton.startAnimation(anim_button_in_left);
+            }
+        });
+    }
+
+    public void passFood(View view) {
+        takeFoodButton.setEnabled(false);
+        passFoodButton.setEnabled(false);
+
+        takeFoodButton.startAnimation(anim_button_out_left);
+        passFoodButton.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                takeFoodButton.setVisibility(View.INVISIBLE);
+                passFoodButton.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // мы ждем очереди
+        mainText.setText("");
+        day1_dialog18_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_no, 60);
+        day1_dialog18_effect.animateText();
+
+        // Показываем кнопку ДАЛЕЕ, когда завершился day1_dialog_4_effect
+        day1_dialog18_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_12.setVisibility(View.VISIBLE);
+                nextButton_12.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void takeFood(View view) {
+        takeFoodButton.setEnabled(false);
+        passFoodButton.setEnabled(false);
+
+        takeFoodButton.startAnimation(anim_button_out_left);
+        passFoodButton.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                takeFoodButton.setVisibility(View.INVISIBLE);
+                passFoodButton.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // мы ждем очереди
+        mainText.setText("");
+        day1_dialog18_effect = new TypewriterEffect(mainText, Dialogues.day1_canteen_yes, 60);
+        day1_dialog18_effect.animateText();
+
+        // Показываем кнопку ДАЛЕЕ
+        day1_dialog18_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_12.setVisibility(View.VISIBLE);
+                nextButton_12.startAnimation(anim_button_in_right);
+            }
+        });
+    }
 }

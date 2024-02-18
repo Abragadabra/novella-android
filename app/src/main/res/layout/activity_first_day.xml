@@ -149,6 +149,91 @@
         android:visibility="invisible"
         app:cornerRadius="14dp" />
 
+    <Button
+        android:id="@+id/next_button_8"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignEnd="@id/first_day_text"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_8"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_9"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignEnd="@id/first_day_text"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_9"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_10"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignEnd="@id/first_day_text"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_10"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_11"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignEnd="@id/first_day_text"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_11"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_12"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/first_day_text"
+        android:layout_alignEnd="@id/first_day_text"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_12"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
     <LinearLayout
         android:id="@+id/choice_1"
         android:layout_width="wrap_content"
@@ -195,8 +280,53 @@
 
             app:cornerRadius="14dp" />
 
-
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/choice_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/first_day_text"
+    android:layout_alignStart="@id/first_day_text"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+        <Button
+            android:id="@+id/choice_button_3"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#ADFFC5C5"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/pass"
+
+            android:onClick="passFood"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            android:visibility="invisible"
+
+            app:cornerRadius="14dp" />
+
+        <Button
+            android:id="@+id/choice_button_4"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:hint="@string/fold"
+
+            android:backgroundTint="#ADFFC5C5"
+            android:fontFamily="@font/ubuntu_bold"
+            android:onClick="takeFood"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            android:visibility="invisible"
+
+            app:cornerRadius="14dp" />
+    </LinearLayout>
 
 </RelativeLayout>
