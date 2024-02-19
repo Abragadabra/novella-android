@@ -531,10 +531,18 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_7.setVisibility(View.GONE);
+                if(PlayerData.jacket == false){
+                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
+                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                    HelperClass.animBackground(relativeLayout, bg1, bg2);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
-                HelperClass.animBackground(relativeLayout, bg1, bg2);
+                }else{
+                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dirov_dorridor);
+                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                    HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+                }
+
 
             }
 
