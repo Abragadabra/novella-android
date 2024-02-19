@@ -531,7 +531,7 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_7.setVisibility(View.GONE);
-                if(PlayerData.jacket == false){
+                if(PlayerData.jacket == true){
                     @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
                     @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
                     HelperClass.animBackground(relativeLayout, bg1, bg2);
