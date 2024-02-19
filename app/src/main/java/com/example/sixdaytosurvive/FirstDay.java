@@ -311,7 +311,7 @@ public class FirstDay extends AppCompatActivity {
 
                 // Меняем фон при завершении анимации
                 @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -401,7 +401,7 @@ public class FirstDay extends AppCompatActivity {
                 // По завершении анимации прячем кнопку
                 nextButton_4.setVisibility(View.GONE);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.class_1);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.kastryuleva_class);
                 @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dirov_dorridor);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
@@ -532,7 +532,7 @@ public class FirstDay extends AppCompatActivity {
                 // По завершении анимации прячем кнопку
                 nextButton_7.setVisibility(View.GONE);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dirov_dorridor);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
                 @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
 
