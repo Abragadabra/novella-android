@@ -898,7 +898,7 @@ public class FirstDay extends AppCompatActivity {
         });
     }
 
-    //    ---------------------------Гардероб, если у нас куртку в гардеробе)---------------------------
+    //    ---------------------------Гардероб, если у нас куртку в гардеробе. Если с собой, начинается второй день)---------------------------
     public void nextPhrase_13(View view) {
         // Прячем кнопку
         nextButton_13.setEnabled(false);
@@ -955,8 +955,8 @@ public class FirstDay extends AppCompatActivity {
 
     public void nextPhrase_14(View view) {
         // Прячем кнопку
-        nextButton_12.setEnabled(false);
-        nextButton_12.startAnimation(anim_button_out_right);
+        nextButton_14.setEnabled(false);
+        nextButton_14.startAnimation(anim_button_out_right);
         setDay2();
         anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -967,7 +967,7 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_12.setVisibility(View.GONE);
+                nextButton_14.setVisibility(View.GONE);
             }
 
             @Override
