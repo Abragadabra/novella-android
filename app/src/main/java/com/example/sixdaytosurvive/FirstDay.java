@@ -400,6 +400,10 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_4.setVisibility(View.GONE);
+
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.class_1);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dirov_dorridor);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
             @Override
@@ -527,6 +531,11 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_7.setVisibility(View.GONE);
+
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dirov_dorridor);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
+
             }
 
             @Override
@@ -696,6 +705,10 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_10.setVisibility(View.GONE);
+
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dirov_canteen);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
             @Override
@@ -870,6 +883,9 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_12.setVisibility(View.GONE);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dirov_canteen);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.lososeva_class);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
             @Override
@@ -913,6 +929,10 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_13.setVisibility(View.GONE);
+
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.lososeva_class);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
             @Override
