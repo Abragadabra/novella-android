@@ -946,8 +946,7 @@ public class FirstDay extends AppCompatActivity {
         }
         // Иначе начинается новый день
         else {
-            nextButton_14.setVisibility(View.VISIBLE);
-            nextButton_14.startAnimation(anim_button_in_right);
+            setDay2();
         }
 
     }
