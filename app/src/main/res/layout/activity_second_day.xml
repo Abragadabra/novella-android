@@ -77,7 +77,7 @@
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_3"
+        android:onClick="nextPhrase_Day2SsoraTrue2"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"

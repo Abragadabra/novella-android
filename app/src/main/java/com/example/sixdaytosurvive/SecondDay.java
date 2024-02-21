@@ -17,7 +17,7 @@ public class SecondDay extends AppCompatActivity {
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
     Button day2MonologNextButton;                     // Кнопка "далее"
     Button Day2SsoraTrue1;                            // Кнопка "далее" 2
-    Button nextButton_3;                              // Кнопка "далее" 3
+    Button Day2SsoraTrue2;                              // Кнопка "далее" 3
     Button nextButton_4;                              // Кнопка "далее" 4
     Button nextButton_5;                              // Кнопка "далее" 5
     Button nextButton_6;                              // Кнопка "далее" 6
@@ -66,7 +66,7 @@ public class SecondDay extends AppCompatActivity {
         // --------- Получение кнопок по id "далее" ---------
         day2MonologNextButton = findViewById(R.id.next_button_day2);
         Day2SsoraTrue1 = findViewById(R.id.next_button_2_day2);
-        nextButton_3 = findViewById(R.id.next_button_3_day2);
+        Day2SsoraTrue2 = findViewById(R.id.next_button_3_day2);
         nextButton_4 = findViewById(R.id.next_button_4_day2);
         nextButton_5 = findViewById(R.id.next_button_5_day2);
         nextButton_6 = findViewById(R.id.next_button_6_day2);
@@ -265,11 +265,28 @@ public class SecondDay extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd() {
                         // Включение кнопки
-                        Day2SsoraTrue1.setEnabled(true);
                         Day2SsoraTrue1.setVisibility(View.VISIBLE);
 
                         // Старт анимации кнопки
                         Day2SsoraTrue1.startAnimation(anim_button_in_right);
+
+                        // По окончанию анимации врубаем кнопку
+                        anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                Day2SsoraTrue1.setEnabled(true);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
                     }
                 });
                 // --- Событие на окончание текста ---
@@ -285,7 +302,69 @@ public class SecondDay extends AppCompatActivity {
     // ----------- OnClick на выбор за мир между Степанидой и Евлампием -----------
 
     public void nextPhrase_Day2SsoraTrue1(View view) {
-        
+        Day2SsoraTrue1.setEnabled(false);
+        Day2SsoraTrue1.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Вырубаем кнопку
+                Day2SsoraTrue1.setVisibility(View.GONE);
+
+                // Очистка текста
+                mainTV.setText("");
+
+                // --- Эффект для печати day2_stepanida_evlampiy_ssora_true_2 ---
+                day2_stepanida_evlampiy_ssora_true_2_effect =
+                        new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_2, 60);
+                day2_stepanida_evlampiy_ssora_true_2_effect.animateText();
+                // --- Эффект для печати day2_stepanida_evlampiy_ssora_true_2 ---
+
+                // --- Событие на окончание анимации текста ---
+                day2_stepanida_evlampiy_ssora_true_2_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        // Включаем кнопку
+                        Day2SsoraTrue2.setVisibility(View.VISIBLE);
+
+                        // Включаем анимацию
+                        Day2SsoraTrue2.startAnimation(anim_button_in_right);
+
+                        // По окончанию анимации врубаем кнопку
+                        anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                // Кнопка ВКЛ
+                                Day2SsoraTrue2.setEnabled(true);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+                    }
+                });
+                // --- Событие на окончание анимации текста ---
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+    public void nextPhrase_Day2SsoraTrue2(View view) {
     }
 
 
