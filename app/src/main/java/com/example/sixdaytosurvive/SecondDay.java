@@ -2,6 +2,8 @@ package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -29,6 +31,11 @@ public class SecondDay extends AppCompatActivity {
     Button nextButton_14;                             // Кнопка "далее" 14
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
+    // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
+    Button choiceButton1;
+    Button choiceButton2;
+    // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
+
     // ------------------------------ Анимации ------------------------------
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
     Animation anim_button_out_right;                // Анимация выхода кнопки справа
@@ -38,6 +45,7 @@ public class SecondDay extends AppCompatActivity {
 
     // ------------------------------ Диалоги ------------------------------
     TypewriterEffect day2_monolog_effect;
+    TypewriterEffect day2_stepanida_evlampiy_ssora_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -68,6 +76,11 @@ public class SecondDay extends AppCompatActivity {
         nextButton_14 = findViewById(R.id.next_button_14_day2);
         // --------- Получение кнопок по id "далее" ---------
 
+        // ---------- Получение кнопок выбора по id ---------
+        choiceButton1 = findViewById(R.id.choice_button1_day2);
+        choiceButton2 = findViewById(R.id.choice_button2_day2);
+        // ---------- Получение кнопок выбора по id ---------
+
         // ---------------------------- Получение анимации по id (правая часть) ----------------------------
         anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
         anim_button_out_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
@@ -80,6 +93,9 @@ public class SecondDay extends AppCompatActivity {
 
         // Получение по id основного TextView
         mainTV = findViewById(R.id.second_day_TV);
+
+        // Получение layout
+        relativeLayout = findViewById(R.id.second_day_layout);
 
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
@@ -99,7 +115,7 @@ public class SecondDay extends AppCompatActivity {
         // ------------------- Эффект печати для day2_monolog -------------------
 
 
-        // ------------------- Событие для окончания печати для day2_monolog -------------------
+        // ------------------- Событие для окончанию печати для day2_monolog -------------------
         day2_monolog_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
@@ -107,7 +123,7 @@ public class SecondDay extends AppCompatActivity {
                 day2MonologNextButton.setVisibility(View.VISIBLE);
                 day2MonologNextButton.startAnimation(anim_button_in_right);
 
-                // Активация кнопки по окончания анимации
+                // Активация кнопки по окончанию анимации
                 anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
@@ -126,6 +142,81 @@ public class SecondDay extends AppCompatActivity {
                 });
             }
         });
-        // ------------------- Событие для окончания печати для day2_monolog -------------------
+        // ------------------- Событие для окончанию печати для day2_monolog -------------------
     }
+
+    // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
+    public void nextPhrase_Day2Monolog(View view) {
+        // Убираем кнопку
+        day2MonologNextButton.setEnabled(false);
+        day2MonologNextButton.startAnimation(anim_button_out_right);
+
+        // --- По окончанию убирания кнопки, удаляем её и вызываем следующую фразу ---
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Удаляем кнопку
+                day2MonologNextButton.setVisibility(View.GONE);
+
+                // Очищаем TextView
+                mainTV.setText("");
+
+                // Смена фона
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.stepanida_evlampiy_corridor);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+                // ------------------- Эффект печати для day2_stepanida_evlampiy_ssora -------------------
+                day2_stepanida_evlampiy_ssora_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora, 60);
+                day2_stepanida_evlampiy_ssora_effect.animateText();
+
+                // ------------------- Событие для окончанию печати для day2_stepanida_evlampiy_ssora -------------------
+                day2_stepanida_evlampiy_ssora_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        choiceButton1.setVisibility(View.VISIBLE);
+                        choiceButton2.setVisibility(View.VISIBLE);
+
+                        choiceButton1.startAnimation(anim_button_in_left);
+                        choiceButton2.startAnimation(anim_button_in_left);
+
+                        // Событие по окончанию анимации
+                        anim_button_in_left.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                // Активируем кнопки после того, как они приехали
+                                choiceButton1.setEnabled(true);
+                                choiceButton2.setEnabled(true);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+                    }
+                });
+                // ------------------- Событие для окончанию печати для day2_stepanida_evlampiy_ssora -------------------
+
+                // ------------------- Эффект печати для day2_stepanida_evlampiy_ssora -------------------
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        // --- По окончанию убирания кнопки, удаляем её и вызываем следующую фразу ---
+    }
+    // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
 }

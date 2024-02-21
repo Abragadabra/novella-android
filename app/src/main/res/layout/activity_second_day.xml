@@ -41,7 +41,7 @@
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase"
+        android:onClick="nextPhrase_Day2Monolog"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -283,7 +283,7 @@
         app:cornerRadius="14dp" />
 
     <LinearLayout
-        android:id="@+id/choice_1"
+        android:id="@+id/choice_1_day2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/second_day_TV"
@@ -295,14 +295,14 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/choice_button_1"
+            android:id="@+id/choice_button1_day2"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
             android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/pass"
+            android:hint="@string/make_peace"
             android:onClick="passJacket"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
@@ -311,14 +311,14 @@
             app:cornerRadius="14dp" />
 
         <Button
-            android:id="@+id/choice_button_2"
+            android:id="@+id/choice_button2_day2"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
             android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/fold"
+            android:hint="@string/walk_past"
             android:onClick="takeJacket"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
@@ -329,7 +329,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/choice_2"
+        android:id="@+id/choice_2_day2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/second_day_TV"

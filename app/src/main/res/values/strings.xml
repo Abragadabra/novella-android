@@ -24,4 +24,8 @@
     <string name="takefood">Принять</string>
     <string name="passfood">Отказаться</string>
 
+    <!--  ВЫБОР СОБЫТИЙ 3  -->
+    <string name="make_peace">Успокоить их</string>
+    <string name="walk_past">Идти на пару</string>
+
 </resources>
