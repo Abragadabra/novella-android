@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
@@ -45,6 +46,33 @@ public class SecondDay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_day);
+
+        // --------- Получение кнопок по id "далее" ---------
+        nextButton = findViewById(R.id.next_button_day2);
+        nextButton_2 = findViewById(R.id.next_button_2_day2);
+        nextButton_3 = findViewById(R.id.next_button_3_day2);
+        nextButton_4 = findViewById(R.id.next_button_4_day2);
+        nextButton_5 = findViewById(R.id.next_button_5_day2);
+        nextButton_6 = findViewById(R.id.next_button_6_day2);
+        nextButton_7 = findViewById(R.id.next_button_7_day2);
+        nextButton_8 = findViewById(R.id.next_button_8_day2);
+        nextButton_9 = findViewById(R.id.next_button_9_day2);
+        nextButton_10 = findViewById(R.id.next_button_10_day2);
+        nextButton_11 = findViewById(R.id.next_button_11_day2);
+        nextButton_12 = findViewById(R.id.next_button_12_day2);
+        nextButton_13 = findViewById(R.id.next_button_13_day2);
+        nextButton_14 = findViewById(R.id.next_button_14_day2);
+        // --------- Получение кнопок по id "далее" ---------
+
+        // ---------------------------- Получение анимации по id (правая часть) ----------------------------
+        anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
+        anim_button_out_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_right);
+        // ---------------------------- Получение анимации по id (правая часть) ----------------------------
+
+        /// ---------------------------- Получение анимации по id (левая часть) ----------------------------
+        anim_button_in_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_left);
+        anim_button_out_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_out_left);
+        // ---------------------------- Получение анимации по id (левая часть) ----------------------------
 
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
