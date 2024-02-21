@@ -16,7 +16,7 @@ public class SecondDay extends AppCompatActivity {
 
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
     Button day2MonologNextButton;                     // Кнопка "далее"
-    Button nextButton_2;                              // Кнопка "далее" 2
+    Button Day2SsoraTrue1;                            // Кнопка "далее" 2
     Button nextButton_3;                              // Кнопка "далее" 3
     Button nextButton_4;                              // Кнопка "далее" 4
     Button nextButton_5;                              // Кнопка "далее" 5
@@ -46,6 +46,10 @@ public class SecondDay extends AppCompatActivity {
     // ------------------------------ Диалоги ------------------------------
     TypewriterEffect day2_monolog_effect;
     TypewriterEffect day2_stepanida_evlampiy_ssora_effect;
+    TypewriterEffect day2_stepanida_evlampiy_ssora_true_1_effect;
+    TypewriterEffect day2_stepanida_evlampiy_ssora_true_2_effect;
+    TypewriterEffect day2_stepanida_evlampiy_ssora_true_3_effect;
+    TypewriterEffect day2_stepanida_evlampiy_ssora_true_4_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -61,7 +65,7 @@ public class SecondDay extends AppCompatActivity {
 
         // --------- Получение кнопок по id "далее" ---------
         day2MonologNextButton = findViewById(R.id.next_button_day2);
-        nextButton_2 = findViewById(R.id.next_button_2_day2);
+        Day2SsoraTrue1 = findViewById(R.id.next_button_2_day2);
         nextButton_3 = findViewById(R.id.next_button_3_day2);
         nextButton_4 = findViewById(R.id.next_button_4_day2);
         nextButton_5 = findViewById(R.id.next_button_5_day2);
@@ -223,8 +227,66 @@ public class SecondDay extends AppCompatActivity {
 
     // ----------- OnClick на выбор за мир между Степанидой и Евлампием -----------
     public void createPeace(View view) {
+        // Добавляем к переменной любви +1
+        PlayerData.loveLevel++;
+
+        // Отключаем кнопки
+        choiceButton1.setEnabled(false);
+        choiceButton2.setEnabled(false);
+
+        // Кнопки уезжают
+        choiceButton1.startAnimation(anim_button_out_left);
+        choiceButton2.startAnimation(anim_button_out_left);
+
+        // --- По окончанию анимации удаляем кнопки ---
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Удаление кнопок
+                choiceButton1.setVisibility(View.GONE);
+                choiceButton2.setVisibility(View.GONE);
+
+                // Чистим TextView
+                mainTV.setText("");
+
+                // --- Эффект печати для day2_stepanida_evlampiy_ssora_true_1 ---
+                day2_stepanida_evlampiy_ssora_true_1_effect =
+                        new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_1, 60);
+                day2_stepanida_evlampiy_ssora_true_1_effect.animateText();
+                // --- Эффект печати для day2_stepanida_evlampiy_ssora_true_1 ---
+
+                // --- Событие на окончание текста ---
+                day2_stepanida_evlampiy_ssora_true_1_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        // Включение кнопки
+                        Day2SsoraTrue1.setEnabled(true);
+                        Day2SsoraTrue1.setVisibility(View.VISIBLE);
+
+                        // Старт анимации кнопки
+                        Day2SsoraTrue1.startAnimation(anim_button_in_right);
+                    }
+                });
+                // --- Событие на окончание текста ---
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        // --- По окончанию анимации удаляем кнопки ---
     }
     // ----------- OnClick на выбор за мир между Степанидой и Евлампием -----------
+
+    public void nextPhrase_Day2SsoraTrue1(View view) {
+        
+    }
 
 
     // ----------- OnClick на выбор за уход на пару без мира -----------
