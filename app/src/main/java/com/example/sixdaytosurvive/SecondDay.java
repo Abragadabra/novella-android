@@ -16,9 +16,9 @@ public class SecondDay extends AppCompatActivity {
 
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
     Button day2MonologNextButton;                     // Кнопка "далее"
-    Button Day2SsoraTrue1Button;                            // Кнопка "далее" 2
-    Button Day2SsoraTrue2Button;                              // Кнопка "далее" 3
-    Button nextButton_4;                              // Кнопка "далее" 4
+    Button Day2SsoraTrue1Button;                      // Кнопка "далее" 2
+    Button Day2SsoraTrue2Button;                      // Кнопка "далее" 3
+    Button Day2SsoraTrue3Button;                              // Кнопка "далее" 4
     Button nextButton_5;                              // Кнопка "далее" 5
     Button nextButton_6;                              // Кнопка "далее" 6
     Button nextButton_7;                              // Кнопка "далее" 7
@@ -67,7 +67,7 @@ public class SecondDay extends AppCompatActivity {
         day2MonologNextButton = findViewById(R.id.next_button_day2);
         Day2SsoraTrue1Button = findViewById(R.id.next_button_2_day2);
         Day2SsoraTrue2Button = findViewById(R.id.next_button_3_day2);
-        nextButton_4 = findViewById(R.id.next_button_4_day2);
+        Day2SsoraTrue3Button = findViewById(R.id.next_button_4_day2);
         nextButton_5 = findViewById(R.id.next_button_5_day2);
         nextButton_6 = findViewById(R.id.next_button_6_day2);
         nextButton_7 = findViewById(R.id.next_button_7_day2);
@@ -365,8 +365,71 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase_Day2SsoraTrue2(View view) {
+        Day2SsoraTrue2Button.setEnabled(false);
+        Day2SsoraTrue2Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Вырубаем кнопку
+                Day2SsoraTrue2Button.setVisibility(View.GONE);
+
+                // Очистка текста
+                mainTV.setText("");
+
+                // --- Эффект для печати day2_stepanida_evlampiy_ssora_true_3 ---
+                day2_stepanida_evlampiy_ssora_true_3_effect =
+                        new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_3, 60);
+                day2_stepanida_evlampiy_ssora_true_3_effect.animateText();
+                // --- Эффект для печати day2_stepanida_evlampiy_ssora_true_3 ---
+
+                // --- Событие на окончание анимации текста ---
+                day2_stepanida_evlampiy_ssora_true_3_effect.setListener(new TypewriterListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        // Включаем кнопку
+                        Day2SsoraTrue3Button.setVisibility(View.VISIBLE);
+
+                        // Включаем анимацию
+                        Day2SsoraTrue3Button.startAnimation(anim_button_in_right);
+
+                        // По окончанию анимации врубаем кнопку
+                        anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                // Кнопка ВКЛ
+                                Day2SsoraTrue3Button.setEnabled(true);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+                    }
+                });
+                // --- Событие на окончание анимации текста ---
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 
+    public void nextPhrase_Day2SsoraTrue3(View view) {
+
+    }
 
     // ----------- OnClick на выбор за уход на пару без мира -----------
     public void walkPast(View view) {
