@@ -28,4 +28,8 @@
     <string name="make_peace">Успокоить их</string>
     <string name="walk_past">Идти на пару</string>
 
+    <!--  ВЫБОР СОБЫТИЙ 4  -->
+    <string name="baget">Багет</string>
+    <string name="sosisa">Сосиса</string>
+
 </resources>

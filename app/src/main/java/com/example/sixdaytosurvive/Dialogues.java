@@ -43,7 +43,7 @@ public class Dialogues {
     public static String day2_canteen_sosiska_1 = "Я подношу сосиску ко рту... БАМ, и она катится по всей столовой! ЁЛКИ ПАЛКИ!!!";
     public static String day2_canteen_sosiska_2 = "Евгей:\nО! НАКОНЕЦ-ТО НОРМАЛЬНАЯ ЕДАААА! (Он поедает сосиску, смотря на нас)";
     public static String day2_canteen_sosiska_3 = "Ты нормальный вообще? Вкусно?";
-    public static String day2_canteen_sosiska_4 = "Евгей:\nда! АЦТАНЬ!";
+    public static String day2_canteen_sosiska_4 = "Евгей:\nда! АЦТАНЬ! Я бедный студент!";
 
     public static String day2_class2_stepanida_1 = "Степанида... Она выглядит грустной, стоит поговорить!";
     public static String day2_class2_stepanida_2 = "Да не грусти ты, нормально всё будет! Пиво бушь?! Но если без шуток, то забудь просто про него (я зачем-то ПРИОБНЯЛ ЕЁ)";
@@ -58,6 +58,7 @@ public class Dialogues {
     public static String day2_class23_5 = "ДА! (Я услышал в голове музыку гигачада...)";
 
     public static String day2_home_1 = "А вот завтра мне не с первой пары, поэтому я могу не спать! (это было ошибкой)";
+
     // Третий день
     public static String day3_class_1_1 = "Пара Лососевой! А зачем мне эта пара то?";
 

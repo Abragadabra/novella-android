@@ -341,15 +341,15 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/choice_button_3"
+            android:id="@+id/choice_button3_day2"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
             android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/passfood"
-            android:onClick="passFood"
+            android:hint="@string/baget"
+            android:onClick="getBaget"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
@@ -357,15 +357,15 @@
             app:cornerRadius="14dp" />
 
         <Button
-            android:id="@+id/choice_button_4"
+            android:id="@+id/choice_button4_day2"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
             android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/takefood"
-            android:onClick="takeFood"
+            android:hint="@string/sosisa"
+            android:onClick="getSosisa"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"

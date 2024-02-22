@@ -36,6 +36,11 @@ public class SecondDay extends AppCompatActivity {
     Button choiceButton2;
     // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
 
+    // ---------- Кнопки для выбора в столовой между багетом и сосисой в тесте ----------
+    Button choiceButton3;
+    Button choiceButton4;
+    // ---------- Кнопки для выбора в столовой между багетом и сосисой в тесте ----------
+
     // ------------------------------ Анимации ------------------------------
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
     Animation anim_button_out_right;                // Анимация выхода кнопки справа
@@ -51,6 +56,8 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_stepanida_evlampiy_ssora_true_3_effect;
     TypewriterEffect day2_stepanida_evlampiy_ssora_true_4_effect;
     TypewriterEffect day2_class1_1_effect;
+    TypewriterEffect day2_canteen_1_effect;
+    TypewriterEffect day2_canteen_baget_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -59,6 +66,7 @@ public class SecondDay extends AppCompatActivity {
     // Основной TextView на экране
     TextView mainTV;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +92,11 @@ public class SecondDay extends AppCompatActivity {
         // ---------- Получение кнопок выбора по id ---------
         choiceButton1 = findViewById(R.id.choice_button1_day2);
         choiceButton2 = findViewById(R.id.choice_button2_day2);
+        // ---------- Получение кнопок выбора по id ---------
+
+        // ---------- Получение кнопок выбора по id ---------
+        choiceButton3 = findViewById(R.id.choice_button3_day2);
+        choiceButton4 = findViewById(R.id.choice_button4_day2);
         // ---------- Получение кнопок выбора по id ---------
 
         // ---------------------------- Получение анимации по id (правая часть) ----------------------------
@@ -306,6 +319,7 @@ public class SecondDay extends AppCompatActivity {
     }
     // ----------- OnClick на выбор за мир между Степанидой и Евлампием -----------
 
+    // ----------- Развитие ветки с ссорой в коридоре -----------
     public void nextPhrase_Day2SsoraTrue1(View view) {
         Day2SsoraTrue1Button.setEnabled(false);
         Day2SsoraTrue1Button.startAnimation(anim_button_out_right);
@@ -497,6 +511,7 @@ public class SecondDay extends AppCompatActivity {
         });
         // --- Событие на окончание анимации текста ---
     }
+    // ----------- Развитие ветки с ссорой в коридоре -----------
 
     // ----------- OnClick на выбор за уход на пару без мира -----------
     public void walkPast(View view) {
@@ -652,5 +667,112 @@ public class SecondDay extends AppCompatActivity {
 
             }
         });
+
+        // Очищаем текст
+        mainTV.setText("");
+
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dushnya_class);
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.evgey_canteen);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        // --------- Анимация day2_canteen_1 ---------
+        day2_canteen_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_1, 60);
+        day2_canteen_1_effect.animateText();
+        // --------- Анимация day2_canteen_1 ---------
+
+        // По окончанию печати текста
+        day2_canteen_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Кнопки входят на экран
+                choiceButton3.setVisibility(View.VISIBLE);
+                choiceButton4.setVisibility(View.VISIBLE);
+
+                choiceButton3.startAnimation(anim_button_in_left);
+                choiceButton4.startAnimation(anim_button_in_left);
+
+                anim_button_in_left.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        choiceButton3.setEnabled(true);
+                        choiceButton4.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void getBaget(View view) {
+        // Отключение кнопочек
+        choiceButton3.setEnabled(false);
+        choiceButton4.setEnabled(false);
+
+        choiceButton3.startAnimation(anim_button_out_left);
+        choiceButton4.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                choiceButton3.setVisibility(View.GONE);
+                choiceButton4.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+    public void getSosisa(View view) {
+        // Отключение кнопочек
+        choiceButton3.setEnabled(false);
+        choiceButton4.setEnabled(false);
+
+        choiceButton3.startAnimation(anim_button_out_left);
+        choiceButton4.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                choiceButton3.setVisibility(View.GONE);
+                choiceButton4.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ------ Анимация печати для day2_canteen_baget ------
+        day2_canteen_baget_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_baget, 60);
+        day2_canteen_baget_effect.animateText();
+        // ------ Анимация печати для day2_canteen_baget ------
+
+        
     }
 }
