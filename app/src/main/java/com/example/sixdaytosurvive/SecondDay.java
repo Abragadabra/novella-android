@@ -174,53 +174,6 @@ public class SecondDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // Удаляем кнопку
                 day2MonologNextButton.setVisibility(View.GONE);
-
-                // Очищаем TextView
-                mainTV.setText("");
-
-                // Смена фона
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.stepanida_evlampiy_corridor);
-                HelperClass.animBackground(relativeLayout, bg1, bg2);
-
-                // ------------------- Эффект печати для day2_stepanida_evlampiy_ssora -------------------
-                day2_stepanida_evlampiy_ssora_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora, 60);
-                day2_stepanida_evlampiy_ssora_effect.animateText();
-
-                // ------------------- Событие для окончанию печати для day2_stepanida_evlampiy_ssora -------------------
-                day2_stepanida_evlampiy_ssora_effect.setListener(new TypewriterListener() {
-                    @Override
-                    public void onAnimationEnd() {
-                        choiceButton1.setVisibility(View.VISIBLE);
-                        choiceButton2.setVisibility(View.VISIBLE);
-
-                        choiceButton1.startAnimation(anim_button_in_left);
-                        choiceButton2.startAnimation(anim_button_in_left);
-
-                        // Событие по окончанию анимации
-                        anim_button_in_left.setAnimationListener(new Animation.AnimationListener() {
-                            @Override
-                            public void onAnimationStart(Animation animation) {
-
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-                                // Активируем кнопки после того, как они приехали
-                                choiceButton1.setEnabled(true);
-                                choiceButton2.setEnabled(true);
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animation animation) {
-
-                            }
-                        });
-                    }
-                });
-                // ------------------- Событие для окончанию печати для day2_stepanida_evlampiy_ssora -------------------
-
-                // ------------------- Эффект печати для day2_stepanida_evlampiy_ssora -------------------
             }
 
             @Override
@@ -228,7 +181,50 @@ public class SecondDay extends AppCompatActivity {
 
             }
         });
-        // --- По окончанию убирания кнопки, удаляем её и вызываем следующую фразу ---
+
+        // Очищаем TextView
+        mainTV.setText("");
+
+        // Смена фона
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.stepanida_evlampiy_corridor);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        // ------------------- Эффект печати для day2_stepanida_evlampiy_ssora -------------------
+        day2_stepanida_evlampiy_ssora_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora, 60);
+        day2_stepanida_evlampiy_ssora_effect.animateText();
+        // ------------------- Эффект печати для day2_stepanida_evlampiy_ssora -------------------
+
+        day2_stepanida_evlampiy_ssora_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                choiceButton1.setVisibility(View.VISIBLE);
+                choiceButton2.setVisibility(View.VISIBLE);
+
+                choiceButton1.startAnimation(anim_button_in_left);
+                choiceButton2.startAnimation(anim_button_in_left);
+
+                // Событие по окончанию анимации
+                anim_button_in_left.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        // Активируем кнопки после того, как они приехали
+                        choiceButton1.setEnabled(true);
+                        choiceButton2.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
     }
     // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
 
@@ -246,7 +242,6 @@ public class SecondDay extends AppCompatActivity {
         choiceButton1.startAnimation(anim_button_out_left);
         choiceButton2.startAnimation(anim_button_out_left);
 
-        // --- По окончанию анимации удаляем кнопки ---
         anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -258,46 +253,6 @@ public class SecondDay extends AppCompatActivity {
                 // Удаление кнопок
                 choiceButton1.setVisibility(View.GONE);
                 choiceButton2.setVisibility(View.GONE);
-
-                // Чистим TextView
-                mainTV.setText("");
-
-                // --- Эффект печати для day2_stepanida_evlampiy_ssora_true_1 ---
-                day2_stepanida_evlampiy_ssora_true_1_effect =
-                        new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_1, 60);
-                day2_stepanida_evlampiy_ssora_true_1_effect.animateText();
-                // --- Эффект печати для day2_stepanida_evlampiy_ssora_true_1 ---
-
-                // --- Событие на окончание текста ---
-                day2_stepanida_evlampiy_ssora_true_1_effect.setListener(new TypewriterListener() {
-                    @Override
-                    public void onAnimationEnd() {
-                        // Включение кнопки
-                        Day2SsoraTrue1Button.setVisibility(View.VISIBLE);
-
-                        // Старт анимации кнопки
-                        Day2SsoraTrue1Button.startAnimation(anim_button_in_right);
-
-                        // По окончанию анимации врубаем кнопку
-                        anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
-                            @Override
-                            public void onAnimationStart(Animation animation) {
-
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-                                Day2SsoraTrue1Button.setEnabled(true);
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animation animation) {
-
-                            }
-                        });
-                    }
-                });
-                // --- Событие на окончание текста ---
             }
 
             @Override
@@ -305,7 +260,46 @@ public class SecondDay extends AppCompatActivity {
 
             }
         });
-        // --- По окончанию анимации удаляем кнопки ---
+
+        // Чистим TextView
+        mainTV.setText("");
+
+        // --- Эффект печати для day2_stepanida_evlampiy_ssora_true_1 ---
+        day2_stepanida_evlampiy_ssora_true_1_effect =
+                new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_1, 60);
+        day2_stepanida_evlampiy_ssora_true_1_effect.animateText();
+        // --- Эффект печати для day2_stepanida_evlampiy_ssora_true_1 ---
+
+        // --- Событие на окончание текста ---
+        day2_stepanida_evlampiy_ssora_true_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Включение кнопки
+                Day2SsoraTrue1Button.setVisibility(View.VISIBLE);
+
+                // Старт анимации кнопки
+                Day2SsoraTrue1Button.startAnimation(anim_button_in_right);
+
+                // По окончанию анимации врубаем кнопку
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2SsoraTrue1Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+        // --- Событие на окончание текста ---
     }
     // ----------- OnClick на выбор за мир между Степанидой и Евлампием -----------
 
@@ -324,6 +318,7 @@ public class SecondDay extends AppCompatActivity {
                 // Вырубаем кнопку
                 Day2SsoraTrue1Button.setVisibility(View.GONE);
             }
+
             @Override
             public void onAnimationRepeat(Animation animation) {
 
@@ -387,6 +382,7 @@ public class SecondDay extends AppCompatActivity {
                 // Вырубаем кнопку
                 Day2SsoraTrue2Button.setVisibility(View.GONE);
             }
+
             @Override
             public void onAnimationRepeat(Animation animation) {
 
@@ -450,6 +446,7 @@ public class SecondDay extends AppCompatActivity {
                 // Вырубаем кнопку
                 Day2SsoraTrue3Button.setVisibility(View.GONE);
             }
+
             @Override
             public void onAnimationRepeat(Animation animation) {
 
@@ -502,6 +499,7 @@ public class SecondDay extends AppCompatActivity {
     public void walkPast(View view) {
 
     }
+
     // ----------- OnClick на выбор за уход на пару без мира -----------
     public void nextPhrase_Day2SsoraTrue4(View view) {
 
