@@ -20,7 +20,7 @@ public class SecondDay extends AppCompatActivity {
     Button Day2SsoraTrue2Button;                      // Кнопка "далее" 3
     Button Day2SsoraTrue3Button;                              // Кнопка "далее" 4
     Button Day2SsoraTrue4Button;                              // Кнопка "далее" 5
-    Button nextButton_6;                              // Кнопка "далее" 6
+    Button Day2Class1_1Button;                              // Кнопка "далее" 6
     Button nextButton_7;                              // Кнопка "далее" 7
     Button nextButton_8;                              // Кнопка "далее" 8
     Button nextButton_9;                              // Кнопка "далее" 9
@@ -50,6 +50,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_stepanida_evlampiy_ssora_true_2_effect;
     TypewriterEffect day2_stepanida_evlampiy_ssora_true_3_effect;
     TypewriterEffect day2_stepanida_evlampiy_ssora_true_4_effect;
+    TypewriterEffect day2_class1_1_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -69,7 +70,7 @@ public class SecondDay extends AppCompatActivity {
         Day2SsoraTrue2Button = findViewById(R.id.next_button_3_day2);
         Day2SsoraTrue3Button = findViewById(R.id.next_button_4_day2);
         Day2SsoraTrue4Button = findViewById(R.id.next_button_5_day2);
-        nextButton_6 = findViewById(R.id.next_button_6_day2);
+        Day2Class1_1Button = findViewById(R.id.next_button_6_day2);
         nextButton_7 = findViewById(R.id.next_button_7_day2);
         nextButton_8 = findViewById(R.id.next_button_8_day2);
         nextButton_9 = findViewById(R.id.next_button_9_day2);
@@ -155,6 +156,8 @@ public class SecondDay extends AppCompatActivity {
         HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_1_effect);
         HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_2_effect);
         HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_3_effect);
+        HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_4_effect);
+        HelperClass.stopAnimation(day2_class1_1_effect);
     }
 
     // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
@@ -497,11 +500,165 @@ public class SecondDay extends AppCompatActivity {
 
     // ----------- OnClick на выбор за уход на пару без мира -----------
     public void walkPast(View view) {
+        // Отключаем кнопки
+        choiceButton1.setEnabled(false);
+        choiceButton2.setEnabled(false);
 
+        // Кнопки уезжают
+        choiceButton1.startAnimation(anim_button_out_left);
+        choiceButton2.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Удаление кнопок
+                choiceButton1.setVisibility(View.GONE);
+                choiceButton2.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // Смена фона
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.stepanida_evlampiy_corridor);
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dushnya_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        // ---- Анимация текста day2_class1_1 ----
+        day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
+        day2_class1_1_effect.animateText();
+        // ---- Анимация текста day2_class1_1 ----
+
+        day2_class1_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Появление кнопки
+                Day2Class1_1Button.setVisibility(View.VISIBLE);
+                Day2Class1_1Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        // По окончанию анимации включаем кнопку
+                        Day2Class1_1Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+    // ----------- OnClick на выбор за уход на пару без мира -----------
+
+    public void nextPhrase_Day2SsoraTrue4(View view) {
+//        // Отключаем кнопки
+//        choiceButton1.setEnabled(false);
+//        choiceButton2.setEnabled(false);
+//
+//        // Кнопки уезжают
+//        choiceButton1.startAnimation(anim_button_out_left);
+//        choiceButton2.startAnimation(anim_button_out_left);
+
+        Day2SsoraTrue4Button.setEnabled(false);
+        Day2SsoraTrue4Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2SsoraTrue4Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // Смена фона
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.stepanida_evlampiy_corridor);
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dushnya_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        // ---- Анимация текста day2_class1_1 ----
+        day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
+        day2_class1_1_effect.animateText();
+        // ---- Анимация текста day2_class1_1 ----
+
+        day2_class1_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Появление кнопки
+                Day2Class1_1Button.setVisibility(View.VISIBLE);
+                Day2Class1_1Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        // По окончанию анимации включаем кнопку
+                        Day2Class1_1Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
     }
 
-    // ----------- OnClick на выбор за уход на пару без мира -----------
-    public void nextPhrase_Day2SsoraTrue4(View view) {
+    public void nextPhrase_Day2Class1_1(View view) {
+        // Убираем кнопочку
+        Day2Class1_1Button.setEnabled(false);
+        Day2Class1_1Button.startAnimation(anim_button_out_right);
 
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2Class1_1Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 }
