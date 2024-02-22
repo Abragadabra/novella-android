@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SecondDay extends AppCompatActivity {
 
@@ -773,6 +774,11 @@ public class SecondDay extends AppCompatActivity {
         day2_canteen_baget_effect.animateText();
         // ------ Анимация печати для day2_canteen_baget ------
 
-        
+        day2_canteen_baget_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                Toast.makeText(SecondDay.this, "Здесь появляется кноппочка далее...", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
