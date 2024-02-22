@@ -570,14 +570,6 @@ public class SecondDay extends AppCompatActivity {
     // ----------- OnClick на выбор за уход на пару без мира -----------
 
     public void nextPhrase_Day2SsoraTrue4(View view) {
-//        // Отключаем кнопки
-//        choiceButton1.setEnabled(false);
-//        choiceButton2.setEnabled(false);
-//
-//        // Кнопки уезжают
-//        choiceButton1.startAnimation(anim_button_out_left);
-//        choiceButton2.startAnimation(anim_button_out_left);
-
         Day2SsoraTrue4Button.setEnabled(false);
         Day2SsoraTrue4Button.startAnimation(anim_button_out_right);
 
