@@ -149,6 +149,14 @@ public class SecondDay extends AppCompatActivity {
         // ------------------- Событие для окончанию печати для day2_monolog -------------------
     }
 
+    public void skipAnimationDay2(View view) {
+        HelperClass.stopAnimation(day2_monolog_effect);
+        HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_effect);
+        HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_1_effect);
+        HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_2_effect);
+        HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_3_effect);
+    }
+
     // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
     public void nextPhrase_Day2Monolog(View view) {
         // Убираем кнопку
