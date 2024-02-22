@@ -738,6 +738,21 @@ public class SecondDay extends AppCompatActivity {
 
             }
         });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ------ Анимация печати для day2_canteen_baget ------
+        day2_canteen_baget_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_baget, 60);
+        day2_canteen_baget_effect.animateText();
+        // ------ Анимация печати для day2_canteen_baget ------
+
+        day2_canteen_baget_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                Toast.makeText(SecondDay.this, "Здесь появляется кноппочка далее...", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void getSosisa(View view) {
@@ -763,21 +778,6 @@ public class SecondDay extends AppCompatActivity {
             @Override
             public void onAnimationRepeat(Animation animation) {
 
-            }
-        });
-
-        // Очистка текста
-        mainTV.setText("");
-
-        // ------ Анимация печати для day2_canteen_baget ------
-        day2_canteen_baget_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_baget, 60);
-        day2_canteen_baget_effect.animateText();
-        // ------ Анимация печати для day2_canteen_baget ------
-
-        day2_canteen_baget_effect.setListener(new TypewriterListener() {
-            @Override
-            public void onAnimationEnd() {
-                Toast.makeText(SecondDay.this, "Здесь появляется кноппочка далее...", Toast.LENGTH_SHORT).show();
             }
         });
     }
