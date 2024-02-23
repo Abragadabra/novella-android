@@ -36,6 +36,9 @@ public class SecondDay extends AppCompatActivity {
     Button Day2Class234Button;
     Button Day2Class235Button;
     Button Day2Class236Button;
+    Button Day2Home1Button;
+    Button openDay3Button;
+
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
     // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
@@ -77,6 +80,8 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_class23_2_effect;
     TypewriterEffect day2_class23_3_effect;
     TypewriterEffect day2_class23_4_effect;
+    TypewriterEffect day2_class23_5_effect;
+    TypewriterEffect day2_home_1_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -112,6 +117,8 @@ public class SecondDay extends AppCompatActivity {
         Day2Class234Button = findViewById(R.id.next_button_18_day2);
         Day2Class235Button = findViewById(R.id.next_button_19_day2);
         Day2Class236Button = findViewById(R.id.next_button_20_day2);
+        Day2Home1Button = findViewById(R.id.next_button_21_day2);
+        openDay3Button = findViewById(R.id.next_button_22_day2);
         // --------- Получение кнопок по id "далее" ---------
 
         // ---------- Получение кнопок выбора по id ---------
@@ -1705,6 +1712,125 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase_Day2Class236(View view) {
-        
+        // Убираем кнопочку
+        Day2Class236Button.setEnabled(false);
+        Day2Class236Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2Class236Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ------------ Эффект печати для day2_class23_5 ------------
+        day2_class23_5_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_5, 60);
+        day2_class23_5_effect.animateText();
+        // ------------ Эффект печати для day2_class23_5 ------------
+
+        day2_class23_5_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Кнопочка приезжает
+                Day2Home1Button.setVisibility(View.VISIBLE);
+                Day2Home1Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2Home1Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void nextPhrase_Day2Home1(View view) {
+        // Меняем фон
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.class_1);
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.bedroom);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        // Убираем кнопочку
+        Day2Home1Button.setEnabled(false);
+        Day2Home1Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2Home1Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ------------ Эффект печати для day2_home_1 ------------
+        day2_home_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_home_1, 60);
+        day2_home_1_effect.animateText();
+        // ------------ Эффект печати для day2_home_1 ------------
+
+        day2_home_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Кнопочка приезжает
+                openDay3Button.setVisibility(View.VISIBLE);
+                openDay3Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        openDay3Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void nextPhrase_OpenDay3(View view) {
+        Toast.makeText(this, "Здесь открывается третий день...", Toast.LENGTH_SHORT).show();
     }
 }
