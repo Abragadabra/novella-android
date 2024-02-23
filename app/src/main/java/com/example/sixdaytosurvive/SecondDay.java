@@ -26,8 +26,8 @@ public class SecondDay extends AppCompatActivity {
     Button Day2CanteenSosiska2Button;
     Button Day2CanteenSosiska3Button;
     Button Day2CanteenSosiska4Button;
-    Button Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1;
-    Button nextButton_12;
+    Button Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button;
+    Button Day2Class2Stepanida2Button;
     Button nextButton_13;
     Button nextButton_14;
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
@@ -90,8 +90,8 @@ public class SecondDay extends AppCompatActivity {
         Day2CanteenSosiska2Button = findViewById(R.id.next_button_8_day2);
         Day2CanteenSosiska3Button = findViewById(R.id.next_button_9_day2);
         Day2CanteenSosiska4Button = findViewById(R.id.next_button_10_day2);
-        Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1 = findViewById(R.id.next_button_11_day2);
-        nextButton_12 = findViewById(R.id.next_button_12_day2);
+        Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button = findViewById(R.id.next_button_11_day2);
+        Day2Class2Stepanida2Button = findViewById(R.id.next_button_12_day2);
         nextButton_13 = findViewById(R.id.next_button_13_day2);
         nextButton_14 = findViewById(R.id.next_button_14_day2);
         // --------- Получение кнопок по id "далее" ---------
@@ -995,8 +995,8 @@ public class SecondDay extends AppCompatActivity {
         day2_canteen_sosiska_4_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setVisibility(View.VISIBLE);
-                Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.startAnimation(anim_button_in_right);
+                Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setVisibility(View.VISIBLE);
+                Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.startAnimation(anim_button_in_right);
 
                 anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -1006,7 +1006,7 @@ public class SecondDay extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setEnabled(true);
+                        Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setEnabled(true);
                     }
 
                     @Override
@@ -1032,8 +1032,8 @@ public class SecondDay extends AppCompatActivity {
             HelperClass.animBackground(relativeLayout, bg1, bg2);
 
             // Убираем кнопочку
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setEnabled(false);
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.startAnimation(anim_button_out_right);
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setEnabled(false);
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.startAnimation(anim_button_out_right);
 
             anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
                 @Override
@@ -1043,7 +1043,7 @@ public class SecondDay extends AppCompatActivity {
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
-                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setVisibility(View.GONE);
+                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setVisibility(View.GONE);
                 }
 
                 @Override
@@ -1074,8 +1074,8 @@ public class SecondDay extends AppCompatActivity {
             HelperClass.animBackground(relativeLayout, bg1, bg2);
 
             // Убираем кнопочку
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setEnabled(false);
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.startAnimation(anim_button_out_right);
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setEnabled(false);
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.startAnimation(anim_button_out_right);
 
             anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
                 @Override
@@ -1085,7 +1085,7 @@ public class SecondDay extends AppCompatActivity {
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
-                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setVisibility(View.GONE);
+                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setVisibility(View.GONE);
                 }
 
                 @Override
@@ -1105,7 +1105,26 @@ public class SecondDay extends AppCompatActivity {
             day2_class2_stepanida_1_effect.setListener(new TypewriterListener() {
                 @Override
                 public void onAnimationEnd() {
-                    Toast.makeText(SecondDay.this, "Далее обнимашки и всякое такое", Toast.LENGTH_SHORT).show();
+                    // Кнопочка приезжает
+                    Day2Class2Stepanida2Button.setVisibility(View.VISIBLE);
+                    Day2Class2Stepanida2Button.startAnimation(anim_button_in_right);
+
+                    anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            Day2Class2Stepanida2Button.setEnabled(true);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
                 }
             });
         }
