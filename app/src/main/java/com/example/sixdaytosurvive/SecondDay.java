@@ -26,7 +26,7 @@ public class SecondDay extends AppCompatActivity {
     Button Day2CanteenSosiska2Button;
     Button Day2CanteenSosiska3Button;
     Button Day2CanteenSosiska4Button;
-    Button nextButton_11;
+    Button Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1;
     Button nextButton_12;
     Button nextButton_13;
     Button nextButton_14;
@@ -63,6 +63,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_canteen_sosiska_2_effect;
     TypewriterEffect day2_canteen_sosiska_3_effect;
     TypewriterEffect day2_canteen_sosiska_4_effect;
+    TypewriterEffect day2_class2_evlampiy_1_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -88,7 +89,7 @@ public class SecondDay extends AppCompatActivity {
         Day2CanteenSosiska2Button = findViewById(R.id.next_button_8_day2);
         Day2CanteenSosiska3Button = findViewById(R.id.next_button_9_day2);
         Day2CanteenSosiska4Button = findViewById(R.id.next_button_10_day2);
-        nextButton_11 = findViewById(R.id.next_button_11_day2);
+        Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1 = findViewById(R.id.next_button_11_day2);
         nextButton_12 = findViewById(R.id.next_button_12_day2);
         nextButton_13 = findViewById(R.id.next_button_13_day2);
         nextButton_14 = findViewById(R.id.next_button_14_day2);
@@ -993,8 +994,8 @@ public class SecondDay extends AppCompatActivity {
         day2_canteen_sosiska_4_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                Day2CanteenSosiska4Button.setVisibility(View.VISIBLE);
-                Day2CanteenSosiska4Button.startAnimation(anim_button_in_right);
+                Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setVisibility(View.VISIBLE);
+                Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.startAnimation(anim_button_in_right);
 
                 anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -1004,7 +1005,7 @@ public class SecondDay extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Day2CanteenSosiska4Button.setEnabled(true);
+                        Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setEnabled(true);
                     }
 
                     @Override
@@ -1019,5 +1020,54 @@ public class SecondDay extends AppCompatActivity {
 
     public void nextPhrase_Day2CanteenBaget(View view) {
         Toast.makeText(this, "Здесь начинается сцена второй пары", Toast.LENGTH_SHORT).show();
+    }
+
+    public void nextPhrase_Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1(View view) {
+        // Проверка на то, что Степанида и Евлампий поссорились или нет
+        if(PlayerData.stepanidaAndEvlampiyFight) {
+            // Меняем фон
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+            // Убираем кнопочку
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setEnabled(false);
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.startAnimation(anim_button_out_right);
+
+            anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
+            // Очистка текста
+            mainTV.setText("");
+
+            // ------------ Эффект печати для day2_class2_evlampiy_1 ------------
+            day2_class2_evlampiy_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class2_evlampiy_1, 60);
+            day2_class2_evlampiy_1_effect.animateText();
+            // ------------ Эффект печати для day2_class2_evlampiy_1 ------------
+
+            day2_class2_evlampiy_1_effect.setListener(new TypewriterListener() {
+                @Override
+                public void onAnimationEnd() {
+                    Toast.makeText(SecondDay.this, "Далее появляется кнопка и пара оладушкина", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else {
+
+        }
     }
 }

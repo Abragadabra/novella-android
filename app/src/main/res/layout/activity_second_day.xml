@@ -221,7 +221,7 @@
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_11"
+        android:onClick="nextPhrase_Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
