@@ -16,20 +16,20 @@ import android.widget.Toast;
 public class SecondDay extends AppCompatActivity {
 
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
-    Button day2MonologNextButton;                     // Кнопка "далее"
-    Button Day2SsoraTrue1Button;                      // Кнопка "далее" 2
-    Button Day2SsoraTrue2Button;                      // Кнопка "далее" 3
-    Button Day2SsoraTrue3Button;                              // Кнопка "далее" 4
-    Button Day2SsoraTrue4Button;                              // Кнопка "далее" 5
-    Button Day2Class1_1Button;                              // Кнопка "далее" 6
-    Button nextButton_7;                              // Кнопка "далее" 7
-    Button nextButton_8;                              // Кнопка "далее" 8
-    Button nextButton_9;                              // Кнопка "далее" 9
-    Button nextButton_10;                             // Кнопка "далее" 10
-    Button nextButton_11;                             // Кнопка "далее" 11
-    Button nextButton_12;                             // Кнопка "далее" 12
-    Button nextButton_13;                             // Кнопка "далее" 13
-    Button nextButton_14;                             // Кнопка "далее" 14
+    Button day2MonologNextButton;
+    Button Day2SsoraTrue1Button;
+    Button Day2SsoraTrue2Button;
+    Button Day2SsoraTrue3Button;
+    Button Day2SsoraTrue4Button;
+    Button Day2Class1_1Button;
+    Button Day2Class2Stepanida1;
+    Button nextButton_8;
+    Button nextButton_9;
+    Button nextButton_10;
+    Button nextButton_11;
+    Button nextButton_12;
+    Button nextButton_13;
+    Button nextButton_14;
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
     // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
@@ -59,6 +59,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_class1_1_effect;
     TypewriterEffect day2_canteen_1_effect;
     TypewriterEffect day2_canteen_baget_effect;
+    TypewriterEffect day2_canteen_sosiska_1_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -80,7 +81,7 @@ public class SecondDay extends AppCompatActivity {
         Day2SsoraTrue3Button = findViewById(R.id.next_button_4_day2);
         Day2SsoraTrue4Button = findViewById(R.id.next_button_5_day2);
         Day2Class1_1Button = findViewById(R.id.next_button_6_day2);
-        nextButton_7 = findViewById(R.id.next_button_7_day2);
+        Day2Class2Stepanida1 = findViewById(R.id.next_button_7_day2);
         nextButton_8 = findViewById(R.id.next_button_8_day2);
         nextButton_9 = findViewById(R.id.next_button_9_day2);
         nextButton_10 = findViewById(R.id.next_button_10_day2);
@@ -174,6 +175,7 @@ public class SecondDay extends AppCompatActivity {
         HelperClass.stopAnimation(day2_class1_1_effect);
         HelperClass.stopAnimation(day2_canteen_1_effect);
         HelperClass.stopAnimation(day2_canteen_baget_effect);
+        HelperClass.stopAnimation(day2_canteen_sosiska_1_effect);
     }
 
     // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
@@ -715,6 +717,7 @@ public class SecondDay extends AppCompatActivity {
         });
     }
 
+    // ------------------------------------ выбор в столовой ------------------------------------
     public void getBaget(View view) {
         // Отключение кнопочек
         choiceButton3.setEnabled(false);
@@ -752,7 +755,26 @@ public class SecondDay extends AppCompatActivity {
         day2_canteen_baget_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                Toast.makeText(SecondDay.this, "Здесь появляется кноппочка далее...", Toast.LENGTH_SHORT).show();
+                Day2Class2Stepanida1.setVisibility(View.VISIBLE);
+                Day2Class2Stepanida1.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        // Включение кнпопки
+                        Day2Class2Stepanida1.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -782,5 +804,25 @@ public class SecondDay extends AppCompatActivity {
 
             }
         });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ------------- Эффект печати фразы day2_canteen_sosiska_1 -------------
+        day2_canteen_sosiska_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_sosiska_1, 60);
+        day2_canteen_sosiska_1_effect.animateText();
+        // ------------- Эффект печати фразы day2_canteen_sosiska_1 -------------
+
+        day2_canteen_sosiska_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                
+            }
+        });
+    }
+    // ------------------------------------ выбор в столовой ------------------------------------
+
+    public void nextPhrase_Day2CanteenBaget(View view) {
+        Toast.makeText(this, "Здесь начинается сцена второй пары", Toast.LENGTH_SHORT).show();
     }
 }
