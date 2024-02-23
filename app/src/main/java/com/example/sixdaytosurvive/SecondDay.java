@@ -3,6 +3,7 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -1842,6 +1843,16 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase_OpenDay3(View view) {
-        Toast.makeText(this, "Здесь открывается третий день...", Toast.LENGTH_SHORT).show();
+        // Новый intent для открытия главного меню
+        Intent intent = new Intent(SecondDay.this, SplashScreenWednesday.class);
+
+        // Открываем новое активити
+        SecondDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        SecondDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
