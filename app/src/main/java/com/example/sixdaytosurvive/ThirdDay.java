@@ -239,10 +239,10 @@ public class ThirdDay extends AppCompatActivity {
         });
     }
 
-    public void nextPhrase_2(View view) {
+    public void nextPhrase_3(View view) {
         // Прячем кнопку
-        nextButton_2.setEnabled(false);
-        nextButton_2.startAnimation(anim_button_out_right);
+        nextButton_3.setEnabled(false);
+        nextButton_3.startAnimation(anim_button_out_right);
         anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -252,7 +252,11 @@ public class ThirdDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
-                nextButton_2.setVisibility(View.GONE);
+                nextButton_3.setVisibility(View.GONE);
+                // Меняем фон при завершении анимации
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.lososeva_class);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dushnya_class);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
             @Override
@@ -265,19 +269,340 @@ public class ThirdDay extends AppCompatActivity {
         mainText.setText("");
 
         // Анимация второй фразы
-        day3_dialog3_effect = new TypewriterEffect(mainText, Dialogues.day3_class_1_test_false, 60);
+        day3_dialog4_effect = new TypewriterEffect(mainText, Dialogues.day3_class_2_1, 60);
 
         // Старт анимции
-        day3_dialog3_effect.animateText();
+        day3_dialog4_effect.animateText();
 
         // События анимации
-        day3_dialog3_effect.setListener(new TypewriterListener() {
+        day3_dialog4_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
                 // По окончанию анимация печатания вызываем кнопку "далее"
-                nextButton_3.setVisibility(View.VISIBLE);
-                nextButton_3.startAnimation(anim_button_in_right);
+                nextButton_4.setVisibility(View.VISIBLE);
+                nextButton_4.startAnimation(anim_button_in_right);
             }
         });
+    }
+
+    public void nextPhrase_4(View view) {
+        // Прячем кнопку
+        nextButton_4.setEnabled(false);
+        nextButton_4.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_4.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog5_effect = new TypewriterEffect(mainText, Dialogues.day3_class_2_2, 60);
+
+        // Старт анимции
+        day3_dialog5_effect.animateText();
+
+        // События анимации
+        day3_dialog5_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_5.setVisibility(View.VISIBLE);
+                nextButton_5.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_5(View view) {
+        // Прячем кнопку
+        nextButton_5.setEnabled(false);
+        nextButton_5.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_5.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog6_effect = new TypewriterEffect(mainText, Dialogues.day3_class_2_3, 60);
+
+        // Старт анимции
+        day3_dialog6_effect.animateText();
+
+        // События анимации
+        day3_dialog6_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_6.setVisibility(View.VISIBLE);
+                nextButton_6.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_6(View view) {
+        // Прячем кнопку
+        nextButton_6.setEnabled(false);
+        nextButton_6.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_6.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog7_effect = new TypewriterEffect(mainText, Dialogues.day3_warderobe, 60);
+
+        // Старт анимции
+        day3_dialog7_effect.animateText();
+
+        // События анимации
+        day3_dialog7_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_7.setVisibility(View.VISIBLE);
+                nextButton_7.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_7(View view) {
+        // Прячем кнопку
+        nextButton_7.setEnabled(false);
+        nextButton_7.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_7.setVisibility(View.GONE);
+
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dushnya_class);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog8_effect = new TypewriterEffect(mainText, Dialogues.day3_class_3_1, 60);
+
+        // Старт анимции
+        day3_dialog8_effect.animateText();
+
+        // События анимации
+        day3_dialog8_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_8.setVisibility(View.VISIBLE);
+                nextButton_8.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_8(View view) {
+        // Прячем кнопку
+        nextButton_8.setEnabled(false);
+        nextButton_8.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_8.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog9_effect = new TypewriterEffect(mainText, Dialogues.day3_class_3_2, 60);
+
+        // Старт анимции
+        day3_dialog9_effect.animateText();
+
+        // События анимации
+        day3_dialog9_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_9.setVisibility(View.VISIBLE);
+                nextButton_9.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_9(View view) {
+        // Прячем кнопку
+        nextButton_9.setEnabled(false);
+        nextButton_9.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_9.setVisibility(View.GONE);
+
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog10_effect = new TypewriterEffect(mainText, Dialogues.day3_warderobe, 60);
+
+        // Старт анимции
+        day3_dialog10_effect.animateText();
+
+        // События анимации
+        day3_dialog10_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_10.setVisibility(View.VISIBLE);
+                nextButton_10.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    // Кнопка смены дня, если отношения = 0, если они больше 0, продолжается день
+    public void nextPhrase_10(View view) {
+        // Прячем кнопку
+        nextButton_10.setEnabled(false);
+        nextButton_10.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_10.setVisibility(View.GONE);
+
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
+                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.home_computer);
+                HelperClass.animBackground(relativeLayout, bg1, bg2);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog10_effect = new TypewriterEffect(mainText, Dialogues.day3_warderobe, 60);
+
+        // Старт анимции
+        day3_dialog10_effect.animateText();
+
+        // События анимации
+        day3_dialog10_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_9.setVisibility(View.VISIBLE);
+                nextButton_9.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void setDay4() {
+        // // Новый intent для открытия главного меню
+        Intent intent = new Intent(ThirdDay.this, SplashScreenTuesday.class);
+
+        // Открываем новое активити
+        ThirdDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        ThirdDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
