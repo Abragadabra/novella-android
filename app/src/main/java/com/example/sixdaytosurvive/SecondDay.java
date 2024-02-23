@@ -64,6 +64,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_canteen_sosiska_3_effect;
     TypewriterEffect day2_canteen_sosiska_4_effect;
     TypewriterEffect day2_class2_evlampiy_1_effect;
+    TypewriterEffect day2_class2_stepanida_1_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -1067,7 +1068,46 @@ public class SecondDay extends AppCompatActivity {
             });
         }
         else {
+            // Меняем фон
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.stepanida_corridor);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+            // Убираем кнопочку
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setEnabled(false);
+            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.startAnimation(anim_button_out_right);
+
+            anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
+            // Очистка текста
+            mainTV.setText("");
+
+            // ------------ Эффект печати для day2_class2_stepanida_1 ------------
+            day2_class2_stepanida_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class2_stepanida_1, 60);
+            day2_class2_stepanida_1_effect.animateText();
+            // ------------ Эффект печати для day2_class2_stepanida_1 ------------
+
+            day2_class2_stepanida_1_effect.setListener(new TypewriterListener() {
+                @Override
+                public void onAnimationEnd() {
+                    Toast.makeText(SecondDay.this, "Далее обнимашки и всякое такое", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }
