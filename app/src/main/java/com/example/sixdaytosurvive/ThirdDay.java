@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ThirdDay extends AppCompatActivity {
 
@@ -1120,16 +1121,6 @@ public class ThirdDay extends AppCompatActivity {
 
     // СМЕНА ДНЯ (на данный момент этого дня нет, поэтому игра завершится)
     public void setDay4() {
-        // // Новый intent для открытия главного меню
-        Intent intent = new Intent(ThirdDay.this, SplashScreenTuesday.class);
-
-        // Открываем новое активити
-        ThirdDay.this.startActivity(intent);
-
-        // Завершаем текущее активити
-        ThirdDay.this.finish();
-
-        // Плавный переход между активити
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        Toast.makeText(this, "Тупик! Четвёрга пока нет!!!", Toast.LENGTH_SHORT).show();
     }
 }
