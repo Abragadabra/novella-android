@@ -22,9 +22,9 @@ public class SecondDay extends AppCompatActivity {
     Button Day2SsoraTrue3Button;
     Button Day2SsoraTrue4Button;
     Button Day2Class1_1Button;
-    Button Day2Class2Stepanida1;
-    Button nextButton_8;
-    Button nextButton_9;
+    Button Day2Class2Stepanida1Button;
+    Button Day2CanteenSosiska2Button;
+    Button Day2CanteenSosiska3Button;
     Button nextButton_10;
     Button nextButton_11;
     Button nextButton_12;
@@ -60,6 +60,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_canteen_1_effect;
     TypewriterEffect day2_canteen_baget_effect;
     TypewriterEffect day2_canteen_sosiska_1_effect;
+    TypewriterEffect day2_canteen_sosiska_2_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -81,9 +82,9 @@ public class SecondDay extends AppCompatActivity {
         Day2SsoraTrue3Button = findViewById(R.id.next_button_4_day2);
         Day2SsoraTrue4Button = findViewById(R.id.next_button_5_day2);
         Day2Class1_1Button = findViewById(R.id.next_button_6_day2);
-        Day2Class2Stepanida1 = findViewById(R.id.next_button_7_day2);
-        nextButton_8 = findViewById(R.id.next_button_8_day2);
-        nextButton_9 = findViewById(R.id.next_button_9_day2);
+        Day2Class2Stepanida1Button = findViewById(R.id.next_button_7_day2);
+        Day2CanteenSosiska2Button = findViewById(R.id.next_button_8_day2);
+        Day2CanteenSosiska3Button = findViewById(R.id.next_button_9_day2);
         nextButton_10 = findViewById(R.id.next_button_10_day2);
         nextButton_11 = findViewById(R.id.next_button_11_day2);
         nextButton_12 = findViewById(R.id.next_button_12_day2);
@@ -755,8 +756,8 @@ public class SecondDay extends AppCompatActivity {
         day2_canteen_baget_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                Day2Class2Stepanida1.setVisibility(View.VISIBLE);
-                Day2Class2Stepanida1.startAnimation(anim_button_in_right);
+                Day2Class2Stepanida1Button.setVisibility(View.VISIBLE);
+                Day2Class2Stepanida1Button.startAnimation(anim_button_in_right);
 
                 anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -767,7 +768,7 @@ public class SecondDay extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         // Включение кнпопки
-                        Day2Class2Stepanida1.setEnabled(true);
+                        Day2Class2Stepanida1Button.setEnabled(true);
                     }
 
                     @Override
@@ -816,7 +817,81 @@ public class SecondDay extends AppCompatActivity {
         day2_canteen_sosiska_1_effect.setListener(new TypewriterListener() {
             @Override
             public void onAnimationEnd() {
-                
+                Day2CanteenSosiska2Button.setVisibility(View.VISIBLE);
+                Day2CanteenSosiska2Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2CanteenSosiska2Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void nextPhrase_Day2CanteenSosiska1(View view) {
+        // Кнопочка уезжает
+        Day2CanteenSosiska2Button.setEnabled(false);
+        Day2CanteenSosiska2Button.startAnimation(anim_button_out_left);
+
+        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2CanteenSosiska2Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ----------------- Эффект печати day2_canteen_sosiska_2 -----------------
+        day2_canteen_sosiska_2_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_sosiska_2, 60);
+        day2_canteen_sosiska_2_effect.animateText();
+        // ----------------- Эффект печати day2_canteen_sosiska_2 -----------------
+
+        day2_canteen_sosiska_2_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                Day2CanteenSosiska3Button.setVisibility(View.VISIBLE);
+                Day2CanteenSosiska3Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2CanteenSosiska3Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -825,4 +900,6 @@ public class SecondDay extends AppCompatActivity {
     public void nextPhrase_Day2CanteenBaget(View view) {
         Toast.makeText(this, "Здесь начинается сцена второй пары", Toast.LENGTH_SHORT).show();
     }
+
+
 }
