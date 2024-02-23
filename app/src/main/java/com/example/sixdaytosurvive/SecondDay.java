@@ -208,6 +208,17 @@ public class SecondDay extends AppCompatActivity {
         HelperClass.stopAnimation(day2_canteen_sosiska_1_effect);
         HelperClass.stopAnimation(day2_canteen_sosiska_2_effect);
         HelperClass.stopAnimation(day2_canteen_sosiska_3_effect);
+        HelperClass.stopAnimation(day2_canteen_sosiska_4_effect);
+        HelperClass.stopAnimation(day2_class2_evlampiy_1_effect);
+        HelperClass.stopAnimation(day2_class2_stepanida_1_effect);
+        HelperClass.stopAnimation(day2_class2_stepanida_2_effect);
+        HelperClass.stopAnimation(day2_class2_stepanida_3_effect);
+        HelperClass.stopAnimation(day2_class23_1_effect);
+        HelperClass.stopAnimation(day2_class23_2_effect);
+        HelperClass.stopAnimation(day2_class23_3_effect);
+        HelperClass.stopAnimation(day2_class23_4_effect);
+        HelperClass.stopAnimation(day2_class23_5_effect);
+        HelperClass.stopAnimation(day2_home_1_effect);
     }
 
     // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
