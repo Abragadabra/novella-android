@@ -152,6 +152,23 @@ public class FirstDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton.setVisibility(View.VISIBLE);
                 nextButton.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
         // Старт анимации
@@ -241,6 +258,24 @@ public class FirstDay extends AppCompatActivity {
 
                         takeJacketButton.startAnimation(anim_button_in_left);
                         passJacketButton.startAnimation(anim_button_in_left);
+
+                        anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                takeJacketButton.setEnabled(true);
+                                passJacketButton.setEnabled(true);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
                     }
                 });
             }
@@ -289,6 +324,23 @@ public class FirstDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_2.setVisibility(View.VISIBLE);
                 nextButton_2.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_2.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -337,6 +389,23 @@ public class FirstDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_3.setVisibility(View.VISIBLE);
                 nextButton_3.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_3.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
 
@@ -381,6 +450,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее4
                 nextButton_4.setVisibility(View.VISIBLE);
                 nextButton_4.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_4.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -428,6 +514,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее5
                 nextButton_5.setVisibility(View.VISIBLE);
                 nextButton_5.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_5.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -471,6 +574,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее6
                 nextButton_6.setVisibility(View.VISIBLE);
                 nextButton_6.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_6.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -513,6 +633,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее7
                 nextButton_7.setVisibility(View.VISIBLE);
                 nextButton_7.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_7.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -531,7 +668,7 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_7.setVisibility(View.GONE);
-                if(PlayerData.jacket == true){
+                if(PlayerData.jacket){
                     @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
                     @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
                     HelperClass.animBackground(relativeLayout, bg1, bg2);
@@ -542,8 +679,6 @@ public class FirstDay extends AppCompatActivity {
                     HelperClass.animBackground(relativeLayout, bg1, bg2);
 
                 }
-
-
             }
 
             @Override
@@ -568,6 +703,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее8
                 nextButton_8.setVisibility(View.VISIBLE);
                 nextButton_8.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_8.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -610,6 +762,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее6
                 nextButton_7.setVisibility(View.VISIBLE);
                 nextButton_7.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_7.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -652,6 +821,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее8
                 nextButton_9.setVisibility(View.VISIBLE);
                 nextButton_9.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_9.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -694,6 +880,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее8
                 nextButton_10.setVisibility(View.VISIBLE);
                 nextButton_10.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_10.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -741,6 +944,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее8
                 nextButton_11.setVisibility(View.VISIBLE);
                 nextButton_11.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_11.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -787,6 +1007,24 @@ public class FirstDay extends AppCompatActivity {
                 // Начинаем анимации на кнопки выбора ответа в столовой
                 takeFoodButton.startAnimation(anim_button_in_left);
                 passFoodButton.startAnimation(anim_button_in_left);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        takeFoodButton.setEnabled(true);
+                        passFoodButton.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -829,6 +1067,23 @@ public class FirstDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_12.setVisibility(View.VISIBLE);
                 nextButton_12.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_12.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -871,6 +1126,23 @@ public class FirstDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_12.setVisibility(View.VISIBLE);
                 nextButton_12.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_12.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -918,6 +1190,23 @@ public class FirstDay extends AppCompatActivity {
                 // Показываем кнопку далее13
                 nextButton_13.setVisibility(View.VISIBLE);
                 nextButton_13.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_13.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -969,6 +1258,23 @@ public class FirstDay extends AppCompatActivity {
                     // Показываем кнопку далее14
                     nextButton_14.setVisibility(View.VISIBLE);
                     nextButton_14.startAnimation(anim_button_in_right);
+
+                    anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            nextButton_14.setEnabled(true);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
                 }
             });
         }
