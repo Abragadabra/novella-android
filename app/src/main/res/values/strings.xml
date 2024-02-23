@@ -11,9 +11,11 @@
     <string name="next_text">Далее ></string>
     <string name="day1">День 1</string>
     <string name="day2">День 2</string>
+    <string name="day3">День 3</string>
 
     <string name="monday">Понедельник</string>
     <string name="tuesday">Вторник</string>
+    <string name="wednesday">Среда</string>
 
 
     <!--  ВЫБОР СОБЫТИЙ 1  -->
