@@ -172,6 +172,8 @@ public class SecondDay extends AppCompatActivity {
         HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_3_effect);
         HelperClass.stopAnimation(day2_stepanida_evlampiy_ssora_true_4_effect);
         HelperClass.stopAnimation(day2_class1_1_effect);
+        HelperClass.stopAnimation(day2_canteen_1_effect);
+        HelperClass.stopAnimation(day2_canteen_baget_effect);
     }
 
     // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
