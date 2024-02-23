@@ -259,7 +259,7 @@ public class FirstDay extends AppCompatActivity {
                         takeJacketButton.startAnimation(anim_button_in_left);
                         passJacketButton.startAnimation(anim_button_in_left);
 
-                        anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                        anim_button_in_left.setAnimationListener(new Animation.AnimationListener() {
                             @Override
                             public void onAnimationStart(Animation animation) {
 
@@ -1008,7 +1008,7 @@ public class FirstDay extends AppCompatActivity {
                 takeFoodButton.startAnimation(anim_button_in_left);
                 passFoodButton.startAnimation(anim_button_in_left);
 
-                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                anim_button_in_left.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
