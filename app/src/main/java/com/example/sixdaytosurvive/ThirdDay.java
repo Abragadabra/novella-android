@@ -133,6 +133,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton.setVisibility(View.VISIBLE);
                 nextButton.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
         // Старт анимации
@@ -207,6 +224,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_2.setVisibility(View.VISIBLE);
                 nextButton_2.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_2.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -249,6 +283,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_3.setVisibility(View.VISIBLE);
                 nextButton_3.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_3.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -295,6 +346,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_4.setVisibility(View.VISIBLE);
                 nextButton_4.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_4.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -337,6 +405,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_5.setVisibility(View.VISIBLE);
                 nextButton_5.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_5.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -379,6 +464,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_6.setVisibility(View.VISIBLE);
                 nextButton_6.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_6.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -421,6 +523,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_7.setVisibility(View.VISIBLE);
                 nextButton_7.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_7.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -467,6 +586,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_8.setVisibility(View.VISIBLE);
                 nextButton_8.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_8.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -509,6 +645,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_9.setVisibility(View.VISIBLE);
                 nextButton_9.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_9.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -555,6 +708,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_10.setVisibility(View.VISIBLE);
                 nextButton_10.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_10.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -603,6 +773,23 @@ public class ThirdDay extends AppCompatActivity {
                     // По окончанию анимация печатания вызываем кнопку "далее"
                     nextButton_11.setVisibility(View.VISIBLE);
                     nextButton_11.startAnimation(anim_button_in_right);
+
+                    anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            nextButton_11.setEnabled(true);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
                 }
             });
         } else {
@@ -650,6 +837,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_12.setVisibility(View.VISIBLE);
                 nextButton_12.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_12.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -692,6 +896,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_13.setVisibility(View.VISIBLE);
                 nextButton_13.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_13.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -734,6 +955,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_14.setVisibility(View.VISIBLE);
                 nextButton_14.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_14.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -776,6 +1014,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_15.setVisibility(View.VISIBLE);
                 nextButton_15.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_15.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
@@ -818,6 +1073,23 @@ public class ThirdDay extends AppCompatActivity {
                 // По окончанию анимация печатания вызываем кнопку "далее"
                 nextButton_16.setVisibility(View.VISIBLE);
                 nextButton_16.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton_16.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
     }
