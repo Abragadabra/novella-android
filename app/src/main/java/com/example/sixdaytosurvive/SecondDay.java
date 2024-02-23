@@ -25,7 +25,7 @@ public class SecondDay extends AppCompatActivity {
     Button Day2Class2Stepanida1Button;
     Button Day2CanteenSosiska2Button;
     Button Day2CanteenSosiska3Button;
-    Button nextButton_10;
+    Button Day2CanteenSosiska4Button;
     Button nextButton_11;
     Button nextButton_12;
     Button nextButton_13;
@@ -61,6 +61,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_canteen_baget_effect;
     TypewriterEffect day2_canteen_sosiska_1_effect;
     TypewriterEffect day2_canteen_sosiska_2_effect;
+    TypewriterEffect day2_canteen_sosiska_3_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -85,7 +86,7 @@ public class SecondDay extends AppCompatActivity {
         Day2Class2Stepanida1Button = findViewById(R.id.next_button_7_day2);
         Day2CanteenSosiska2Button = findViewById(R.id.next_button_8_day2);
         Day2CanteenSosiska3Button = findViewById(R.id.next_button_9_day2);
-        nextButton_10 = findViewById(R.id.next_button_10_day2);
+        Day2CanteenSosiska4Button = findViewById(R.id.next_button_10_day2);
         nextButton_11 = findViewById(R.id.next_button_11_day2);
         nextButton_12 = findViewById(R.id.next_button_12_day2);
         nextButton_13 = findViewById(R.id.next_button_13_day2);
@@ -177,6 +178,8 @@ public class SecondDay extends AppCompatActivity {
         HelperClass.stopAnimation(day2_canteen_1_effect);
         HelperClass.stopAnimation(day2_canteen_baget_effect);
         HelperClass.stopAnimation(day2_canteen_sosiska_1_effect);
+        HelperClass.stopAnimation(day2_canteen_sosiska_2_effect);
+        HelperClass.stopAnimation(day2_canteen_sosiska_3_effect);
     }
 
     // ----------- OnClick на переключение на следующую фразу после Day2Monolog -----------
@@ -897,6 +900,62 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase_Day2CanteenSosiska2(View view) {
+        // Кнопочка уезжает
+        Day2CanteenSosiska3Button.setEnabled(false);
+        Day2CanteenSosiska3Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2CanteenSosiska3Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ----------------- Эффект печати day2_canteen_sosiska_3 -----------------
+        day2_canteen_sosiska_3_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_sosiska_3, 60);
+        day2_canteen_sosiska_3_effect.animateText();
+        // ----------------- Эффект печати day2_canteen_sosiska_3 -----------------
+
+        day2_canteen_sosiska_3_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                Day2CanteenSosiska4Button.setVisibility(View.VISIBLE);
+                Day2CanteenSosiska4Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2CanteenSosiska4Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void nextPhrase_Day2CanteenSosiska3(View view) {
         
     }
     // ------------------------------------ выбор в столовой ------------------------------------
@@ -904,7 +963,4 @@ public class SecondDay extends AppCompatActivity {
     public void nextPhrase_Day2CanteenBaget(View view) {
         Toast.makeText(this, "Здесь начинается сцена второй пары", Toast.LENGTH_SHORT).show();
     }
-
-
-
 }
