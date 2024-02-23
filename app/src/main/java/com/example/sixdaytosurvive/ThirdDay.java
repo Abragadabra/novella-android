@@ -395,7 +395,7 @@ public class ThirdDay extends AppCompatActivity {
         mainText.setText("");
 
         // Анимация второй фразы
-        day3_dialog7_effect = new TypewriterEffect(mainText, Dialogues.day3_warderobe, 60);
+        day3_dialog7_effect = new TypewriterEffect(mainText, Dialogues.day3_class_2_4, 60);
 
         // Старт анимции
         day3_dialog7_effect.animateText();
@@ -560,36 +560,41 @@ public class ThirdDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_10.setVisibility(View.GONE);
+                if (PlayerData.loveLevel > 0){
+                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
+                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.home_computer);
+                    HelperClass.animBackground(relativeLayout, bg1, bg2);
+                }
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.home_computer);
-                HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
                 // Событие при повторе анимации
             }
         });
+        if (PlayerData.loveLevel > 0){
+            mainText.setText("");
 
-        // Очистка поля текста
-        mainText.setText("");
+            // Анимация второй фразы
+            day3_dialog11_effect = new TypewriterEffect(mainText, Dialogues.day3_warderobe, 60);
 
-        // Анимация второй фразы
-        day3_dialog10_effect = new TypewriterEffect(mainText, Dialogues.day3_warderobe, 60);
+            // Старт анимции
+            day3_dialog11_effect.animateText();
 
-        // Старт анимции
-        day3_dialog10_effect.animateText();
+            // События анимации
+            day3_dialog11_effect.setListener(new TypewriterListener() {
+                @Override
+                public void onAnimationEnd() {
+                    // По окончанию анимация печатания вызываем кнопку "далее"
+                    nextButton_11.setVisibility(View.VISIBLE);
+                    nextButton_11.startAnimation(anim_button_in_right);
+                }
+            });
+        }
+        else{
+            setDay4();
+        }
 
-        // События анимации
-        day3_dialog10_effect.setListener(new TypewriterListener() {
-            @Override
-            public void onAnimationEnd() {
-                // По окончанию анимация печатания вызываем кнопку "далее"
-                nextButton_9.setVisibility(View.VISIBLE);
-                nextButton_9.startAnimation(anim_button_in_right);
-            }
-        });
     }
 
     public void setDay4() {
@@ -605,4 +610,6 @@ public class ThirdDay extends AppCompatActivity {
         // Плавный переход между активити
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
+
+
 }
