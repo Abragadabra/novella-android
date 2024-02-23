@@ -31,6 +31,8 @@ public class SecondDay extends AppCompatActivity {
     Button Day2Class231Button;
     Button Day2Class2Stepanida3Button;
     Button Day2Class231AfterStepanidaButton;
+    Button Day2Class232Button;
+    Button Day2Class233Button;
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
     // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
@@ -69,6 +71,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_class2_stepanida_2_effect;
     TypewriterEffect day2_class2_stepanida_3_effect;
     TypewriterEffect day2_class23_1_effect;
+    TypewriterEffect day2_class23_2_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -99,6 +102,8 @@ public class SecondDay extends AppCompatActivity {
         Day2Class231Button = findViewById(R.id.next_button_13_day2);
         Day2Class2Stepanida3Button = findViewById(R.id.next_button_14_day2);
         Day2Class231AfterStepanidaButton = findViewById(R.id.next_button_15_day2);
+        Day2Class232Button = findViewById(R.id.next_button_16_day2);
+        Day2Class233Button = findViewById(R.id.next_button_17_day2);
         // --------- Получение кнопок по id "далее" ---------
 
         // ---------- Получение кнопок выбора по id ---------
@@ -1431,8 +1436,8 @@ public class SecondDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd() {
                 // Кнопочка приезжает
-                Day2Class231Button.setVisibility(View.VISIBLE);
-                Day2Class231Button.startAnimation(anim_button_in_right);
+                Day2Class232Button.setVisibility(View.VISIBLE);
+                Day2Class232Button.startAnimation(anim_button_in_right);
 
                 anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -1442,7 +1447,64 @@ public class SecondDay extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Day2Class231Button.setEnabled(true);
+                        Day2Class232Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void nextPhrase_Day2Class232(View view) {
+        // Убираем кнопочку
+        Day2Class232Button.setEnabled(false);
+        Day2Class232Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2Class232Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ------------ Эффект печати для day2_class23_2 ------------
+        day2_class23_2_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_2, 60);
+        day2_class23_2_effect.animateText();
+        // ------------ Эффект печати для day2_class23_2 ------------
+
+        day2_class23_2_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Кнопочка приезжает
+                Day2Class233Button.setVisibility(View.VISIBLE);
+                Day2Class233Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2Class233Button.setEnabled(true);
                     }
 
                     @Override
