@@ -62,6 +62,7 @@ public class SecondDay extends AppCompatActivity {
     TypewriterEffect day2_canteen_sosiska_1_effect;
     TypewriterEffect day2_canteen_sosiska_2_effect;
     TypewriterEffect day2_canteen_sosiska_3_effect;
+    TypewriterEffect day2_canteen_sosiska_4_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -258,6 +259,7 @@ public class SecondDay extends AppCompatActivity {
     public void createPeace(View view) {
         // Добавляем к переменной любви +1
         PlayerData.loveLevel++;
+        PlayerData.stepanidaAndEvlampiyFight = true;
 
         // Отключаем кнопки
         choiceButton1.setEnabled(false);
@@ -524,6 +526,9 @@ public class SecondDay extends AppCompatActivity {
 
     // ----------- OnClick на выбор за уход на пару без мира -----------
     public void walkPast(View view) {
+        // Их битва не увенчалась успехом, они поссорились
+        PlayerData.stepanidaAndEvlampiyFight = true;
+
         // Отключаем кнопки
         choiceButton1.setEnabled(false);
         choiceButton2.setEnabled(false);
@@ -956,7 +961,59 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase_Day2CanteenSosiska3(View view) {
-        
+        // Кнопочка уезжает
+        Day2CanteenSosiska4Button.setEnabled(false);
+        Day2CanteenSosiska4Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2CanteenSosiska4Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ----------------- Эффект печати day2_canteen_sosiska_4 -----------------
+        day2_canteen_sosiska_4_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_sosiska_4, 60);
+        day2_canteen_sosiska_4_effect.animateText();
+        // ----------------- Эффект печати day2_canteen_sosiska_4 -----------------
+
+        day2_canteen_sosiska_4_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                Day2CanteenSosiska4Button.setVisibility(View.VISIBLE);
+                Day2CanteenSosiska4Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2CanteenSosiska4Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
     }
     // ------------------------------------ выбор в столовой ------------------------------------
 
