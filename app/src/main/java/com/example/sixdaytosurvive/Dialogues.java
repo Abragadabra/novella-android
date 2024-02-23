@@ -40,7 +40,7 @@ public class Dialogues {
 
     public static String day2_canteen_baget = "Багет как всегда прекрасен... Я бы помер ради такого... Я в париже...";
 
-    public static String day2_canteen_sosiska_1 = "Я подношу сосиску ко рту... БАМ, и она катится по всей столовой! ЁЛКИ ПАЛКИ!!!";
+    public static String day2_canteen_sosiska_1 = "Я подношу сосиску ко рту... БАМ, и она катится по всей столовой! ЁЛКИ ПАЛКИ!!! ТЫСЯЧИ ЧЕРТЕЙ!!!";
     public static String day2_canteen_sosiska_2 = "Евгей:\nО! НАКОНЕЦ-ТО НОРМАЛЬНАЯ ЕДАААА! (Он поедает сосиску, смотря на нас)";
     public static String day2_canteen_sosiska_3 = "Ты нормальный вообще? Вкусно?";
     public static String day2_canteen_sosiska_4 = "Евгей:\nда! АЦТАНЬ! Я бедный студент!";
