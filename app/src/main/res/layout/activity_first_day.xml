@@ -43,6 +43,7 @@
         android:onClick="nextPhrase"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
+        android:enabled="false"
         android:textSize="25sp"
         android:visibility="invisible"
         app:cornerRadius="14dp" />
@@ -59,6 +60,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_2"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -76,6 +78,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_3"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -93,6 +96,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_4"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -110,6 +114,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_5"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -127,6 +132,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_6"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -144,6 +150,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_7"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -161,6 +168,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_8"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -178,6 +186,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_9"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -195,6 +204,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_10"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -212,6 +222,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_11"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -229,6 +240,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_12"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -246,6 +258,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_13"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -263,6 +276,7 @@
         android:hint="@string/next_text"
         android:onClick="nextPhrase_14"
         android:textColor="@drawable/button_color"
+        android:enabled="false"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -285,16 +299,15 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
+            android:enabled="false"
             android:backgroundTint="#ADFFC5C5"
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/pass"
-
             android:onClick="passJacket"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
 
         <Button
@@ -303,15 +316,14 @@
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
-
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/fold"
             android:onClick="takeJacket"
             android:textColor="@drawable/button_color"
+            android:enabled="false"
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
 
     </LinearLayout>
@@ -333,25 +345,24 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
+            android:enabled="false"
             android:backgroundTint="#ADFFC5C5"
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/passfood"
-
             android:onClick="passFood"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
 
         <Button
             android:id="@+id/choice_button_4"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
+            android:enabled="false"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
-
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/takefood"
             android:onClick="takeFood"
@@ -359,7 +370,6 @@
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
     </LinearLayout>
 
