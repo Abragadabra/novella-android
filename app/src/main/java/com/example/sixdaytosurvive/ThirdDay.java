@@ -30,6 +30,10 @@ public class ThirdDay extends AppCompatActivity {
     Button nextButton_12;                             // Кнопка "далее" 12
     Button nextButton_13;                             // Кнопка "далее" 13
     Button nextButton_14;                             // Кнопка "далее" 14
+    Button nextButton_15;                             // Кнопка "далее" 14
+    Button nextButton_16;                             // Кнопка "далее" 14
+    Button nextButton_17;                             // Кнопка "далее" 14
+
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
     // ------------------------------ Анимации ------------------------------
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
@@ -83,6 +87,11 @@ public class ThirdDay extends AppCompatActivity {
         nextButton_12 = findViewById(R.id.next_button_12);
         nextButton_13 = findViewById(R.id.next_button_13);
         nextButton_14 = findViewById(R.id.next_button_14);
+        nextButton_15 = findViewById(R.id.next_button_15);
+        nextButton_16 = findViewById(R.id.next_button_16);
+        nextButton_17 = findViewById(R.id.next_button_17);
+
+
         // --------- Получение кнопок "далее" ---------
 
         // ------------------------------ Получение анимации справа экрана ------------------------------
@@ -576,7 +585,7 @@ public class ThirdDay extends AppCompatActivity {
             mainText.setText("");
 
             // Анимация второй фразы
-            day3_dialog11_effect = new TypewriterEffect(mainText, Dialogues.day3_warderobe, 60);
+            day3_dialog11_effect = new TypewriterEffect(mainText, Dialogues.day3_home_stepanida_1, 60);
 
             // Старт анимции
             day3_dialog11_effect.animateText();
@@ -597,6 +606,243 @@ public class ThirdDay extends AppCompatActivity {
 
     }
 
+
+
+    public void nextPhrase_11(View view) {
+        // Прячем кнопку
+        nextButton_11.setEnabled(false);
+        nextButton_11.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_11.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog12_effect = new TypewriterEffect(mainText, Dialogues.day3_home_stepanida_2, 60);
+
+        // Старт анимции
+        day3_dialog12_effect.animateText();
+
+        // События анимации
+        day3_dialog12_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_12.setVisibility(View.VISIBLE);
+                nextButton_12.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_12(View view) {
+        // Прячем кнопку
+        nextButton_12.setEnabled(false);
+        nextButton_12.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_12.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog13_effect = new TypewriterEffect(mainText, Dialogues.day3_home_stepanida_3, 60);
+
+        // Старт анимции
+        day3_dialog13_effect.animateText();
+
+        // События анимации
+        day3_dialog13_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_13.setVisibility(View.VISIBLE);
+                nextButton_13.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_13(View view) {
+        // Прячем кнопку
+        nextButton_13.setEnabled(false);
+        nextButton_13.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_13.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog14_effect = new TypewriterEffect(mainText, Dialogues.day3_home_stepanida_4, 60);
+
+        // Старт анимции
+        day3_dialog14_effect.animateText();
+
+        // События анимации
+        day3_dialog14_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_14.setVisibility(View.VISIBLE);
+                nextButton_14.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_14(View view) {
+        // Прячем кнопку
+        nextButton_14.setEnabled(false);
+        nextButton_14.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_14.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog15_effect = new TypewriterEffect(mainText, Dialogues.day3_home_stepanida_5, 60);
+
+        // Старт анимции
+        day3_dialog15_effect.animateText();
+
+        // События анимации
+        day3_dialog15_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_15.setVisibility(View.VISIBLE);
+                nextButton_15.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_15(View view) {
+        // Прячем кнопку
+        nextButton_15.setEnabled(false);
+        nextButton_15.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_15.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+
+        // Очистка поля текста
+        mainText.setText("");
+
+        // Анимация второй фразы
+        day3_dialog16_effect = new TypewriterEffect(mainText, Dialogues.day3_home_stepanida_6, 60);
+
+        // Старт анимции
+        day3_dialog16_effect.animateText();
+
+        // События анимации
+        day3_dialog16_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // По окончанию анимация печатания вызываем кнопку "далее"
+                nextButton_16.setVisibility(View.VISIBLE);
+                nextButton_16.startAnimation(anim_button_in_right);
+            }
+        });
+    }
+
+    public void nextPhrase_16(View view) {
+        // Прячем кнопку
+        nextButton_16.setEnabled(false);
+        nextButton_16.startAnimation(anim_button_out_right);
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // Событие при старте анимации
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // По завершении анимации прячем кнопку
+                nextButton_16.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // Событие при повторе анимации
+            }
+        });
+        setDay4();
+    }
+
+    // СМЕНА ДНЯ (на данный момент этого дня нет, поэтому игра завершится)
     public void setDay4() {
         // // Новый intent для открытия главного меню
         Intent intent = new Intent(ThirdDay.this, SplashScreenTuesday.class);
@@ -610,6 +856,4 @@ public class ThirdDay extends AppCompatActivity {
         // Плавный переход между активити
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
-
-
 }
