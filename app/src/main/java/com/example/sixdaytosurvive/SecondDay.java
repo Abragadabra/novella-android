@@ -529,7 +529,7 @@ public class SecondDay extends AppCompatActivity {
     // ----------- OnClick на выбор за уход на пару без мира -----------
     public void walkPast(View view) {
         // Их битва не увенчалась успехом, они поссорились
-        PlayerData.stepanidaAndEvlampiyFight = true;
+        PlayerData.stepanidaAndEvlampiyFight = false;
 
         // Отключаем кнопки
         choiceButton1.setEnabled(false);
@@ -1028,8 +1028,8 @@ public class SecondDay extends AppCompatActivity {
             HelperClass.animBackground(relativeLayout, bg1, bg2);
 
             // Убираем кнопочку
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setEnabled(false);
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.startAnimation(anim_button_out_right);
+            Day2Class2Stepanida1Button.setEnabled(false);
+            Day2Class2Stepanida1Button.startAnimation(anim_button_out_right);
 
             anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
                 @Override
@@ -1039,7 +1039,7 @@ public class SecondDay extends AppCompatActivity {
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
-                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setVisibility(View.GONE);
+                    Day2Class2Stepanida1Button.setVisibility(View.GONE);
                 }
 
                 @Override
@@ -1089,8 +1089,8 @@ public class SecondDay extends AppCompatActivity {
             HelperClass.animBackground(relativeLayout, bg1, bg2);
 
             // Убираем кнопочку
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setEnabled(false);
-            Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.startAnimation(anim_button_out_right);
+            Day2Class2Stepanida1Button.setEnabled(false);
+            Day2Class2Stepanida1Button.startAnimation(anim_button_out_right);
 
             anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
                 @Override
@@ -1100,7 +1100,7 @@ public class SecondDay extends AppCompatActivity {
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
-                    Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button.setVisibility(View.GONE);
+                    Day2Class2Stepanida1Button.setVisibility(View.GONE);
                 }
 
                 @Override
