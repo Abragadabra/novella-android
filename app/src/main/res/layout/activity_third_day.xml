@@ -267,6 +267,7 @@
         android:textSize="25sp"
         android:visibility="invisible"
         app:cornerRadius="14dp" />
+
     <Button
         android:id="@+id/next_button_15"
         android:layout_width="wrap_content"
@@ -283,6 +284,7 @@
         android:textSize="25sp"
         android:visibility="invisible"
         app:cornerRadius="14dp" />
+
     <Button
         android:id="@+id/next_button_16"
         android:layout_width="wrap_content"
@@ -299,6 +301,7 @@
         android:textSize="25sp"
         android:visibility="invisible"
         app:cornerRadius="14dp" />
+
     <Button
         android:id="@+id/next_button_17"
         android:layout_width="wrap_content"

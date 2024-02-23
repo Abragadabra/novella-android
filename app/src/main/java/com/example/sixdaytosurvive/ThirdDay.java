@@ -1,6 +1,7 @@
 package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -67,6 +68,7 @@ public class ThirdDay extends AppCompatActivity {
     // ------------------------------ Диалоги ------------------------------
 
     RelativeLayout relativeLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,6 +139,7 @@ public class ThirdDay extends AppCompatActivity {
         day3_dialog1_effect.animateText();
 
     }
+
     // Скип анимации на каждый диалог
     public void skipAnimation(View view) {
         HelperClass.stopAnimation(day3_dialog1_effect);
@@ -160,6 +163,7 @@ public class ThirdDay extends AppCompatActivity {
         HelperClass.stopAnimation(day3_dialog19_effect);
         HelperClass.stopAnimation(day3_dialog20_effect);
     }
+
     public void nextPhrase(View view) {
         // Прячем кнопку
         nextButton.setEnabled(false);
@@ -206,6 +210,7 @@ public class ThirdDay extends AppCompatActivity {
             }
         });
     }
+
     public void nextPhrase_2(View view) {
         // Прячем кнопку
         nextButton_2.setEnabled(false);
@@ -569,19 +574,20 @@ public class ThirdDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_10.setVisibility(View.GONE);
-                if (PlayerData.loveLevel > 0){
+                if (PlayerData.loveLevel > 0) {
                     @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
                     @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.home_computer);
                     HelperClass.animBackground(relativeLayout, bg1, bg2);
                 }
 
             }
+
             @Override
             public void onAnimationRepeat(Animation animation) {
                 // Событие при повторе анимации
             }
         });
-        if (PlayerData.loveLevel > 0){
+        if (PlayerData.loveLevel > 0) {
             mainText.setText("");
 
             // Анимация второй фразы
@@ -599,13 +605,11 @@ public class ThirdDay extends AppCompatActivity {
                     nextButton_11.startAnimation(anim_button_in_right);
                 }
             });
-        }
-        else{
+        } else {
             setDay4();
         }
 
     }
-
 
 
     public void nextPhrase_11(View view) {

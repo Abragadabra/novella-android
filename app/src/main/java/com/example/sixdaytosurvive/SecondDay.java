@@ -1058,7 +1058,7 @@ public class SecondDay extends AppCompatActivity {
 
     public void nextPhrase_Day2CanteenBaget(View view) {
         // Проверка на то, что Степанида и Евлампий поссорились или нет
-        if(PlayerData.stepanidaAndEvlampiyFight) {
+        if (PlayerData.stepanidaAndEvlampiyFight) {
             // Меняем фон
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
@@ -1118,8 +1118,7 @@ public class SecondDay extends AppCompatActivity {
                     });
                 }
             });
-        }
-        else {
+        } else {
             // Меняем фон
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.stepanida_corridor);
@@ -1184,7 +1183,7 @@ public class SecondDay extends AppCompatActivity {
 
     public void nextPhrase_Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1(View view) {
         // Проверка на то, что Степанида и Евлампий поссорились или нет
-        if(PlayerData.stepanidaAndEvlampiyFight) {
+        if (PlayerData.stepanidaAndEvlampiyFight) {
             // Меняем фон
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
@@ -1244,8 +1243,7 @@ public class SecondDay extends AppCompatActivity {
                     });
                 }
             });
-        }
-        else {
+        } else {
             // Меняем фон
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.stepanida_corridor);
@@ -1426,8 +1424,7 @@ public class SecondDay extends AppCompatActivity {
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
             HelperClass.animBackground(relativeLayout, bg1, bg2);
-        }
-        else {
+        } else {
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.stepanida_corridor);
             @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
             HelperClass.animBackground(relativeLayout, bg1, bg2);
