@@ -1394,7 +1394,73 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase_Day2Class231Button(View view) {
-        Toast.makeText(this, "Здесь пойдет фраза day2_class23_2", Toast.LENGTH_SHORT).show();
+        // Меняем фон
+        if (PlayerData.stepanidaAndEvlampiyFight) {
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.evgey_canteen);
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
+        }
+        else {
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.stepanida_corridor);
+            @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.class_1);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
+        }
+
+
+        // Убираем кнопочку
+        Day2Class231Button.setEnabled(false);
+        Day2Class231Button.startAnimation(anim_button_out_right);
+
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Day2Class231Button.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        // Очистка текста
+        mainTV.setText("");
+
+        // ------------ Эффект печати для day2_class23_1 ------------
+        day2_class23_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_1, 60);
+        day2_class23_1_effect.animateText();
+        // ------------ Эффект печати для day2_class23_1 ------------
+
+        day2_class23_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                // Кнопочка приезжает
+                Day2Class232Button.setVisibility(View.VISIBLE);
+                Day2Class232Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day2Class232Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
     }
 
     public void nextPhrase_Day2Class231AfterStepanida(View view) {
