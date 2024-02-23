@@ -843,9 +843,9 @@ public class SecondDay extends AppCompatActivity {
     public void nextPhrase_Day2CanteenSosiska1(View view) {
         // Кнопочка уезжает
         Day2CanteenSosiska2Button.setEnabled(false);
-        Day2CanteenSosiska2Button.startAnimation(anim_button_out_left);
+        Day2CanteenSosiska2Button.startAnimation(anim_button_out_right);
 
-        anim_button_out_left.setAnimationListener(new Animation.AnimationListener() {
+        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -895,11 +895,16 @@ public class SecondDay extends AppCompatActivity {
             }
         });
     }
+
+    public void nextPhrase_Day2CanteenSosiska2(View view) {
+        
+    }
     // ------------------------------------ выбор в столовой ------------------------------------
 
     public void nextPhrase_Day2CanteenBaget(View view) {
         Toast.makeText(this, "Здесь начинается сцена второй пары", Toast.LENGTH_SHORT).show();
     }
+
 
 
 }
