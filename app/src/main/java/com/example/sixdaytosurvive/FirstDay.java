@@ -1,6 +1,7 @@
 package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -236,8 +237,8 @@ public class FirstDay extends AppCompatActivity {
             @Override
             public void onAnimationEnd() {
                 // Меняем фон при завершении анимации
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bedroom);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
 
                 // Очистка поля текста
@@ -362,8 +363,8 @@ public class FirstDay extends AppCompatActivity {
                 nextButton_2.setVisibility(View.GONE);
 
                 // Меняем фон при завершении анимации
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -487,8 +488,8 @@ public class FirstDay extends AppCompatActivity {
                 // По завершении анимации прячем кнопку
                 nextButton_4.setVisibility(View.GONE);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.kastryuleva_class);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dirov_dorridor);
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_dorridor);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -668,14 +669,14 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_7.setVisibility(View.GONE);
-                if(PlayerData.jacket){
-                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
-                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                if (PlayerData.jacket) {
+                    Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
+                    Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
                     HelperClass.animBackground(relativeLayout, bg1, bg2);
 
-                }else{
-                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dirov_dorridor);
-                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                } else {
+                    Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_dorridor);
+                    Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
                     HelperClass.animBackground(relativeLayout, bg1, bg2);
 
                 }
@@ -917,8 +918,9 @@ public class FirstDay extends AppCompatActivity {
                 // По завершении анимации прячем кнопку
                 nextButton_10.setVisibility(View.GONE);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.kastryuleva_class);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dirov_canteen);
+                // Смена фона
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_canteen);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -1163,8 +1165,10 @@ public class FirstDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_12.setVisibility(View.GONE);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dirov_canteen);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.lososeva_class);
+
+                // Смена фона
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_canteen);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -1227,8 +1231,9 @@ public class FirstDay extends AppCompatActivity {
                 // По завершении анимации прячем кнопку
                 nextButton_13.setVisibility(View.GONE);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.lososeva_class);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
+                // Смена фона
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -1239,7 +1244,7 @@ public class FirstDay extends AppCompatActivity {
         });
 
         // Если куртка в гардеробе - ждем
-        if (PlayerData.jacket == false) {
+        if (!PlayerData.jacket) {
             PlayerData.oladushkinTest = true;
 
             // Очистка поля текста

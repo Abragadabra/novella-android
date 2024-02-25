@@ -1,6 +1,7 @@
 package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -198,8 +199,8 @@ public class ThirdDay extends AppCompatActivity {
                 nextButton.setVisibility(View.GONE);
 
                 // Меняем фон при завершении анимации
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.bedroom);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.lososeva_class);
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bedroom);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -319,9 +320,10 @@ public class ThirdDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_3.setVisibility(View.GONE);
+
                 // Меняем фон при завершении анимации
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.lososeva_class);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.dushnya_class);
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -560,8 +562,9 @@ public class ThirdDay extends AppCompatActivity {
                 // По завершении анимации прячем кнопку
                 nextButton_7.setVisibility(View.GONE);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.dushnya_class);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.kastryuleva_class);
+                // Смена фона
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -682,8 +685,9 @@ public class ThirdDay extends AppCompatActivity {
                 // По завершении анимации прячем кнопку
                 nextButton_9.setVisibility(View.GONE);
 
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.kastryuleva_class);
-                @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.garderob);
+                // Смена фона
+                Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+                Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
                 HelperClass.animBackground(relativeLayout, bg1, bg2);
             }
 
@@ -745,9 +749,10 @@ public class ThirdDay extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 // По завершении анимации прячем кнопку
                 nextButton_10.setVisibility(View.GONE);
+
                 if (PlayerData.loveLevel > 0) {
-                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg1 = getResources().getDrawable(R.drawable.garderob);
-                    @SuppressLint("UseCompatLoadingForDrawables") Drawable bg2 = getResources().getDrawable(R.drawable.home_computer);
+                    Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
+                    Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.home_computer);
                     HelperClass.animBackground(relativeLayout, bg1, bg2);
                 }
 
