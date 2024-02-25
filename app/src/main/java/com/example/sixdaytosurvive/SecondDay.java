@@ -1063,7 +1063,7 @@ public class SecondDay extends AppCompatActivity {
         if (PlayerData.stepanidaAndEvlampiyFight) {
             // Меняем фон
             Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.evgey_canteen);
-            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.class_1);
+            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_evlampiy_corridor);
             HelperClass.animBackground(relativeLayout, bg1, bg2);
 
             // Убираем кнопочку
@@ -1188,7 +1188,7 @@ public class SecondDay extends AppCompatActivity {
         if (PlayerData.stepanidaAndEvlampiyFight) {
             // Меняем фон
             Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.evgey_canteen);
-            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.class_1);
+            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_evlampiy_corridor);
             HelperClass.animBackground(relativeLayout, bg1, bg2);
 
             // Убираем кнопочку
@@ -1423,7 +1423,7 @@ public class SecondDay extends AppCompatActivity {
     public void nextPhrase_Day2Class231Button(View view) {
         // Меняем фон
         if (PlayerData.stepanidaAndEvlampiyFight) {
-            Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.evgey_canteen);
+            Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_evlampiy_corridor);
             Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.class_1);
             HelperClass.animBackground(relativeLayout, bg1, bg2);
         } else {
