@@ -10,8 +10,8 @@ android {
         applicationId = "com.example.sixdaytosurvive"
         minSdk = 26
         targetSdk = 34
-        versionCode = 3
-        versionName = "v0.5-b3"
+        versionCode = 4
+        versionName = "v0.5-b4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
