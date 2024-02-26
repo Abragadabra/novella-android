@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.TextView;
 
 public class Disclaimer extends AppCompatActivity {
+
+    TextView mainTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,9 @@ public class Disclaimer extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        mainTV = findViewById(R.id.disclaimer_text);
+        mainTV.setMovementMethod(new ScrollingMovementMethod());
     }
 
     public void openMainMenu(View view) {
