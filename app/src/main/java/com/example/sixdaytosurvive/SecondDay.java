@@ -393,67 +393,15 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase_Day2SsoraTrue3(View view) {
-        Day2SsoraTrue3Button.setEnabled(false);
-        Day2SsoraTrue3Button.startAnimation(anim_button_out_right);
-
-        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                // Вырубаем кнопку
-                Day2SsoraTrue3Button.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
-        // Очистка текста
-        mainTV.setText("");
-
-        // --- Эффект для печати day2_stepanida_evlampiy_ssora_true_4 ---
+        // Инициализация эффекта печати
         day2_stepanida_evlampiy_ssora_true_4_effect =
                 new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_4, 60);
-        day2_stepanida_evlampiy_ssora_true_4_effect.animateText();
-        // --- Эффект для печати day2_stepanida_evlampiy_ssora_true_3 ---
 
-        // --- Событие на окончание анимации текста ---
-        day2_stepanida_evlampiy_ssora_true_4_effect.setListener(new TypewriterListener() {
-            @Override
-            public void onAnimationEnd() {
-                // Включаем кнопку
-                Day2SsoraTrue4Button.setVisibility(View.VISIBLE);
+        // Добавление фразы
+        HelperClass.addPhrase(Day2SsoraTrue3Button, Day2SsoraTrue4Button,
+                day2_stepanida_evlampiy_ssora_true_4_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
 
-                // Включаем анимацию
-                Day2SsoraTrue4Button.startAnimation(anim_button_in_right);
-
-                // По окончанию анимации врубаем кнопку
-                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        // Кнопка ВКЛ
-                        Day2SsoraTrue4Button.setEnabled(true);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-            }
-        });
-        // --- Событие на окончание анимации текста ---
     }
     // ----------- Развитие ветки с ссорой в коридоре -----------
 
@@ -532,65 +480,17 @@ public class SecondDay extends AppCompatActivity {
     // ----------- OnClick на выбор за уход на пару без мира -----------
 
     public void nextPhrase_Day2SsoraTrue4(View view) {
-        Day2SsoraTrue4Button.setEnabled(false);
-        Day2SsoraTrue4Button.startAnimation(anim_button_out_right);
+        // Инициализация эффекта печати
+        day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
 
-        anim_button_out_right.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
+        // Добавление фразы
+        HelperClass.addPhrase(Day2SsoraTrue4Button, Day2Class1_1Button,
+                day2_class1_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
 
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                Day2SsoraTrue4Button.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
-        // Очистка текста
-        mainTV.setText("");
-
-        // Смена фона
         Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_evlampiy_corridor);
         Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
         HelperClass.animBackground(relativeLayout, bg1, bg2);
-
-        // ---- Анимация текста day2_class1_1 ----
-        day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
-        day2_class1_1_effect.animateText();
-        // ---- Анимация текста day2_class1_1 ----
-
-        day2_class1_1_effect.setListener(new TypewriterListener() {
-            @Override
-            public void onAnimationEnd() {
-                // Появление кнопки
-                Day2Class1_1Button.setVisibility(View.VISIBLE);
-                Day2Class1_1Button.startAnimation(anim_button_in_right);
-
-                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        // По окончанию анимации включаем кнопку
-                        Day2Class1_1Button.setEnabled(true);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-            }
-        });
     }
 
     public void nextPhrase_Day2Class1_1(View view) {
