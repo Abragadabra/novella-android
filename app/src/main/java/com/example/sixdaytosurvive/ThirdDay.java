@@ -3,6 +3,7 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -1121,8 +1122,17 @@ public class ThirdDay extends AppCompatActivity {
         setDay4();
     }
 
-    // СМЕНА ДНЯ (на данный момент этого дня нет, поэтому игра завершится)
     public void setDay4() {
-        Toast.makeText(this, "Тупик! Четвёрга пока нет!!!", Toast.LENGTH_SHORT).show();
+        // Новый intent для открытия главного меню
+        Intent intent = new Intent(ThirdDay.this, SplashScreenThursday.class);
+
+        // Открываем новое активити
+        ThirdDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        ThirdDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
