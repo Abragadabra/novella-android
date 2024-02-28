@@ -246,8 +246,23 @@ public class FourthDay extends AppCompatActivity {
     }
 
     public void openWindow(View view) {
+        PlayerData.windowOpen = true;
+        // Инициализация эффекта печати
+        day4_class_7_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_7, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class4Button,Day4Class4Button, Day4Class5Button,
+                day4_class_5_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void closeWindow(View view) {
+        // Инициализация эффекта печати
+        day4_class_7_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_5, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class4Button,Day4Class4Button, Day4Class5Button,
+                day4_class_5_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 }
