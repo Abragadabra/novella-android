@@ -162,6 +162,12 @@ public class FourthDay extends AppCompatActivity {
         });
     }
 
+    // Скип всех анимаций
+    public void skipAnimationDay4(View view) {
+        HelperClass.stopAnimation(day4_home_1_effect);
+        HelperClass.stopAnimation(day4_class_1_effect);
+    }
+
     public void nextPhrase_Day4Home1(View view) {
         // Инициализация эффекта печати
         day4_class_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_1, 60);
@@ -171,4 +177,6 @@ public class FourthDay extends AppCompatActivity {
                 day4_class_1_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
     }
+
+
 }
