@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fourth_day_layout"
+    android:id="@+id/second_day_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bedroom">
@@ -15,7 +15,7 @@
     <!--        android:src="@drawable/pause"/>-->
 
     <TextView
-        android:id="@+id/first_day_text"
+        android:id="@+id/fourth_day_TV"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:layout_alignParentBottom="true"
@@ -24,43 +24,42 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/mega_round_text"
         android:fontFamily="@font/ubuntu_bold"
-        android:onClick="skipAnimation"
+        android:onClick="skipAnimationDay2"
         android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="25sp" />
 
     <!--   Кнопка 1     -->
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/next_button_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase"
+        android:onClick="nextPhrase_Day2Monolog"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
         android:visibility="invisible"
         app:cornerRadius="14dp" />
-
     <!--   Кнопка 2     -->
     <Button
-        android:id="@+id/next_button_2"
+        android:id="@+id/next_button_2_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_2"
+        android:onClick="nextPhrase_Day2SsoraTrue1"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -68,17 +67,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_3"
+        android:id="@+id/next_button_3_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_3"
+        android:onClick="nextPhrase_Day2SsoraTrue2"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -86,17 +85,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_4"
+        android:id="@+id/next_button_4_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_4"
+        android:onClick="nextPhrase_Day2SsoraTrue3"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -104,17 +103,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_5"
+        android:id="@+id/next_button_5_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_5"
+        android:onClick="nextPhrase_Day2SsoraTrue4"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -122,17 +121,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_6"
+        android:id="@+id/next_button_6_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_6"
+        android:onClick="nextPhrase_Day2Class1_1"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -140,17 +139,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_7"
+        android:id="@+id/next_button_7_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_7"
+        android:onClick="nextPhrase_Day2CanteenBaget"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -158,17 +157,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_8"
+        android:id="@+id/next_button_8_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_8"
+        android:onClick="nextPhrase_Day2CanteenSosiska1"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -176,17 +175,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_9"
+        android:id="@+id/next_button_9_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_9"
+        android:onClick="nextPhrase_Day2CanteenSosiska2"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -194,17 +193,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_10"
+        android:id="@+id/next_button_10_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_10"
+        android:onClick="nextPhrase_Day2CanteenSosiska3"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -212,17 +211,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_11"
+        android:id="@+id/next_button_11_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_11"
+        android:onClick="nextPhrase_Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -230,17 +229,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_12"
+        android:id="@+id/next_button_12_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_12"
+        android:onClick="nextPhrase_Day2Class2Stepanida1"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -248,17 +247,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_13"
+        android:id="@+id/next_button_13_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_13"
+        android:onClick="nextPhrase_Day2Class231Button"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -266,17 +265,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_14"
+        android:id="@+id/next_button_14_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_14"
+        android:onClick="nextPhrase_Day2Class2Stepanida3"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -284,17 +283,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_15"
+        android:id="@+id/next_button_15_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_15"
+        android:onClick="nextPhrase_Day2Class231AfterStepanida"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -302,17 +301,17 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_16"
+        android:id="@+id/next_button_16_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_16"
+        android:onClick="nextPhrase_Day2Class232"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -320,17 +319,107 @@
         app:cornerRadius="14dp" />
 
     <Button
-        android:id="@+id/next_button_17"
+        android:id="@+id/next_button_17_day4"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignEnd="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#ADFFC5C5"
         android:enabled="false"
         android:fontFamily="@font/ubuntu_bold"
         android:hint="@string/next_text"
-        android:onClick="nextPhrase_17"
+        android:onClick="nextPhrase_Day2Class232"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_18_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Class234"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_19_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Class235"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_20_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Class236"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_21_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Home1"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_22_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignEnd="@id/second_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_OpenDay3"
         android:textColor="@drawable/button_color"
         android:textColorHint="#000000"
         android:textSize="25sp"
@@ -338,11 +427,11 @@
         app:cornerRadius="14dp" />
 
     <LinearLayout
-        android:id="@+id/choice_1"
+        android:id="@+id/choice_1_day4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignStart="@id/first_day_text"
+        android:layout_above="@id/second_day_TV"
+        android:layout_alignStart="@id/fourth_day_TV"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -350,47 +439,45 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/choice_button_1"
+            android:id="@+id/choice_button1_day4"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
+            android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/pass"
-
-            android:onClick="passJacket"
+            android:hint="@string/make_peace"
+            android:onClick="createPeace"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
 
         <Button
-            android:id="@+id/choice_button_2"
+            android:id="@+id/choice_button2_day4"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
-
+            android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/fold"
-            android:onClick="takeJacket"
+            android:hint="@string/walk_past"
+            android:onClick="walkPast"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/choice_2"
+        android:id="@+id/choice_2_day4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/first_day_text"
-        android:layout_alignStart="@id/first_day_text"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignStart="@id/fourth_day_TV"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -398,37 +485,35 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/choice_button_3"
+            android:id="@+id/choice_button3_day4"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
+            android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/passfood"
-
-            android:onClick="passFood"
+            android:hint="@string/baget"
+            android:onClick="getBaget"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
 
         <Button
-            android:id="@+id/choice_button_4"
+            android:id="@+id/choice_button4_day4"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="#ADFFC5C5"
-
+            android:enabled="false"
             android:fontFamily="@font/ubuntu_bold"
-            android:hint="@string/takefood"
-            android:onClick="takeFood"
+            android:hint="@string/sosisa"
+            android:onClick="getSosisa"
             android:textColor="@drawable/button_color"
             android:textColorHint="#000000"
             android:textSize="25sp"
             android:visibility="invisible"
-
             app:cornerRadius="14dp" />
     </LinearLayout>
 
