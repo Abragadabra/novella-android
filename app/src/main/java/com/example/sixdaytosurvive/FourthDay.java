@@ -40,10 +40,10 @@ public class FourthDay extends AppCompatActivity {
 
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
-    // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
-    Button choiceButton1;
-    Button choiceButton2;
-    // ---------- Кнопки для выбора в коридоре при ссоре Степаниды и Евлампия ----------
+    // ---------- Кнопки для выбора в открытия окна ----------
+    Button Day4Class6WindowOpenButton;
+    Button Day4Class6WindowCloseButton;
+    // ---------- Кнопки для выбора в открытия окна ----------
 
     // ---------- Кнопки для выбора в столовой между багетом и сосисой в тесте ----------
     Button choiceButton3;
@@ -121,8 +121,8 @@ public class FourthDay extends AppCompatActivity {
         openDay3Button = findViewById(R.id.next_button_22_day4);
 
         // ---------- Получение кнопок выбора по id ---------
-        choiceButton1 = findViewById(R.id.choice_button1_day4);
-        choiceButton2 = findViewById(R.id.choice_button2_day4);
+        Day4Class6WindowOpenButton = findViewById(R.id.choice_button1_day4);
+        Day4Class6WindowCloseButton = findViewById(R.id.choice_button2_day4);
         // ---------- Получение кнопок выбора по id ---------
 
         // ---------- Получение кнопок выбора по id ---------
@@ -234,5 +234,20 @@ public class FourthDay extends AppCompatActivity {
         HelperClass.addPhrase(Day4Class4Button, Day4Class5Button,
                 day4_class_5_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_Day4Class5(View view) {
+        // Инициализация эффекта печати
+        day4_class_6_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_6, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class5Button, Day4Class6WindowOpenButton, Day4Class6WindowCloseButton,
+                day4_class_6_effect, anim_button_out_right, anim_button_in_left, mainTV);
+    }
+
+    public void openWindow(View view) {
+    }
+
+    public void closeWindow(View view) {
     }
 }

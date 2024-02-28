@@ -80,56 +80,62 @@ public class HelperClass {
         });
     }
 
-//    public static void addPhrase(Button out_button1, Button out_button2, Button in_button1,
-//                                 Button in_button2, TypewriterEffect phrase,
-//                                 Animation in_right, Animation out_right, TextView TV) {
-//        out_button.setEnabled(false);
-//        out_button.startAnimation(out_right);
-//
-//        out_right.setAnimationListener(new Animation.AnimationListener() {
-//            @Override
-//            public void onAnimationStart(Animation animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animation animation) {
-//                out_button.setVisibility(View.GONE);
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animation animation) {
-//
-//            }
-//        });
-//
-//        TV.setText("");
-//
-//        phrase.animateText();
-//
-//        phrase.setListener(new TypewriterListener() {
-//            @Override
-//            public void onAnimationEnd() {
-//                in_button.setVisibility(View.VISIBLE);
-//                in_button.startAnimation(in_right);
-//
-//                in_right.setAnimationListener(new Animation.AnimationListener() {
-//                    @Override
-//                    public void onAnimationStart(Animation animation) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onAnimationEnd(Animation animation) {
-//                        in_button.setEnabled(true);
-//                    }
-//
-//                    @Override
-//                    public void onAnimationRepeat(Animation animation) {
-//
-//                    }
-//                });
-//            }
-//        });
-//    }
+    public static void addPhrase(Button out_button, Button in_button1,
+                                 Button in_button2, TypewriterEffect phrase,
+                                 Animation out_right, Animation in_left,
+                                 TextView TV) {
+
+        out_button.setEnabled(false);
+        out_button.startAnimation(out_right);
+
+        out_right.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                out_button.setVisibility(View.GONE);
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        TV.setText("");
+
+        phrase.animateText();
+
+        phrase.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                in_button1.setVisibility(View.VISIBLE);
+                in_button1.startAnimation(in_left);
+                in_button2.setVisibility(View.VISIBLE);
+                in_button2.startAnimation(in_left);
+
+                in_left.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        in_button1.setEnabled(true);
+                        in_button2.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
 }

@@ -40,4 +40,8 @@
     <string name="baget">Багет</string>
     <string name="sosisa">Сосиса</string>
 
+    <!--  ВЫБОР СОБЫТИЙ 5  -->
+    <string name="openWindow">Открыть окно</string>
+    <string name="closeWindow">Не открывать окно</string>
+
 </resources>
