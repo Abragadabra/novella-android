@@ -1,7 +1,9 @@
 package com.example.sixdaytosurvive;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -188,6 +190,10 @@ public class FourthDay extends AppCompatActivity {
         HelperClass.addPhrase(Day4Home1Button, Day4Class1Button,
                 day4_class_1_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
+
+        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bedroom);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.policarbonat_vatislav_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
     }
 
     public void nextPhrase_Day4Class1(View view) {
