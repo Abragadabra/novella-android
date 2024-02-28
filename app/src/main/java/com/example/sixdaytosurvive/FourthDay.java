@@ -13,8 +13,8 @@ import android.widget.TextView;
 public class FourthDay extends AppCompatActivity {
 
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
-    Button day2MonologNextButton;
-    Button Day2SsoraTrue1Button;
+    Button Day4Home1Button;
+    Button Day4Class1Button;
     Button Day2SsoraTrue2Button;
     Button Day2SsoraTrue3Button;
     Button Day2SsoraTrue4Button;
@@ -55,6 +55,12 @@ public class FourthDay extends AppCompatActivity {
     Animation anim_button_out_left;                 // Анимация выхода кнопки слева
     // ------------------------------ Анимации ------------------------------
 
+    // ------------------------------ Диалоги ------------------------------
+    TypewriterEffect day4_home_1_effect;
+    TypewriterEffect day4_class_1_effect;
+    // ------------------------------ Диалоги ------------------------------
+
+
     // Основной Layout в вёрстке
     RelativeLayout relativeLayout;
 
@@ -78,8 +84,8 @@ public class FourthDay extends AppCompatActivity {
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
 
-        day2MonologNextButton = findViewById(R.id.next_button_day4);
-        Day2SsoraTrue1Button = findViewById(R.id.next_button_2_day4);
+        Day4Home1Button = findViewById(R.id.next_button_day4);
+        Day4Class1Button = findViewById(R.id.next_button_2_day4);
         Day2SsoraTrue2Button = findViewById(R.id.next_button_3_day4);
         Day2SsoraTrue3Button = findViewById(R.id.next_button_4_day4);
         Day2SsoraTrue4Button = findViewById(R.id.next_button_5_day4);
@@ -126,5 +132,43 @@ public class FourthDay extends AppCompatActivity {
 
         // Получение layout
         relativeLayout = findViewById(R.id.fourth_day_layout);
+
+        day4_home_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_home_1, 60);
+        day4_home_1_effect.animateText();
+
+        day4_home_1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                Day4Home1Button.setVisibility(View.VISIBLE);
+                Day4Home1Button.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Day4Home1Button.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void nextPhrase_Day4Home1(View view) {
+        // Инициализация эффекта печати
+        day4_class_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_1, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Home1Button, Day4Class1Button,
+                day4_class_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 }
