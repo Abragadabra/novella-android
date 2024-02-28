@@ -296,8 +296,6 @@ public class SecondDay extends AppCompatActivity {
 
     // ----------- OnClick на выбор за мир между Степанидой и Евлампием -----------
     public void createPeace(View view) {
-        // Добавляем к переменной любви +1
-        PlayerData.loveLevel++;
         PlayerData.stepanidaAndEvlampiyFight = true;
 
         // Отключаем кнопки
@@ -409,6 +407,9 @@ public class SecondDay extends AppCompatActivity {
     public void walkPast(View view) {
         // Их битва не увенчалась успехом, они поссорились
         PlayerData.stepanidaAndEvlampiyFight = false;
+
+        // Добавляем к переменной любви +1
+        PlayerData.loveLevel++;
 
         // Отключаем кнопки
         choiceButton1.setEnabled(false);
