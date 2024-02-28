@@ -16,14 +16,14 @@ public class FourthDay extends AppCompatActivity {
     Button Day4Home1Button;
     Button Day4Class1Button;
     Button Day4Class2Button;
-    Button Day2SsoraTrue3Button;
-    Button Day2SsoraTrue4Button;
-    Button Day2Class1_1Button;
-    Button Day2Class2Stepanida1Button;
-    Button Day2CanteenSosiska2Button;
-    Button Day2CanteenSosiska3Button;
-    Button Day2CanteenSosiska4Button;
-    Button Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button;
+    Button Day4Class3Button;
+    Button Day4Class4Button;
+    Button Day4Class5Button;
+    Button Day4Class6Button;
+    Button Day4Class7Button;
+    Button Day4Class8Button;
+    Button Day4Class9Button;
+    Button Day4Class10Button;
     Button Day2Class2Stepanida2Button;
     Button Day2Class231Button;
     Button Day2Class2Stepanida3Button;
@@ -59,6 +59,15 @@ public class FourthDay extends AppCompatActivity {
     TypewriterEffect day4_home_1_effect;
     TypewriterEffect day4_class_1_effect;
     TypewriterEffect day4_class_2_effect;
+    TypewriterEffect day4_class_3_effect;
+    TypewriterEffect day4_class_4_effect;
+    TypewriterEffect day4_class_5_effect;
+    TypewriterEffect day4_class_6_effect;
+    TypewriterEffect day4_class_7_effect;
+    TypewriterEffect day4_class_8_effect;
+    TypewriterEffect day4_class_9_effect;
+    TypewriterEffect day4_class_10_effect;
+
 
     // ------------------------------ Диалоги ------------------------------
 
@@ -89,14 +98,14 @@ public class FourthDay extends AppCompatActivity {
         Day4Home1Button = findViewById(R.id.next_button_day4);
         Day4Class1Button = findViewById(R.id.next_button_2_day4);
         Day4Class2Button = findViewById(R.id.next_button_3_day4);
-        Day2SsoraTrue3Button = findViewById(R.id.next_button_4_day4);
-        Day2SsoraTrue4Button = findViewById(R.id.next_button_5_day4);
-        Day2Class1_1Button = findViewById(R.id.next_button_6_day4);
-        Day2Class2Stepanida1Button = findViewById(R.id.next_button_7_day4);
-        Day2CanteenSosiska2Button = findViewById(R.id.next_button_8_day4);
-        Day2CanteenSosiska3Button = findViewById(R.id.next_button_9_day4);
-        Day2CanteenSosiska4Button = findViewById(R.id.next_button_10_day4);
-        Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button = findViewById(R.id.next_button_11_day4);
+        Day4Class3Button = findViewById(R.id.next_button_4_day4);
+        Day4Class4Button = findViewById(R.id.next_button_5_day4);
+        Day4Class5Button = findViewById(R.id.next_button_6_day4);
+        Day4Class6Button = findViewById(R.id.next_button_7_day4);
+        Day4Class7Button = findViewById(R.id.next_button_8_day4);
+        Day4Class8Button = findViewById(R.id.next_button_9_day4);
+        Day4Class9Button = findViewById(R.id.next_button_10_day4);
+        Day4Class10Button = findViewById(R.id.next_button_11_day4);
         Day2Class2Stepanida2Button = findViewById(R.id.next_button_12_day4);
         Day2Class231Button = findViewById(R.id.next_button_13_day4);
         Day2Class2Stepanida3Button = findViewById(R.id.next_button_14_day4);
@@ -192,6 +201,32 @@ public class FourthDay extends AppCompatActivity {
     }
 
     public void nextPhrase_Day4Class2(View view) {
-        
+        // Инициализация эффекта печати
+        day4_class_3_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_3, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class2Button, Day4Class3Button,
+                day4_class_3_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_Day4Class3(View view) {
+        // Инициализация эффекта печати
+        day4_class_4_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_4, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class3Button, Day4Class4Button,
+                day4_class_4_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_Day4Class4(View view) {
+        // Инициализация эффекта печати
+        day4_class_5_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_5, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class4Button, Day4Class5Button,
+                day4_class_5_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 }
