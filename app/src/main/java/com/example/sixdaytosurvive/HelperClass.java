@@ -141,16 +141,16 @@ public class HelperClass {
 
     public static void addPhrase(Button in_button1, Button test_costil, Button out_button1,
                                  Button out_button2, TypewriterEffect phrase,
-                                 Animation out_right, Animation in_left,
+                                 Animation out_left, Animation in_right,
                                  TextView TV) {
 
         out_button1.setEnabled(false);
-        out_button1.startAnimation(out_right);
+        out_button1.startAnimation(out_left);
 
         out_button2.setEnabled(false);
-        out_button2.startAnimation(out_right);
+        out_button2.startAnimation(out_left);
 
-        out_right.setAnimationListener(new Animation.AnimationListener() {
+        out_left.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -175,9 +175,9 @@ public class HelperClass {
             @Override
             public void onAnimationEnd() {
                 in_button1.setVisibility(View.VISIBLE);
-                in_button1.startAnimation(in_left);
+                in_button1.startAnimation(in_right);
 
-                in_left.setAnimationListener(new Animation.AnimationListener() {
+                in_right.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
                     }

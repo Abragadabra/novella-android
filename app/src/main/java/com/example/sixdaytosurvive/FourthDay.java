@@ -180,6 +180,13 @@ public class FourthDay extends AppCompatActivity {
         HelperClass.stopAnimation(day4_home_1_effect);
         HelperClass.stopAnimation(day4_class_1_effect);
         HelperClass.stopAnimation(day4_class_2_effect);
+        HelperClass.stopAnimation(day4_class_3_effect);
+        HelperClass.stopAnimation(day4_class_4_effect);
+        HelperClass.stopAnimation(day4_class_5_effect);
+        HelperClass.stopAnimation(day4_class_6_effect);
+        HelperClass.stopAnimation(day4_class_7_effect);
+
+
     }
 
     public void nextPhrase_Day4Home1(View view) {
@@ -251,18 +258,28 @@ public class FourthDay extends AppCompatActivity {
         day4_class_7_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_7, 60);
 
         // Добавление фразы
-        HelperClass.addPhrase(Day4Class4Button,Day4Class4Button, Day4Class5Button,
-                day4_class_5_effect, anim_button_in_right,
-                anim_button_out_right, mainTV);
+        HelperClass.addPhrase(Day4Class6Button, Day4Class6Button, Day4Class6WindowOpenButton, Day4Class6WindowCloseButton,
+                day4_class_7_effect, anim_button_out_left,
+                anim_button_in_right, mainTV);
     }
 
     public void closeWindow(View view) {
         // Инициализация эффекта печати
-        day4_class_7_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_5, 60);
+        day4_class_7_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_7, 60);
 
         // Добавление фразы
-        HelperClass.addPhrase(Day4Class4Button,Day4Class4Button, Day4Class5Button,
-                day4_class_5_effect, anim_button_in_right,
-                anim_button_out_right, mainTV);
+        HelperClass.addPhrase(Day4Class6Button, Day4Class6Button, Day4Class6WindowOpenButton, Day4Class6WindowCloseButton,
+                day4_class_7_effect, anim_button_out_left,
+                anim_button_in_right, mainTV);
+    }
+
+
+    public void nextPhrase_Day4Class6(View view) {
+//        // Инициализация эффекта печати
+//        day4_class_6_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_6, 60);
+//
+//        // Добавление фразы
+//        HelperClass.addPhrase(Day4Class5Button, Day4Class6WindowOpenButton, Day4Class6WindowCloseButton,
+//                day4_class_6_effect, anim_button_out_right, anim_button_in_left, mainTV);
     }
 }
