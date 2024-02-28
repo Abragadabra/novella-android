@@ -15,7 +15,7 @@ public class FourthDay extends AppCompatActivity {
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
     Button Day4Home1Button;
     Button Day4Class1Button;
-    Button Day2SsoraTrue2Button;
+    Button Day4Class2Button;
     Button Day2SsoraTrue3Button;
     Button Day2SsoraTrue4Button;
     Button Day2Class1_1Button;
@@ -58,6 +58,8 @@ public class FourthDay extends AppCompatActivity {
     // ------------------------------ Диалоги ------------------------------
     TypewriterEffect day4_home_1_effect;
     TypewriterEffect day4_class_1_effect;
+    TypewriterEffect day4_class_2_effect;
+
     // ------------------------------ Диалоги ------------------------------
 
 
@@ -86,7 +88,7 @@ public class FourthDay extends AppCompatActivity {
 
         Day4Home1Button = findViewById(R.id.next_button_day4);
         Day4Class1Button = findViewById(R.id.next_button_2_day4);
-        Day2SsoraTrue2Button = findViewById(R.id.next_button_3_day4);
+        Day4Class2Button = findViewById(R.id.next_button_3_day4);
         Day2SsoraTrue3Button = findViewById(R.id.next_button_4_day4);
         Day2SsoraTrue4Button = findViewById(R.id.next_button_5_day4);
         Day2Class1_1Button = findViewById(R.id.next_button_6_day4);
@@ -166,6 +168,7 @@ public class FourthDay extends AppCompatActivity {
     public void skipAnimationDay4(View view) {
         HelperClass.stopAnimation(day4_home_1_effect);
         HelperClass.stopAnimation(day4_class_1_effect);
+        HelperClass.stopAnimation(day4_class_2_effect);
     }
 
     public void nextPhrase_Day4Home1(View view) {
@@ -178,5 +181,17 @@ public class FourthDay extends AppCompatActivity {
                 anim_button_out_right, mainTV);
     }
 
+    public void nextPhrase_Day4Class1(View view) {
+        // Инициализация эффекта печати
+        day4_class_2_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_2, 60);
 
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class1Button, Day4Class2Button,
+                day4_class_2_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_Day4Class2(View view) {
+        
+    }
 }
