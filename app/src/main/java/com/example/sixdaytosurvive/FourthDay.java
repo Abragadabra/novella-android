@@ -185,8 +185,8 @@ public class FourthDay extends AppCompatActivity {
         HelperClass.stopAnimation(day4_class_5_effect);
         HelperClass.stopAnimation(day4_class_6_effect);
         HelperClass.stopAnimation(day4_class_7_effect);
-
-
+        HelperClass.stopAnimation(day4_class_8_effect);
+        HelperClass.stopAnimation(day4_class_9_effect);
     }
 
     public void nextPhrase_Day4Home1(View view) {
@@ -275,11 +275,22 @@ public class FourthDay extends AppCompatActivity {
 
 
     public void nextPhrase_Day4Class6(View view) {
-//        // Инициализация эффекта печати
-//        day4_class_6_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_6, 60);
-//
-//        // Добавление фразы
-//        HelperClass.addPhrase(Day4Class5Button, Day4Class6WindowOpenButton, Day4Class6WindowCloseButton,
-//                day4_class_6_effect, anim_button_out_right, anim_button_in_left, mainTV);
+        // Инициализация эффекта печати
+        day4_class_8_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_8, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class6Button, Day4Class7Button,
+                day4_class_8_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_Day4Class8(View view) {
+        // Инициализация эффекта печати
+        day4_class_9_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_9, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day4Class7Button, Day4Class8Button,
+                day4_class_9_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 }
