@@ -29,7 +29,7 @@ public class FourthDay extends AppCompatActivity {
     Button Day4Class10Button;
     Button Day4Class11Button;
     Button Day4Class12Button;
-    Button Day2Class2Stepanida3Button;
+    Button Day4Class13Button;
     Button Day2Class231AfterStepanidaButton;
     Button Day2Class232Button;
     Button Day2Class233Button;
@@ -118,7 +118,7 @@ public class FourthDay extends AppCompatActivity {
         Day4Class10Button = findViewById(R.id.next_button_11_day4);
         Day4Class11Button = findViewById(R.id.next_button_12_day4);
         Day4Class12Button = findViewById(R.id.next_button_13_day4);
-        Day2Class2Stepanida3Button = findViewById(R.id.next_button_14_day4);
+        Day4Class13Button = findViewById(R.id.next_button_14_day4);
         Day2Class231AfterStepanidaButton = findViewById(R.id.next_button_15_day4);
         Day2Class232Button = findViewById(R.id.next_button_16_day4);
         Day2Class233Button = findViewById(R.id.next_button_17_day4);
@@ -269,6 +269,7 @@ public class FourthDay extends AppCompatActivity {
                 day4_class_6_effect, anim_button_out_right, anim_button_in_left, mainTV);
     }
 
+    // Кнопки на открытие окна
     public void openWindow(View view) {
         PlayerData.windowOpen = true;
         // Инициализация эффекта печати
@@ -281,6 +282,7 @@ public class FourthDay extends AppCompatActivity {
     }
 
     public void closeWindow(View view) {
+        PlayerData.windowOpen = false;
         // Инициализация эффекта печати
         day4_class_7_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_7, 60);
 
@@ -289,7 +291,7 @@ public class FourthDay extends AppCompatActivity {
                 day4_class_7_effect, anim_button_out_left,
                 anim_button_in_right, mainTV);
     }
-
+    // Кнопки на открытие окна
 
     public void nextPhrase_Day4Class6(View view) {
         // Инициализация эффекта печати
@@ -329,7 +331,7 @@ public class FourthDay extends AppCompatActivity {
                 day4_class_stepanida_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_stepanida_1, 60);
 
                 // Добавление кнопки на поход домой со Степанидой
-                HelperClass.addPhrase(Day4Class10Button, Day4Class11Button,
+                HelperClass.addPhrase(Day4Class9Button, Day4Class13Button,
                         day4_class_window_is_closed_1_effect, anim_button_in_right,
                         anim_button_out_right, mainTV);
             } else {
@@ -337,7 +339,7 @@ public class FourthDay extends AppCompatActivity {
                 day4_class_window_is_closed_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_ilyaz_1, 60);
 
                 // Добавление фразы
-                HelperClass.addPhrase(Day4Class9Button, Day4Class10Button,
+                HelperClass.addPhrase(Day4Class9Button, Day4Class11Button,
                         day4_class_window_is_closed_1_effect, anim_button_in_right,
                         anim_button_out_right, mainTV);
             }
@@ -346,16 +348,29 @@ public class FourthDay extends AppCompatActivity {
             // Идём блевать
             day4_class_window_is_closed_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_window_is_closed_1, 60);
 
-            // Добавление фразы
-            HelperClass.addPhrase(Day4Class10Button, Day4Class11Button,
-                    day4_class_window_is_closed_1_effect, anim_button_in_right,
-                    anim_button_out_right, mainTV);
+            if (PlayerData.loveLevel > 0) {
+                // Если окошко открыто, то идём домой с Вумен
+                day4_class_stepanida_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_stepanida_1, 60);
+
+                // Добавление кнопки на поход домой со Степанидой
+                HelperClass.addPhrase(Day4Class9Button, Day4Class13Button,
+                        day4_class_window_is_closed_1_effect, anim_button_in_right,
+                        anim_button_out_right, mainTV);
+            } else {
+                // Если окошко открыто, то идём домой с Ильязомы
+                day4_class_window_is_closed_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_ilyaz_1, 60);
+
+                // Добавление фразы
+                HelperClass.addPhrase(Day4Class9Button, Day4Class11Button,
+                        day4_class_window_is_closed_1_effect, anim_button_in_right,
+                        anim_button_out_right, mainTV);
+            }
         }
 
 
     }
 
-    // Блюём и пришла степуха
+    // Блюём и пришла степуха (после этого кнопка с условием на Ильяза или Степаниду)
     public void nextPhrase_Day4Class11(View view) {
         // Идём блевать
         day4_class_window_is_closed_2_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_window_is_closed_2, 60);
@@ -366,13 +381,29 @@ public class FourthDay extends AppCompatActivity {
                 anim_button_out_right, mainTV);
     }
 
+
+    // Продолжение разговора с Ильязом и после этого появляется кнопка смены дня
     public void nextPhrase_Day4Class12(View view) {
         // Идём блевать
-        day4_class_window_is_closed_2_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_stepanida_2, 60);
+        day4_class_window_is_closed_2_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_ilyaz_2, 60);
 
         // Добавление фразы
         HelperClass.addPhrase(Day4Class11Button, Day4Class12Button,
                 day4_class_window_is_closed_2_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
     }
+
+
+    // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
+    public void nextPhrase_Day4Class13(View view) {
+
+    }
+    // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
+
+
+    // Продолжаем разговор со Степанидой
+    public void nextPhrase_Day4Class14(View view) {
+
+    }
+
 }
