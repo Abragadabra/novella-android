@@ -301,6 +301,10 @@ public class FourthDay extends AppCompatActivity {
         HelperClass.addPhrase(Day4Class6Button, Day4Class7Button,
                 day4_class_8_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
+
+        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.policarbonat_vatislav_class);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ilyaz_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
     }
 
     public void nextPhrase_Day4Class8(View view) {
@@ -327,13 +331,16 @@ public class FourthDay extends AppCompatActivity {
     public void nextPhrase_Day4Class10(View view) {
         // Проверка на душность, если душно, то пора блевать
         if (PlayerData.windowOpen) {
+            Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ilyaz_class);
+            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.home_computer);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
             if (PlayerData.loveLevel > 0) {
                 // Если окошко открыто, то идём домой с Вумен
                 day4_class_stepanida_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_stepanida_1, 60);
 
                 // Добавление кнопки на поход домой со Степанидой
                 HelperClass.addPhrase(Day4Class9Button, Day4Class14Button,
-                        day4_class_window_is_closed_1_effect, anim_button_in_right,
+                        day4_class_stepanida_1_effect, anim_button_in_right,
                         anim_button_out_right, mainTV);
             } else {
                 // Если окошко открыто, то идём домой с Ильязомы
@@ -380,15 +387,14 @@ public class FourthDay extends AppCompatActivity {
     }
 
 
-    // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
-    public void nextPhrase_Day4Class13(View view) {
 
-    }
-    // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
 
 
     // Если поблевали
     public void nextPhrase_Day4Class14(View view) {
+        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ilyaz_class);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.home_computer);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
         if (PlayerData.loveLevel > 0) {
             day4_class_stepanida_1_effect = new TypewriterEffect(mainTV, Dialogues.day4_class_stepanida_1, 60);
 
@@ -427,4 +433,12 @@ public class FourthDay extends AppCompatActivity {
                 day4_class_stepanida_3_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
     }
+
+
+
+    // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
+    public void nextPhrase_Day4Class13(View view) {
+
+    }
+    // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
 }
