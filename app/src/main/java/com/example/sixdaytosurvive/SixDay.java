@@ -152,10 +152,10 @@ public class SixDay extends AppCompatActivity {
         // ---------------------------- Получение анимации по id (левая часть) ----------------------------
 
         // Получение по id основного TextView
-        mainTV = findViewById(R.id.fourth_day_TV);
+        mainTV = findViewById(R.id.six_day_TV);
 
         // Получение layout
-        relativeLayout = findViewById(R.id.fourth_day_layout);
+        relativeLayout = findViewById(R.id.six_day_layout);
 
         day6_home_1_effect = new TypewriterEffect(mainTV, Dialogues.day6_home, 60);
         day6_home_1_effect.animateText();
@@ -208,11 +208,11 @@ public class SixDay extends AppCompatActivity {
 
     public void nextPhrase_Day6_class1(View view) {
         // Инициализация эффекта печати
-        day6_class_1_effect = new TypewriterEffect(mainTV, Dialogues.day6_class_1, 60);
+        day6_class_2_effect = new TypewriterEffect(mainTV, Dialogues.day6_class_1, 60);
 
         // Добавление фразы
         HelperClass.addPhrase(Day6Home1Button, Day6Class1Button,
-                day6_class_1_effect, anim_button_in_right,
+                day6_class_2_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
 
         Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bedroom);
@@ -222,15 +222,30 @@ public class SixDay extends AppCompatActivity {
 
     public void nextPhrase_Day6_class2(View view) {
         // Инициализация эффекта печати
-        day6_class_2_effect = new TypewriterEffect(mainTV, Dialogues.day6_class_2, 60);
+        day6_class_3_effect = new TypewriterEffect(mainTV, Dialogues.day6_class_2, 60);
 
         // Добавление фразы
-        HelperClass.addPhrase(Day6Home1Button, Day6Class1Button,
-                day6_class_1_effect, anim_button_in_right,
+        HelperClass.addPhrase(Day6Class1Button, Day6Class2Button,
+                day6_class_3_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
 
         Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
         Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
         HelperClass.animBackground(relativeLayout, bg1, bg2);
     }
+    public void nextPhrase_Day6_class3(View view) {
+        // Инициализация эффекта печати
+        day6_class_4_effect = new TypewriterEffect(mainTV, Dialogues.day6_class_3_1, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day6Class2Button, Day6Class3Button,
+                day6_class_4_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+
+        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+    }
+
+    
 }

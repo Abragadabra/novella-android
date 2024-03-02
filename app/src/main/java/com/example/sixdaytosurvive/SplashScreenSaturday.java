@@ -19,7 +19,7 @@ public class SplashScreenSaturday extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen_thursday);
+        setContentView(R.layout.activity_splash_screen_saturday);
 
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
