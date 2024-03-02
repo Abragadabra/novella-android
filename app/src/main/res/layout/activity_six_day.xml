@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/six_day_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bedroom">
+
+    <!--  Изображение паузы  -->
+    <!--    <ImageView-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginStart="15dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:src="@drawable/pause"/>-->
+
+    <TextView
+        android:id="@+id/fourth_day_TV"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/mega_round_text"
+        android:fontFamily="@font/ubuntu_bold"
+        android:onClick="skipAnimationDay4"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <!--   Кнопка 1     -->
+    <Button
+        android:id="@+id/next_button_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day6_class1"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+    <!--   Кнопка 2     -->
+    <Button
+        android:id="@+id/next_button_2_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day6_class2"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_3_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class2"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_4_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class3"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_5_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class4"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_6_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class5"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_7_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class6"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_8_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class8"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_9_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class9"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_10_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class10"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_11_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class11"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_12_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class12"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_13_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class13"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_14_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class14"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_15_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class15"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_16_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class16"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_17_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Class232"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_18_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Class234"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_19_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Class235"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_20_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Class236"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_21_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day2Home1"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_22_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignEnd="@id/fourth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_OpenDay3"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <LinearLayout
+        android:id="@+id/choice_1_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignStart="@id/fourth_day_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/choice_button1_day6"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#ADFFC5C5"
+            android:enabled="false"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/openWindow"
+            android:onClick="openWindow"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            app:cornerRadius="14dp" />
+
+        <Button
+            android:id="@+id/choice_button2_day6"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#ADFFC5C5"
+            android:enabled="false"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/closeWindow"
+            android:onClick="closeWindow"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            app:cornerRadius="14dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/choice_2_day6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fourth_day_TV"
+        android:layout_alignStart="@id/fourth_day_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/choice_button3_day6"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#ADFFC5C5"
+            android:enabled="false"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/baget"
+            android:onClick="getBaget"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            app:cornerRadius="14dp" />
+
+        <Button
+            android:id="@+id/choice_button4_day6"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#ADFFC5C5"
+            android:enabled="false"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/sosisa"
+            android:onClick="getSosisa"
+            android:textColor="@drawable/button_color"
+            android:textColorHint="#000000"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            app:cornerRadius="14dp" />
+    </LinearLayout>
+
+</RelativeLayout>
