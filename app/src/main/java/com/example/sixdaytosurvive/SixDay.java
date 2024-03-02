@@ -73,7 +73,7 @@ public class SixDay extends AppCompatActivity {
     TypewriterEffect day6_class_8_effect;
     TypewriterEffect day6_class_9_effect;
     TypewriterEffect day6_class_10_effect;
-    TypewriterEffect day6_class_window_is_closed_1_effect;
+    TypewriterEffect day6_class_11_effect;
     TypewriterEffect day6_class_window_is_closed_2_effect;
     TypewriterEffect day6_class_ilyaz_effect;
     TypewriterEffect day6_class_ilyaz_2_effect;
@@ -197,7 +197,7 @@ public class SixDay extends AppCompatActivity {
         HelperClass.stopAnimation(day6_class_8_effect);
         HelperClass.stopAnimation(day6_class_9_effect);
         HelperClass.stopAnimation(day6_class_10_effect);
-        HelperClass.stopAnimation(day6_class_window_is_closed_1_effect);
+        HelperClass.stopAnimation(day6_class_11_effect);
         HelperClass.stopAnimation(day6_class_window_is_closed_2_effect);
         HelperClass.stopAnimation(day6_class_ilyaz_effect);
         HelperClass.stopAnimation(day6_class_ilyaz_2_effect);
@@ -247,5 +247,88 @@ public class SixDay extends AppCompatActivity {
         HelperClass.animBackground(relativeLayout, bg1, bg2);
     }
 
-    
+
+    public void nextPhrase_Day6_class4(View view) {
+        if (PlayerData.loveLevel > 2){
+            // Плохая концовка
+            day6_class_5_effect = new TypewriterEffect(mainTV, Dialogues.bad_ending_1, 60);
+
+            // Добавление фразы
+            HelperClass.addPhrase(Day6Class3Button, Day6Class4Button,
+                    day6_class_5_effect, anim_button_in_right,
+                    anim_button_out_right, mainTV);
+
+            Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
+            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kiss);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
+        }else{
+            // Хорошая концовка
+            day6_class_10_effect = new TypewriterEffect(mainTV, Dialogues.good_ending_1, 60);
+
+            // Добавление фразы
+            HelperClass.addPhrase(Day6Class3Button, Day6Class9Button,
+                    day6_class_10_effect, anim_button_in_right,
+                    anim_button_out_right, mainTV);
+
+            Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
+            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.home_computer);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
+        }
+    }
+
+
+    public void nextPhrase_Day6_class5(View view) {
+        // Плохая концовка
+        day6_class_6_effect = new TypewriterEffect(mainTV, Dialogues.bad_ending_2, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day6Class4Button, Day6Class5Button,
+                day6_class_6_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+
+    public void nextPhrase_Day6_class6(View view) {
+        // Плохая концовка
+        day6_class_7_effect = new TypewriterEffect(mainTV, Dialogues.bad_ending_3, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day6Class5Button, Day6Class6Button,
+                day6_class_7_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_Day6_class7(View view) {
+        // Плохая концовка
+        day6_class_8_effect = new TypewriterEffect(mainTV, Dialogues.bad_ending_4, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day6Class6Button, Day6Class7Button,
+                day6_class_8_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    // Финальный монолог
+    public void nextPhrase_Day6_class8(View view) {
+        // Плохая концовка
+        day6_class_9_effect = new TypewriterEffect(mainTV, Dialogues.end, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day6Class7Button, Day6Class8Button,
+                day6_class_9_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+    // ВЫХОД В МЕНЮ
+    public void nextPhrase_Day6_ending(View view) {
+
+    }
+
+    public void nextPhrase_Day6_class9(View view) {
+        day6_class_11_effect = new TypewriterEffect(mainTV, Dialogues.good_ending_2, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day6Class9Button, Day6Class7Button,
+                day6_class_11_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
 }
