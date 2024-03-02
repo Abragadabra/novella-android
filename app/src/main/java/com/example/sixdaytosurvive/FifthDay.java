@@ -27,5 +27,7 @@ public class FifthDay extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+
     }
 }

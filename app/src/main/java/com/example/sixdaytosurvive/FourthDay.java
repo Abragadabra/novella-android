@@ -3,6 +3,7 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -438,7 +439,17 @@ public class FourthDay extends AppCompatActivity {
 
     // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
     public void nextPhrase_Day4Class13(View view) {
+        // Новый intent для открытия главного меню
+        Intent intent = new Intent(FourthDay.this, SplashScreenFriday.class);
 
+        // Открываем новое активити
+        FourthDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        FourthDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
     // ---------- НАЧИНАЕМ НОВЫЙ ДЕНЬ ------------
 }

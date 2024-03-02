@@ -1,6 +1,9 @@
 package com.example.sixdaytosurvive;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -10,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SplashScreenFriday extends AppCompatActivity {
+    final int SPLASH_DISPLAY_LENGTH = 4160;     // Длительность заставки в мс
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +31,20 @@ public class SplashScreenFriday extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        HelperClass.alarmSound = MediaPlayer.create(getApplicationContext(), R.raw.alarm);
+        HelperClass.alarmSound.start();
+
+        // Отложенный запуск перехода на новую активити
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashScreenFriday.this, FifthDay.class);
+                SplashScreenFriday.this.startActivity(intent);
+                SplashScreenFriday.this.finish();
+
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        }, SPLASH_DISPLAY_LENGTH);
     }
 }
