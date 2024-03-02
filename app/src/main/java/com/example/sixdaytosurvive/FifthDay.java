@@ -1,5 +1,6 @@
 package com.example.sixdaytosurvive;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -218,6 +219,16 @@ public class FifthDay extends AppCompatActivity {
     }
 
     public void nextPhrase_nextDay(View view) {
-        Toast.makeText(this, "Суббота начинается", Toast.LENGTH_SHORT).show();
+        // Новый intent для открытия главного меню
+        Intent intent = new Intent(FifthDay.this, SplashScreenSaturday.class);
+
+        // Открываем новое активити
+        FifthDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        FifthDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
