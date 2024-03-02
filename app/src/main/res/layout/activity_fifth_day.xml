@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fifth_day_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dirov_class">
+
+    <!--  Изображение паузы  -->
+    <!--    <ImageView-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginStart="15dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:src="@drawable/pause"/>-->
+
+    <TextView
+        android:id="@+id/fifth_day_TV"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/mega_round_text"
+        android:fontFamily="@font/ubuntu_bold"
+        android:onClick="skipAnimationDay5"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <!--   Кнопка 1     -->
+    <Button
+        android:id="@+id/next_button_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_phrase1"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+    <!--   Кнопка 2     -->
+    <Button
+        android:id="@+id/next_button_2_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_phrase2"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_3_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_phrase3"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_4_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_phrase4"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_5_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_phrase5"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_7_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_phrase6"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_8_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_nextDay"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/next_button_9_day4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_above="@id/fifth_day_TV"
+        android:layout_alignEnd="@id/fifth_day_TV"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#ADFFC5C5"
+        android:enabled="false"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/next_text"
+        android:onClick="nextPhrase_Day4Class9"
+        android:textColor="@drawable/button_color"
+        android:textColorHint="#000000"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:cornerRadius="14dp" />
+
+</RelativeLayout>

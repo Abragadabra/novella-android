@@ -18,6 +18,11 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".SplashScreenSaturday"
+            android:name=".FifthDay"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".SplashScreenFriday"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
