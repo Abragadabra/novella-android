@@ -13,14 +13,6 @@
         android:theme="@style/Theme.SixDayToSurvive"
         tools:targetApi="31">
         <activity
-            android:name=".SixDay"
-            android:exported="false"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".SplashScreenSaturday"
-            android:exported="false"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".FifthDay"
             android:exported="false"
             android:screenOrientation="landscape" />
