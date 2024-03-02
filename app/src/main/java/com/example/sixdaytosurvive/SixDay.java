@@ -1,6 +1,7 @@
 package com.example.sixdaytosurvive;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -89,7 +90,7 @@ public class SixDay extends AppCompatActivity {
 
     // Основной TextView на экране
     TextView mainTV;
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,16 +131,6 @@ public class SixDay extends AppCompatActivity {
         Day6Class236Button = findViewById(R.id.next_button_20_day6);
         Day2Home1Button = findViewById(R.id.next_button_21_day6);
         openDay3Button = findViewById(R.id.next_button_22_day6);
-
-        // ---------- Получение кнопок выбора по id ---------
-        Day4Class6WindowOpenButton = findViewById(R.id.choice_button1_day4);
-        Day4Class6WindowCloseButton = findViewById(R.id.choice_button2_day4);
-        // ---------- Получение кнопок выбора по id ---------
-
-        // ---------- Получение кнопок выбора по id ---------
-        choiceButton3 = findViewById(R.id.choice_button3_day4);
-        choiceButton4 = findViewById(R.id.choice_button4_day4);
-        // ---------- Получение кнопок выбора по id ---------
 
         // ---------------------------- Получение анимации по id (правая часть) ----------------------------
         anim_button_in_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_in_right);
@@ -320,7 +311,17 @@ public class SixDay extends AppCompatActivity {
     }
     // ВЫХОД В МЕНЮ
     public void nextPhrase_Day6_ending(View view) {
+        // Новый intent для открытия главного меню
+        Intent intent = new Intent(SixDay.this, Titres.class);
 
+        // Открываем новое активити
+        SixDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        SixDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void nextPhrase_Day6_class9(View view) {
