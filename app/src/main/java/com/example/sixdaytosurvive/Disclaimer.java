@@ -54,7 +54,7 @@ public class Disclaimer extends AppCompatActivity {
             HelperClass.menuSound.release();
         }
         // Новый intent для открытия главного меню
-        Intent intent = new Intent(Disclaimer.this, SplashScreenThursday.class);
+        Intent intent = new Intent(Disclaimer.this, SplashScreenFriday.class);
 
         // Открываем новое активити
         Disclaimer.this.startActivity(intent);
