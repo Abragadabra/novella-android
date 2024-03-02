@@ -78,8 +78,6 @@ public class FourthDay extends AppCompatActivity {
     TypewriterEffect day4_class_stepanida_1_effect;
     TypewriterEffect day4_class_stepanida_2_effect;
     TypewriterEffect day4_class_stepanida_3_effect;
-
-
     // ------------------------------ Диалоги ------------------------------
 
 
