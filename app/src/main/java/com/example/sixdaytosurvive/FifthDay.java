@@ -8,6 +8,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,8 +24,7 @@ public class FifthDay extends AppCompatActivity {
     Button Day5Class21Button;
     Button Day5Class31Button;
     Button Day5Class32Button;
-    Button Day5Class3StepanidaButton;
-    Button Day5Class3EvgeyButton;
+    Button Day5Class3StepanidaOrEvgeyButton;
     Button Day5Class3VatilaveButton;
     Button nextDayButton;
     Button reserv;
@@ -85,8 +85,7 @@ public class FifthDay extends AppCompatActivity {
         Day5Class21Button = findViewById(R.id.next_button_2_day4);
         Day5Class31Button = findViewById(R.id.next_button_3_day4);
         Day5Class32Button = findViewById(R.id.next_button_4_day4);
-        Day5Class3StepanidaButton = findViewById(R.id.next_button_5_day4);
-        Day5Class3EvgeyButton = findViewById(R.id.next_button_6_day4);
+        Day5Class3StepanidaOrEvgeyButton = findViewById(R.id.next_button_5_day4);
         Day5Class3VatilaveButton = findViewById(R.id.next_button_7_day4);
         nextDayButton = findViewById(R.id.next_button_8_day4);
         reserv = findViewById(R.id.next_button_9_day4);
@@ -173,5 +172,52 @@ public class FifthDay extends AppCompatActivity {
         HelperClass.addPhrase(Day5Class31Button, Day5Class32Button,
                 day5_class_3_2_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_phrase4(View view) {
+        if (PlayerData.loveLevel >= 1) {
+            // Болтаем со Степанидой
+            // Инициализация эффекта печати
+            day5_class_3_stepanida_effect = new TypewriterEffect(mainTV, Dialogues.day5_class_3_stepanida, 60);
+
+            // Добавление фразы
+            HelperClass.addPhrase(Day5Class32Button, Day5Class3StepanidaOrEvgeyButton,
+                    day5_class_3_stepanida_effect, anim_button_in_right,
+                    anim_button_out_right, mainTV);
+        }
+        else {
+            // Болтаем с Евгеем
+            // Инициализация эффекта печати
+            day5_class_3_evgey_effect = new TypewriterEffect(mainTV, Dialogues.day5_class_3_evgey, 60);
+
+            // Добавление фразы
+            HelperClass.addPhrase(Day5Class32Button, Day5Class3StepanidaOrEvgeyButton,
+                    day5_class_3_evgey_effect, anim_button_in_right,
+                    anim_button_out_right, mainTV);
+        }
+    }
+
+    public void nextPhrase_phrase5(View view) {
+        // Инициализация эффекта печати
+        day5_class_3_vatilave_effect = new TypewriterEffect(mainTV, Dialogues.day5_class_3_vatilave, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day5Class3StepanidaOrEvgeyButton, Day5Class3VatilaveButton,
+                day5_class_3_vatilave_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_phrase6(View view) {
+        // Инициализация эффекта печати
+        day5_home_effect = new TypewriterEffect(mainTV, Dialogues.day5_home, 60);
+
+        // Добавление фразы
+        HelperClass.addPhrase(Day5Class3VatilaveButton, nextDayButton,
+                day5_home_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_nextDay(View view) {
+        Toast.makeText(this, "Суббота начинается", Toast.LENGTH_SHORT).show();
     }
 }

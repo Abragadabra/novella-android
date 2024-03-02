@@ -1,7 +1,7 @@
 package com.example.sixdaytosurvive;
 
 public class PlayerData {
-    public static int loveLevel = 2; // Уровень отношений со Степанидой
+    public static int loveLevel = 0; // Уровень отношений со Степанидой
     public static boolean stepanidaAndGgRelationship = false; // false - отношений со Степанидой нетю
     public static boolean jacket = false;
     public static boolean oladushkinTest = false;

@@ -116,7 +116,7 @@ public class Dialogues {
 
     public static String day5_class_3_stepanida = "всю пару я разговаривал со Степанидой...";
 
-    public static String day5_class_3_evgey = "всю пару я разговаривал со Евгеем...";
+    public static String day5_class_3_evgey = "всю пару я разговаривал с Евгеем...";
 
     public static String day5_class_3_vatilave = "Я всё думал про то, что он сказал перед парой, как вдруг заметил, что Поликарбонат чмокнула его в щёчку (ПОДОЗРИТЕЛЬНО\uD83E\uDD28), он покраснел и замолчал";
 
