@@ -159,6 +159,34 @@ public class SecondDay extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        day2_monolog_effect = new TypewriterEffect(mainTV, Dialogues.day2_monolog, 60);
+        day2_monolog_effect.animateText();
+
+        day2_monolog_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                nextButton1.setVisibility(View.VISIBLE);
+                nextButton1.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton1.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
     }
 
     public void skipAnimationDay2(View view) {
@@ -189,7 +217,16 @@ public class SecondDay extends AppCompatActivity {
 
 
     public void nextPhrase1(View view) {
+        // Смена фона
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_evlampiy_corridor);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+        day2_stepanida_evlampiy_ssora_effect = new TypewriterEffect(mainTV,
+                Dialogues.day2_stepanida_evlampiy_ssora, 60);
+
+        HelperClass.addPhrase(nextButton1, nextButton2, day2_stepanida_evlampiy_ssora_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase2(View view) {

@@ -207,7 +207,7 @@ public class FirstDay extends AppCompatActivity {
 
     public void nextPhrase_2(View view) {
         // Смена фона
-        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bedroom);
+        Drawable bg1 = relativeLayout.getBackground();
         Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
         HelperClass.animBackground(relativeLayout, bg1, bg2);
 
@@ -227,7 +227,7 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void nextPhrase_3(View view) {
-        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
+        Drawable bg1 = relativeLayout.getBackground();
         Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
         HelperClass.animBackground(relativeLayout, bg1, bg2);
 
@@ -245,7 +245,7 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void nextPhrase_5(View view) {
-        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+        Drawable bg1 = relativeLayout.getBackground();
         Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_dorridor);
         HelperClass.animBackground(relativeLayout, bg1, bg2);
 
