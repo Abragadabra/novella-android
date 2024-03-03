@@ -53,26 +53,26 @@ public class FirstDay extends AppCompatActivity {
 
 
     // ------------------------------ Диалоги ------------------------------
-    TypewriterEffect day1_dialog1_effect;           // Эффект диалога 1
-    TypewriterEffect day1_dialog2_effect;           // Эффект диалога 2
-    TypewriterEffect day1_dialog3_effect;           // Эффект диалога 3
-    TypewriterEffect day1_dialog4_effect;           // Эффект диалога 4
-    TypewriterEffect day1_dialog5_effect;           // Эффект диалога 5
-    TypewriterEffect day1_dialog6_effect;           // Эффект диалога 6 (извинение за опоздание)
-    TypewriterEffect day1_dialog7_effect;           // Эффект диалога 7 (Кастрюлева)
-    TypewriterEffect day1_dialog8_effect;           // Эффект диалога 8 (Кастрюлева)
-    TypewriterEffect day1_dialog9_effect;           // Эффект диалога 9 (Кастрюлева)
-    TypewriterEffect day1_dialog10_effect;           // Эффект диалога 10 (Кастрюлева)
-    TypewriterEffect day1_dialog11_effect;           // Эффект диалога 11 (Кастрюлева)
-    TypewriterEffect day1_dialog12_effect;           // Эффект диалога 12 (Сели на паре Кастрюлевой вместе со Степанидой)
-    TypewriterEffect day1_dialog13_effect;           // Эффект диалога 13 (Засыпаем на паре)
-    TypewriterEffect day1_dialog14_effect;           // Эффект диалога 14 (Конец первой пары... УРА)
-    TypewriterEffect day1_dialog15_effect;           // Эффект диалога 15 (Столовая)
-    TypewriterEffect day1_dialog16_effect;           // Эффект диалога 16 (Дыров предлагает еду)
-    TypewriterEffect day1_dialog17_effect;           // Эффект диалога 17 (Мы приняли еду)
-    TypewriterEffect day1_dialog18_effect;           // Эффект диалога 18 (Мы отказались от еды)
-    TypewriterEffect day1_dialog19_effect;           // Эффект диалога 19 (Пара Лососевой)
-    TypewriterEffect day1_dialog20_effect;           // Эффект диалога 20 (Если куртку сдана в гардероб)
+    TypewriterEffect day1_dialog1_effect;
+    TypewriterEffect day1_dialog2_effect;
+    TypewriterEffect day1_warderobe1_effect;
+    TypewriterEffect day1_warderobe_variant1_effect;
+    TypewriterEffect day1_warderobe_variant2_1_effect;
+    TypewriterEffect day1_warderobe_variant2_2_effect;
+    TypewriterEffect day1_warderobe_variant2_3_effect;
+    TypewriterEffect day1_warderobe_variant2_4_effect;
+    TypewriterEffect day1_warderobe_variant2_5_effect;
+    TypewriterEffect day1_warderobe_variant2_6_effect;
+    TypewriterEffect day1_class1_1_effect;
+    TypewriterEffect day1_class1_2_effect;
+    TypewriterEffect day1_class1_3_effect;
+    TypewriterEffect day1_canteen_1_effect;
+    TypewriterEffect day1_canteen_2_effect;
+    TypewriterEffect day1_canteen_yes_effect;
+    TypewriterEffect day1_canteen_no_effect;
+    TypewriterEffect day1_class2_1_effect;
+    TypewriterEffect day1_end_if_jacket_false_effect;
+    TypewriterEffect reserve_effect;
     // ------------------------------ Диалоги ------------------------------
 
     // Основной Layout в вёрстке
@@ -147,24 +147,24 @@ public class FirstDay extends AppCompatActivity {
     public void skipAnimation(View view) {
         HelperClass.stopAnimation(day1_dialog1_effect);
         HelperClass.stopAnimation(day1_dialog2_effect);
-        HelperClass.stopAnimation(day1_dialog3_effect);
-        HelperClass.stopAnimation(day1_dialog4_effect);
-        HelperClass.stopAnimation(day1_dialog5_effect);
-        HelperClass.stopAnimation(day1_dialog6_effect);
-        HelperClass.stopAnimation(day1_dialog7_effect);
-        HelperClass.stopAnimation(day1_dialog8_effect);
-        HelperClass.stopAnimation(day1_dialog9_effect);
-        HelperClass.stopAnimation(day1_dialog10_effect);
-        HelperClass.stopAnimation(day1_dialog11_effect);
-        HelperClass.stopAnimation(day1_dialog12_effect);
-        HelperClass.stopAnimation(day1_dialog13_effect);
-        HelperClass.stopAnimation(day1_dialog14_effect);
-        HelperClass.stopAnimation(day1_dialog15_effect);
-        HelperClass.stopAnimation(day1_dialog16_effect);
-        HelperClass.stopAnimation(day1_dialog17_effect);
-        HelperClass.stopAnimation(day1_dialog18_effect);
-        HelperClass.stopAnimation(day1_dialog19_effect);
-        HelperClass.stopAnimation(day1_dialog20_effect);
+        HelperClass.stopAnimation(day1_warderobe1_effect);
+        HelperClass.stopAnimation(day1_warderobe_variant1_effect);
+        HelperClass.stopAnimation(day1_warderobe_variant2_1_effect);
+        HelperClass.stopAnimation(day1_warderobe_variant2_2_effect);
+        HelperClass.stopAnimation(day1_warderobe_variant2_3_effect);
+        HelperClass.stopAnimation(day1_warderobe_variant2_4_effect);
+        HelperClass.stopAnimation(day1_warderobe_variant2_5_effect);
+        HelperClass.stopAnimation(day1_warderobe_variant2_6_effect);
+        HelperClass.stopAnimation(day1_class1_1_effect);
+        HelperClass.stopAnimation(day1_class1_2_effect);
+        HelperClass.stopAnimation(day1_class1_3_effect);
+        HelperClass.stopAnimation(day1_canteen_1_effect);
+        HelperClass.stopAnimation(day1_canteen_2_effect);
+        HelperClass.stopAnimation(day1_canteen_yes_effect);
+        HelperClass.stopAnimation(day1_canteen_no_effect);
+        HelperClass.stopAnimation(day1_class2_1_effect);
+        HelperClass.stopAnimation(day1_end_if_jacket_false_effect);
+        HelperClass.stopAnimation(reserve_effect);
     }
 
 
@@ -219,7 +219,7 @@ public class FirstDay extends AppCompatActivity {
 
     }
 
-    //    ---------------------------СТОЛОВАЯ---------------------------
+
     public void nextPhrase_10(View view) {
 
     }
@@ -239,13 +239,12 @@ public class FirstDay extends AppCompatActivity {
 
     }
 
-    //    ---------------------------ВТОРАЯ ПАРА (ЛОСОСЕВА)---------------------------
 
     public void nextPhrase_12(View view) {
 
     }
 
-    //    ---------------------------Гардероб, если у нас куртку в гардеробе. Если с собой, начинается второй день)---------------------------
+
     public void nextPhrase_13(View view) {
 
     }
