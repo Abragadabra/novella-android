@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class HelperClass {
     public static MediaPlayer menuSound;        // Фоновая музыка меню
     public static MediaPlayer alarmSound;       // Звук будильника
+    public static MediaPlayer titresSound;
 
     // Остановка анимации с проверкой на то, что анимация существует и остановлена
     public static void stopAnimation(TypewriterEffect typewriterEffect) {
