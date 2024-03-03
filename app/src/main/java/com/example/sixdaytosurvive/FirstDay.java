@@ -215,26 +215,42 @@ public class FirstDay extends AppCompatActivity {
                 anim_button_in_left, mainTV);
     }
 
+    // ------------------ Ветка сюжета с опозданием на пару ------------------
     public void passJacket(View view) {
         // Сдаём в гардероб курточку
-    }
+        day1_warderobe_variant2_1_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe_variant2_1, 60);
 
-    public void takeJacket(View view) {
-        // Бежим на пару с курткой
+        HelperClass.addPhrase(nextButton_3, nextButton_3, takeJacketButton, passJacketButton,
+                day1_warderobe_variant2_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
     }
 
     public void nextPhrase_3(View view) {
+        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+        day1_warderobe_variant2_2_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe_variant2_2, 60);
+
+        HelperClass.addPhrase(nextButton_3, nextButton_4, day1_warderobe_variant2_2_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase_4(View view) {
+        day1_warderobe_variant2_3_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe_variant2_3, 60);
 
+        HelperClass.addPhrase(nextButton_4, nextButton_5, day1_warderobe_variant2_3_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase_5(View view) {
 
     }
+    // ------------------ Ветка сюжета с опозданием на пару ------------------
 
+    public void takeJacket(View view) {
+        // Бежим на пару с курткой
+    }
+    
     public void nextPhrase_6(View view) {
 
     }
