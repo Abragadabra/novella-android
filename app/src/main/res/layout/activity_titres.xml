@@ -9,13 +9,12 @@
         android:id="@+id/titres_TV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="100dp"
         android:fontFamily="@font/ubuntu_bold"
         android:gravity="center"
+        android:singleLine="false"
         android:text="@string/titres"
         android:textColor="#D5D5D5"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:ellipsize="end" />
 
 </RelativeLayout>

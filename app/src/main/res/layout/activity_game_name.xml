@@ -35,6 +35,7 @@
             android:hint="@string/start_game"
             android:onClick="startGame"
             android:textColor="@drawable/button_color"
+            android:fontFamily="@font/ubuntu_bold"
             android:textColorHint="#695252"
             android:textSize="25sp"
             app:cornerRadius="14dp" />
@@ -50,6 +51,7 @@
             android:onClick="closeGame"
             android:textColor="@drawable/button_color"
             android:textColorHint="#695252"
+            android:fontFamily="@font/ubuntu_bold"
             android:textSize="25sp"
             app:cornerRadius="14dp" />
 
