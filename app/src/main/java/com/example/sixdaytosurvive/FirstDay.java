@@ -49,7 +49,7 @@ public class FirstDay extends AppCompatActivity {
     // ------------------------------ Анимации ------------------------------
 
 
-    TextView mainText;                              // Поле с текстом
+    TextView mainTV;                              // Поле с текстом
 
 
     // ------------------------------ Диалоги ------------------------------
@@ -125,7 +125,7 @@ public class FirstDay extends AppCompatActivity {
         // ------------------------------ Получение анимации слева экрана ------------------------------
 
         // Получени поля с тектом
-        mainText = findViewById(R.id.first_day_text);
+        mainTV = findViewById(R.id.first_day_text);
 
         // Получение основной вёрстки
         relativeLayout = findViewById(R.id.first_day_layout);
@@ -141,6 +141,34 @@ public class FirstDay extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        day1_dialog1_effect = new TypewriterEffect(mainTV, Dialogues.day1_dialog1, 60);
+        day1_dialog1_effect.animateText();
+
+        day1_dialog1_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                nextButton.setVisibility(View.VISIBLE);
+                nextButton.startAnimation(anim_button_in_right);
+
+                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        nextButton.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
     }
 
     // Скип анимации на каждый диалог
@@ -169,31 +197,40 @@ public class FirstDay extends AppCompatActivity {
 
 
     public void nextPhrase(View view) {
+        day1_dialog2_effect = new TypewriterEffect(mainTV, Dialogues.day1_dialog2, 60);
 
+        HelperClass.addPhrase(nextButton, nextButton_2, day1_dialog2_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
-
-    // ждём в гардеробе
-    public void passJacket(View view) {
-
-    }
-
-    // Событие на кнопку далее_2
     public void nextPhrase_2(View view) {
+        // Смена фона
+        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bedroom);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+        day1_warderobe1_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe1, 60);
+
+        HelperClass.addPhrase(nextButton_2, takeJacketButton, passJacketButton, day1_warderobe1_effect, anim_button_out_right,
+                anim_button_in_left, mainTV);
     }
 
-    // Событие на кнопку 3
+    public void passJacket(View view) {
+        // Сдаём в гардероб курточку
+    }
+
+    public void takeJacket(View view) {
+        // Бежим на пару с курткой
+    }
+
     public void nextPhrase_3(View view) {
 
     }
 
-    // Событие на нажатие кнопки далее4
     public void nextPhrase_4(View view) {
 
     }
 
-    // Событие при нажатии кнопки далее5
     public void nextPhrase_5(View view) {
 
     }
@@ -203,11 +240,6 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void nextPhrase_7(View view) {
-
-    }
-
-    // Не берём куртку
-    public void takeJacket(View view) {
 
     }
 
