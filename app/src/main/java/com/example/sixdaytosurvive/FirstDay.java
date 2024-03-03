@@ -243,37 +243,79 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void nextPhrase_5(View view) {
+        Drawable bg1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_dorridor);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+        day1_warderobe_variant2_4_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe_variant2_4, 60);
+
+        HelperClass.addPhrase(nextButton_5, nextButton_6, day1_warderobe_variant2_4_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_6(View view) {
+        day1_warderobe_variant2_5_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe_variant2_5, 60);
+
+        HelperClass.addPhrase(nextButton_6, nextButton_7, day1_warderobe_variant2_5_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_7(View view) {
+        day1_warderobe_variant2_6_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe_variant2_6, 60);
+
+        HelperClass.addPhrase(nextButton_7, nextButton_8, day1_warderobe_variant2_6_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
     // ------------------ Ветка сюжета с опозданием на пару ------------------
 
     public void takeJacket(View view) {
+        PlayerData.jacket = true;
+
         // Бежим на пару с курткой
-    }
-    
-    public void nextPhrase_6(View view) {
+        day1_warderobe_variant1_effect = new TypewriterEffect(mainTV, Dialogues.day1_warderobe_variant1, 60);
 
-    }
-
-    public void nextPhrase_7(View view) {
-
+        HelperClass.addPhrase(nextButton_8, nextButton_8, takeJacketButton, passJacketButton,
+                day1_warderobe_variant1_effect, anim_button_out_left, anim_button_in_right, mainTV);
     }
 
     public void nextPhrase_8(View view) {
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.kastryuleva_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+        day1_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day1_class1_1, 60);
+
+        HelperClass.addPhrase(nextButton_8, nextButton_9, day1_class1_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase_9(View view) {
+        day1_class1_2_effect = new TypewriterEffect(mainTV, Dialogues.day1_class1_2, 60);
 
+        HelperClass.addPhrase(nextButton_9, nextButton_10, day1_class1_2_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
-
     public void nextPhrase_10(View view) {
+        day1_class1_3_effect = new TypewriterEffect(mainTV, Dialogues.day1_class1_3, 60);
 
+        HelperClass.addPhrase(nextButton_10, nextButton_11, day1_class1_3_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     // Столовая и появление выбора
     public void nextPhrase_11(View view) {
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_canteen);
+
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+        day1_canteen_1_effect = new TypewriterEffect(mainTV, Dialogues.day1_canteen_1, 60);
+
+        HelperClass.addPhrase(nextButton_11, nextButton_12, day1_canteen_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
+    }
+
+    public void nextPhrase_12(View view) {
 
     }
 
@@ -286,12 +328,6 @@ public class FirstDay extends AppCompatActivity {
     public void takeFood(View view) {
 
     }
-
-
-    public void nextPhrase_12(View view) {
-
-    }
-
 
     public void nextPhrase_13(View view) {
 
