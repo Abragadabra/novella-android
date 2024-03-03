@@ -30,6 +30,7 @@ public class FirstDay extends AppCompatActivity {
     Button nextButton_12;                             // Кнопка "далее" 12
     Button nextButton_13;                             // Кнопка "далее" 13
     Button nextButton_14;                             // Кнопка "далее" 14
+    Button nextButton_15;                             // Кнопка "далее" 15
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
     // Кнопки для выбора действий в гардеробе
@@ -98,6 +99,7 @@ public class FirstDay extends AppCompatActivity {
         nextButton_12 = findViewById(R.id.next_button_12);
         nextButton_13 = findViewById(R.id.next_button_13);
         nextButton_14 = findViewById(R.id.next_button_14);
+        nextButton_15 = findViewById(R.id.next_button_15);
         // --------- Получение кнопок "далее" ---------
 
 
@@ -303,7 +305,6 @@ public class FirstDay extends AppCompatActivity {
                 anim_button_out_right, mainTV);
     }
 
-    // Столовая и появление выбора
     public void nextPhrase_11(View view) {
         Drawable bg1 = relativeLayout.getBackground();
         Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_canteen);
@@ -315,27 +316,62 @@ public class FirstDay extends AppCompatActivity {
                 anim_button_out_right, mainTV);
     }
 
+    // Столовая и появление выбора
     public void nextPhrase_12(View view) {
+        day1_canteen_2_effect = new TypewriterEffect(mainTV, Dialogues.day1_canteen_2, 60);
 
+        HelperClass.addPhrase(nextButton_12, takeFoodButton, passFoodButton, day1_canteen_2_effect, anim_button_out_right,
+                anim_button_in_left, mainTV);
     }
 
     // Событие при отказе от еды
     public void passFood(View view) {
+        // Не берем еду
+        day1_canteen_no_effect = new TypewriterEffect(mainTV, Dialogues.day1_canteen_no, 60);
 
+        HelperClass.addPhrase(nextButton_13, nextButton_13, takeFoodButton, passFoodButton,
+                day1_canteen_no_effect, anim_button_out_left, anim_button_in_right, mainTV);
     }
 
     // Событие при принятии еды
     public void takeFood(View view) {
+        // Берем еду и радуемся жизни
+        day1_canteen_yes_effect = new TypewriterEffect(mainTV, Dialogues.day1_canteen_yes, 60);
 
+        HelperClass.addPhrase(nextButton_13, nextButton_13, takeFoodButton, passFoodButton,
+                day1_canteen_yes_effect, anim_button_out_left, anim_button_in_right, mainTV);
     }
 
     public void nextPhrase_13(View view) {
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.lososeva_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+        day1_class2_1_effect = new TypewriterEffect(mainTV, Dialogues.day1_class2_1, 60);
+
+        HelperClass.addPhrase(nextButton_13, nextButton_14, day1_class2_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
 
     public void nextPhrase_14(View view) {
+        if (PlayerData.jacket) {
+            setDay2();
+        }
+        else {
+            Drawable bg1 = relativeLayout.getBackground();
+            Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.garderob);
+            HelperClass.animBackground(relativeLayout, bg1, bg2);
 
+            day1_end_if_jacket_false_effect = new TypewriterEffect(mainTV, Dialogues.day1_end_if_jacket_false, 60);
+
+            HelperClass.addPhrase(nextButton_14, nextButton_15, day1_end_if_jacket_false_effect, anim_button_in_right,
+                    anim_button_out_right, mainTV);
+        }
+    }
+
+    public void nextPhrase_15(View view) {
+        setDay2();
     }
 
     public void setDay2() {
