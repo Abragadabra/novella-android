@@ -3,8 +3,6 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -91,7 +89,6 @@ public class SecondDay extends AppCompatActivity {
     // Основной TextView на экране
     TextView mainTV;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -225,8 +222,44 @@ public class SecondDay extends AppCompatActivity {
         day2_stepanida_evlampiy_ssora_effect = new TypewriterEffect(mainTV,
                 Dialogues.day2_stepanida_evlampiy_ssora, 60);
 
-        HelperClass.addPhrase(nextButton1, nextButton2, day2_stepanida_evlampiy_ssora_effect, anim_button_in_right,
-                anim_button_out_right, mainTV);
+        day2_stepanida_evlampiy_ssora_effect.animateText();
+
+        day2_stepanida_evlampiy_ssora_effect.setListener(new TypewriterListener() {
+            @Override
+            public void onAnimationEnd() {
+                makePeaceButton.setVisibility(View.VISIBLE);
+                notMakePeaceButton.setVisibility(View.VISIBLE);
+
+                makePeaceButton.startAnimation(anim_button_in_left);
+                notMakePeaceButton.startAnimation(anim_button_in_left);
+
+                anim_button_in_left.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        makePeaceButton.setEnabled(true);
+                        notMakePeaceButton.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+    }
+
+    public void makePeace(View view) {
+
+    }
+
+    public void notMakePeace(View view) {
+        
     }
 
     public void nextPhrase2(View view) {
