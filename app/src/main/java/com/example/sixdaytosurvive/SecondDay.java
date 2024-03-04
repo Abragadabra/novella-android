@@ -254,28 +254,60 @@ public class SecondDay extends AppCompatActivity {
         });
     }
 
+    // --------- Ветка мира ---------
     public void makePeace(View view) {
+        // Жестко мирим их
+        PlayerData.stepanidaAndEvlampiyFight = true;
 
-    }
+        day2_stepanida_evlampiy_ssora_true_1_effect = new TypewriterEffect(mainTV,
+                Dialogues.day2_stepanida_evlampiy_ssora_true_1, 60);
 
-    public void notMakePeace(View view) {
-        
+        HelperClass.addPhrase(nextButton2, nextButton2, makePeaceButton, notMakePeaceButton,
+                day2_stepanida_evlampiy_ssora_true_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
     }
 
     public void nextPhrase2(View view) {
+        day2_stepanida_evlampiy_ssora_true_2_effect = new TypewriterEffect(mainTV,
+                Dialogues.day2_stepanida_evlampiy_ssora_true_2, 60);
 
+        HelperClass.addPhrase(nextButton2, nextButton3, day2_stepanida_evlampiy_ssora_true_2_effect,
+                anim_button_in_right, anim_button_out_right, mainTV);
     }
 
     public void nextPhrase3(View view) {
+        day2_stepanida_evlampiy_ssora_true_3_effect = new TypewriterEffect(mainTV,
+                Dialogues.day2_stepanida_evlampiy_ssora_true_3, 60);
 
+        HelperClass.addPhrase(nextButton3, nextButton4, day2_stepanida_evlampiy_ssora_true_3_effect,
+                anim_button_in_right, anim_button_out_right, mainTV);
     }
 
     public void nextPhrase4(View view) {
+        day2_stepanida_evlampiy_ssora_true_4_effect = new TypewriterEffect(mainTV,
+                Dialogues.day2_stepanida_evlampiy_ssora_true_4, 60);
 
+        HelperClass.addPhrase(nextButton4, nextButton5, day2_stepanida_evlampiy_ssora_true_4_effect,
+                anim_button_in_right, anim_button_out_right, mainTV);
+    }
+    // --------- Ветка мира ---------
+
+    public void notMakePeace(View view) {
+        // Как сигмы шагаем на пару душни
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
+
+        HelperClass.addPhrase(nextButton5, nextButton5, makePeaceButton, notMakePeaceButton,
+                day2_class1_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
     }
 
     public void nextPhrase5(View view) {
-
+        // Смена фона на душню
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
     }
 
     public void nextPhrase6(View view) {
