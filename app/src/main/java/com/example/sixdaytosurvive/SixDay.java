@@ -240,7 +240,7 @@ public class SixDay extends AppCompatActivity {
 
 
     public void nextPhrase_Day6_class4(View view) {
-        if (PlayerData.loveLevel > 2){
+        if (PlayerData.loveLevel > 1){
             // Плохая концовка
             day6_class_5_effect = new TypewriterEffect(mainTV, Dialogues.bad_ending_1, 60);
 
@@ -311,7 +311,7 @@ public class SixDay extends AppCompatActivity {
     }
     // ВЫХОД В МЕНЮ
     public void nextPhrase_Day6_ending(View view) {
-        // Новый intent для открытия главного меню
+        // Новый intent для открытия грустного
         Intent intent = new Intent(SixDay.this, Titres.class);
 
         // Открываем новое активити
