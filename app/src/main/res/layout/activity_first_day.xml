@@ -391,4 +391,53 @@
             app:cornerRadius="14dp" />
     </LinearLayout>
 
+    <!--  Меню паузы  -->
+    <LinearLayout
+        android:id="@+id/pause_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/rounded_menu_pause"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/pause_menu_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_bold"
+            android:gravity="center"
+            android:text="@string/menuPauseHeader"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/pause_menu_continue"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#80FFFFFF"
+            android:enabled="false"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/menuPauseContinueButton"
+            android:textColorHint="#393939"
+            android:textSize="25sp"
+            app:cornerRadius="14dp" />
+
+        <Button
+            android:id="@+id/pause_menu_save"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#80FFFFFF"
+            android:enabled="false"
+            android:fontFamily="@font/ubuntu_bold"
+            android:hint="@string/menuPauseSaveButton"
+            android:textColorHint="#393939"
+            android:textSize="25sp"
+            app:cornerRadius="14dp" />
+    </LinearLayout>
+
 </RelativeLayout>
