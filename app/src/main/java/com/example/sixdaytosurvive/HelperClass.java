@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.media.MediaPlayer;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -20,6 +21,22 @@ public class HelperClass {
         if (typewriterEffect != null && typewriterEffect.animationRunning) {
             typewriterEffect.completeTextAnimation();
         }
+    }
+
+    public static void fadeIn(View view) {
+        AlphaAnimation fadeIn = new AlphaAnimation(0f, 1f);
+        fadeIn.setDuration(500);
+        fadeIn.setFillAfter(true);
+
+        view.startAnimation(fadeIn);
+    }
+
+    public static void fadeOut(View view) {
+        AlphaAnimation fadeOut = new AlphaAnimation(1f, 0f);
+        fadeOut.setDuration(500);
+        fadeOut.setFillAfter(true);
+
+        view.startAnimation(fadeOut);
     }
 
     // Функция анимации фона

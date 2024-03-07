@@ -7,11 +7,14 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FirstDay extends AppCompatActivity {
 
@@ -79,6 +82,14 @@ public class FirstDay extends AppCompatActivity {
     // Основной Layout в вёрстке
     RelativeLayout relativeLayout;
 
+    // Фон паузы
+    LinearLayout pauseBackground;
+    LinearLayout pauseMenu;
+
+    // Кнопки в меню паузы
+    Button continueButton;
+    Button saveButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,6 +143,16 @@ public class FirstDay extends AppCompatActivity {
         // Получение основной вёрстки
         relativeLayout = findViewById(R.id.first_day_layout);
 
+        // Получение фона паузы
+        pauseBackground = findViewById(R.id.pause_menu_bg);
+
+        // Получение меню паузы
+        pauseMenu = findViewById(R.id.pause_menu);
+
+        // Получение кнопок в меню паузы
+        continueButton = findViewById(R.id.pause_menu_continue);
+        saveButton = findViewById(R.id.pause_menu_save);
+
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -173,8 +194,7 @@ public class FirstDay extends AppCompatActivity {
         });
     }
 
-    // Скип анимации на каждый диалог
-    public void skipAnimation(View view) {
+    public void skipPhrase() {
         HelperClass.stopAnimation(day1_dialog1_effect);
         HelperClass.stopAnimation(day1_dialog2_effect);
         HelperClass.stopAnimation(day1_warderobe1_effect);
@@ -195,6 +215,78 @@ public class FirstDay extends AppCompatActivity {
         HelperClass.stopAnimation(day1_class2_1_effect);
         HelperClass.stopAnimation(day1_end_if_jacket_false_effect);
         HelperClass.stopAnimation(reserve_effect);
+    }
+
+    public void openPauseMenu(View view) {
+        // Пропускаем текстик
+        skipPhrase();
+
+        // Включение визуально меню и его фона
+        pauseBackground.setVisibility(View.VISIBLE);
+        pauseMenu.setVisibility(View.VISIBLE);
+
+        // Убираем фокус с элементов меню
+        pauseBackground.setFocusable(true);
+        pauseMenu.setFocusable(true);
+
+        // Элементы меню больше не тыкательные
+        pauseBackground.setClickable(true);
+        pauseMenu.setClickable(true);
+
+        // Включение кнопочек в меню, чтобы жмакались
+        continueButton.setEnabled(true);
+        saveButton.setEnabled(true);
+
+        HelperClass.fadeIn(pauseBackground);
+        HelperClass.fadeIn(pauseMenu);
+    }
+
+    // Скип анимации на каждый диалог
+    public void skipAnimation(View view) {
+        skipPhrase();
+    }
+
+    public void saveGame(View view) {
+        Toast.makeText(this, "Игра сохранена!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void closePause(View view) {
+        continueButton.setEnabled(false);
+        saveButton.setEnabled(false);
+
+        AlphaAnimation fadeOut = new AlphaAnimation(1f, 0f);
+        fadeOut.setDuration(500);
+        fadeOut.setFillAfter(true);
+
+        pauseBackground.startAnimation(fadeOut);
+        pauseMenu.startAnimation(fadeOut);
+
+        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Включение визуально меню и его фона
+                pauseBackground.setVisibility(View.INVISIBLE);
+                pauseMenu.setVisibility(View.INVISIBLE);
+
+                // Убираем фокус с элементов меню
+                pauseBackground.setFocusable(false);
+                pauseMenu.setFocusable(false);
+
+                // Элементы меню больше не тыкательные
+                pauseBackground.setClickable(false);
+                pauseMenu.setClickable(false);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 
 
