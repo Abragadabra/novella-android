@@ -3,6 +3,7 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 public class Disclaimer extends AppCompatActivity {
 
     TextView mainTV;
+    private static final String PREFS_FILE = "saves";
+    SharedPreferences saves;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class Disclaimer extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        // Создание файла сохранения
+        saves = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
 
         mainTV = findViewById(R.id.disclaimer_text);
         mainTV.setMovementMethod(new ScrollingMovementMethod());
@@ -53,6 +59,12 @@ public class Disclaimer extends AppCompatActivity {
             HelperClass.menuSound.stop();
             HelperClass.menuSound.release();
         }
+
+        // Сохранение согласия на дисклеймере
+        SharedPreferences.Editor editor = saves.edit();
+        editor.putBoolean("disclaimer", true);
+        editor.apply();
+
         // Новый intent для открытия главного меню
         Intent intent = new Intent(Disclaimer.this, SplashScreenMonday.class);
 

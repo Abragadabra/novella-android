@@ -3,10 +3,14 @@ package com.example.sixdaytosurvive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
 public class MainMenu extends AppCompatActivity {
+
+    private static final String PREFS_FILE = "saves";
+    SharedPreferences saves;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,9 @@ public class MainMenu extends AppCompatActivity {
 
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
+
+        // Создание файла сохранения
+        saves = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
     }
 
     public void closeGame(View view) {
@@ -36,16 +43,34 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        // // Новый intent для открытия главного меню
-        Intent intent = new Intent(MainMenu.this, Disclaimer.class);
+        boolean approvedDisclaimer = saves.getBoolean("disclaimer", false);
 
-        // Открываем новое активити
-        MainMenu.this.startActivity(intent);
+        if (approvedDisclaimer) {
+            // Новый intent для открытия главного меню
+            Intent intent = new Intent(MainMenu.this, SplashScreenMonday.class);
 
-        // Завершаем текущее активити
-        MainMenu.this.finish();
+            // Открываем новое активити
+            MainMenu.this.startActivity(intent);
 
-        // Плавный переход между активити
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            // Завершаем текущее активити
+            MainMenu.this.finish();
+
+            // Плавный переход между активити
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
+        else {
+            // Новый intent для открытия главного меню
+            Intent intent = new Intent(MainMenu.this, Disclaimer.class);
+
+            // Открываем новое активити
+            MainMenu.this.startActivity(intent);
+
+            // Завершаем текущее активити
+            MainMenu.this.finish();
+
+            // Плавный переход между активити
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
+
     }
 }
