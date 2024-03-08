@@ -10,7 +10,7 @@ android {
         applicationId = "me.absurdteam.sixdaytosurvive"
         minSdk = 26
         targetSdk = 34
-        versionCode = 4
+        versionCode = 1
         versionName = "v1.0-pr1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

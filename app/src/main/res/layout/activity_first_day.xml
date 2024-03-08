@@ -10,9 +10,10 @@
     <ImageView
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginStart="15dp"
-        android:onClick="openPauseMenu"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:onClick="openPauseMenu"
         android:src="@drawable/pause" />
 
     <TextView
@@ -413,9 +414,9 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="360dp"
         android:layout_marginTop="200dp"
+        android:background="@drawable/rounded_menu_pause"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/rounded_menu_pause"
         android:orientation="vertical"
         android:padding="15dp"
         android:visibility="invisible">
@@ -436,9 +437,9 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="#80FFFFFF"
             android:enabled="false"
-            android:onClick="closePause"
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/menuPauseContinueButton"
+            android:onClick="closePause"
             android:textColorHint="#393939"
             android:textSize="25sp"
             app:cornerRadius="14dp" />
@@ -450,9 +451,9 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="#80FFFFFF"
             android:enabled="false"
-            android:onClick="saveGame"
             android:fontFamily="@font/ubuntu_bold"
             android:hint="@string/menuPauseSaveButton"
+            android:onClick="saveGame"
             android:textColorHint="#393939"
             android:textSize="25sp"
             app:cornerRadius="14dp" />
