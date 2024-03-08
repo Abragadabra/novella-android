@@ -13,67 +13,67 @@
         android:theme="@style/Theme.SixDayToSurvive"
         tools:targetApi="31">
         <activity
-            android:name=".Titres"
+            android:name="me.absurdteam.sixdaytosurvive.Titres"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SixDay"
+            android:name="me.absurdteam.sixdaytosurvive.SixDay"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SplashScreenSaturday"
+            android:name="me.absurdteam.sixdaytosurvive.SplashScreenSaturday"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".FifthDay"
+            android:name="me.absurdteam.sixdaytosurvive.FifthDay"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SplashScreenFriday"
+            android:name="me.absurdteam.sixdaytosurvive.SplashScreenFriday"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".FourthDay"
+            android:name="me.absurdteam.sixdaytosurvive.FourthDay"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SplashScreenThursday"
+            android:name="me.absurdteam.sixdaytosurvive.SplashScreenThursday"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SplashScreenWednesday"
+            android:name="me.absurdteam.sixdaytosurvive.SplashScreenWednesday"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".ThirdDay"
+            android:name="me.absurdteam.sixdaytosurvive.ThirdDay"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SecondDay"
+            android:name="me.absurdteam.sixdaytosurvive.SecondDay"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SplashScreenTuesday"
+            android:name="me.absurdteam.sixdaytosurvive.SplashScreenTuesday"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SplashScreenMonday"
+            android:name="me.absurdteam.sixdaytosurvive.SplashScreenMonday"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".FirstDay"
+            android:name="me.absurdteam.sixdaytosurvive.FirstDay"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Disclaimer"
+            android:name="me.absurdteam.sixdaytosurvive.Disclaimer"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MainMenu"
+            android:name="me.absurdteam.sixdaytosurvive.MainMenu"
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".SplashScreen"
+            android:name="me.absurdteam.sixdaytosurvive.SplashScreen"
             android:exported="true"
             android:screenOrientation="landscape">
             <intent-filter>

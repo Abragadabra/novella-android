@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.sixdaytosurvive"
+    namespace = "me.absurdteam.sixdaytosurvive"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.sixdaytosurvive"
+        applicationId = "me.absurdteam.sixdaytosurvive"
         minSdk = 26
         targetSdk = 34
         versionCode = 4
