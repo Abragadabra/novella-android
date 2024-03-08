@@ -57,10 +57,7 @@ public class Disclaimer extends AppCompatActivity {
     }
 
     public void startNewGame(View view) {
-        if (HelperClass.menuSound.isPlaying()) {
-            HelperClass.menuSound.stop();
-            HelperClass.menuSound.release();
-        }
+        MusicClass.stopMusic();
 
         // Сохранение согласия на дисклеймере
         SharedPreferences.Editor editor = saves.edit();

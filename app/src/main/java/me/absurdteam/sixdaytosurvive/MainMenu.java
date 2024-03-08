@@ -37,8 +37,7 @@ public class MainMenu extends AppCompatActivity {
 
     public void closeGame(View view) {
         // Выключаем музыку всего приложения
-        HelperClass.menuSound.stop();
-        HelperClass.menuSound.release();
+        MusicClass.stopMusic();
 
         // Закрытие игры
         finishAndRemoveTask();
@@ -49,9 +48,7 @@ public class MainMenu extends AppCompatActivity {
         int savedDay = saves.getInt("level", 1);
 
         if (approvedDisclaimer) {
-            HelperClass.menuSound.stop();
-            HelperClass.menuSound.release();
-
+            MusicClass.stopMusic();
             loadDay(savedDay);
         }
         else {
@@ -60,9 +57,6 @@ public class MainMenu extends AppCompatActivity {
 
             // Открываем новое активити
             MainMenu.this.startActivity(intent);
-
-            // Завершаем текущее активити
-            MainMenu.this.finish();
 
             // Плавный переход между активити
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -98,9 +92,6 @@ public class MainMenu extends AppCompatActivity {
 
         // Открываем новое активити
         MainMenu.this.startActivity(intent);
-
-        // Завершаем текущее активити
-        MainMenu.this.finish();
 
         // Плавный переход между активити
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
