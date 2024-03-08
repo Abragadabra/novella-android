@@ -1,13 +1,15 @@
 package com.example.sixdaytosurvive;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.SharedPreferences;
+import android.graphics.SweepGradient;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.media.MediaPlayer;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,8 +18,6 @@ public class HelperClass {
     public static MediaPlayer menuSound;        // Фоновая музыка меню
     public static MediaPlayer alarmSound;       // Звук будильника
     public static MediaPlayer titresSound;      // Звук титров
-    private static final String PREFS_FILE = "saves";
-    SharedPreferences saves;
 
     // Остановка анимации с проверкой на то, что анимация существует и остановлена
     public static void stopAnimation(TypewriterEffect typewriterEffect) {
@@ -26,8 +26,8 @@ public class HelperClass {
         }
     }
 
-    public void saveAllGame(int currentDay) {
-        SharedPreferences.Editor editor = saves.edit();
+    public void saveAllGame(int currentDay, SharedPreferences SP) {
+        SharedPreferences.Editor editor = SP.edit();
         editor.putInt("loveLevel", PlayerData.loveLevel);
         editor.putInt("level", currentDay);
         editor.putBoolean("jacket", PlayerData.jacket);
@@ -36,11 +36,11 @@ public class HelperClass {
         editor.apply();
     }
 
-    public void loadAllGame() {
-        PlayerData.loveLevel = saves.getInt("loveLevel", 0);
-        PlayerData.jacket = saves.getBoolean("jacket", false);
-        PlayerData.stepanidaAndEvlampiyFight = saves.getBoolean("stepanidaAndEvlampiyFight", false);
-        PlayerData.windowOpen = saves.getBoolean("windowOpen", false);
+    public void loadAllGame(SharedPreferences SP) {
+        PlayerData.loveLevel = SP.getInt("loveLevel", 0);
+        PlayerData.jacket = SP.getBoolean("jacket", false);
+        PlayerData.stepanidaAndEvlampiyFight = SP.getBoolean("stepanidaAndEvlampiyFight", false);
+        PlayerData.windowOpen = SP.getBoolean("windowOpen", false);
     }
 
     public static void fadeIn(View view) {

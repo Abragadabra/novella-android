@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -90,6 +91,9 @@ public class FirstDay extends AppCompatActivity {
     Button continueButton;
     Button saveButton;
 
+    private static final String PREFS_FILE = "saves";
+    SharedPreferences saves;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,6 +156,8 @@ public class FirstDay extends AppCompatActivity {
         // Получение кнопок в меню паузы
         continueButton = findViewById(R.id.pause_menu_continue);
         saveButton = findViewById(R.id.pause_menu_save);
+
+        saves = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
 
         // Скрытие UI элементов android
         getWindow().getDecorView().setSystemUiVisibility(
@@ -248,7 +254,7 @@ public class FirstDay extends AppCompatActivity {
 
     public void saveGame(View view) {
         HelperClass helperClass = new HelperClass();
-        helperClass.saveAllGame(1);
+        helperClass.saveAllGame(1, saves);
 
         Toast.makeText(this, "Игра сохранена!", Toast.LENGTH_SHORT).show();
     }
