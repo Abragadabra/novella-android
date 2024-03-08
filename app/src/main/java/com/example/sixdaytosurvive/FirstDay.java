@@ -171,6 +171,10 @@ public class FirstDay extends AppCompatActivity {
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
 
+        // Загрузка всех данных из сохранения в PlayerData
+        HelperClass helperClass = new HelperClass();
+        helperClass.loadAllGame(saves);
+
         day1_dialog1_effect = new TypewriterEffect(mainTV, Dialogues.day1_dialog1, 60);
         day1_dialog1_effect.animateText();
 
