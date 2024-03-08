@@ -47,6 +47,9 @@ public class MainMenu extends AppCompatActivity {
         int savedDay = saves.getInt("level", 1);
 
         if (approvedDisclaimer) {
+            HelperClass.menuSound.stop();
+            HelperClass.menuSound.release();
+
             loadDay(savedDay);
         }
         else {
