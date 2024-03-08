@@ -30,17 +30,11 @@ public class HelperClass {
         SharedPreferences.Editor editor = SP.edit();
         editor.putInt("loveLevel", PlayerData.loveLevel);
         editor.putInt("level", currentDay);
-        editor.putBoolean("jacket", PlayerData.jacket);
-        editor.putBoolean("stepanidaAndEvlampiyFight", PlayerData.stepanidaAndEvlampiyFight);
-        editor.putBoolean("windowOpen", PlayerData.windowOpen);
         editor.apply();
     }
 
     public void loadAllGame(SharedPreferences SP) {
         PlayerData.loveLevel = SP.getInt("loveLevel", 0);
-        PlayerData.jacket = SP.getBoolean("jacket", false);
-        PlayerData.stepanidaAndEvlampiyFight = SP.getBoolean("stepanidaAndEvlampiyFight", false);
-        PlayerData.windowOpen = SP.getBoolean("windowOpen", false);
     }
 
     public static void fadeIn(View view) {
