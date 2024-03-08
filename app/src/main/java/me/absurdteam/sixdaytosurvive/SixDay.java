@@ -1,14 +1,18 @@
 package me.absurdteam.sixdaytosurvive;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,17 +45,6 @@ public class SixDay extends AppCompatActivity {
     Button Day6Class236Button;
     Button Day2Home1Button;
     Button openDay3Button;
-
-    //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
-    // ---------- Кнопки для выбора в открытия окна ----------
-    Button Day4Class6WindowOpenButton;
-    Button Day4Class6WindowCloseButton;
-    // ---------- Кнопки для выбора в открытия окна ----------
-
-    // ---------- Кнопки для выбора в столовой между багетом и сосисой в тесте ----------
-    Button choiceButton3;
-    Button choiceButton4;
-    // ---------- Кнопки для выбора в столовой между багетом и сосисой в тесте ----------
 
     // ------------------------------ Анимации ------------------------------
     Animation anim_button_in_right;                 // Анимация вхождения кнопки справа
@@ -89,23 +82,23 @@ public class SixDay extends AppCompatActivity {
     // Основной TextView на экране
     TextView mainTV;
 
+    // Фон паузы
+    LinearLayout pauseBackground;
+    LinearLayout pauseMenu;
+
+    // Кнопки в меню паузы
+    Button continueButton;
+    Button saveButton;
+
+    private static final String PREFS_FILE = "saves";
+
+    SharedPreferences saves;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_six_day);
-
-        // Скрытие UI элементов android
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
-        // Размеры приложения занимают весь экран
-        getWindow().setFlags(512, 512);
 
         Day6Home1Button = findViewById(R.id.next_button_day6);
         Day6Class1Button = findViewById(R.id.next_button_2_day6);
@@ -146,6 +139,35 @@ public class SixDay extends AppCompatActivity {
         // Получение layout
         relativeLayout = findViewById(R.id.six_day_layout);
 
+        // Получение фона паузы
+        pauseBackground = findViewById(R.id.pause_menu_bg);
+
+        // Получение меню паузы
+        pauseMenu = findViewById(R.id.pause_menu);
+
+        // Получение кнопок в меню паузы
+        continueButton = findViewById(R.id.pause_menu_continue);
+        saveButton = findViewById(R.id.pause_menu_save);
+
+        // Экземпляр класса SharedPreferences
+        saves = getSharedPreferences(PREFS_FILE, MODE_PRIVATE);
+
+        // Скрытие UI элементов android
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        // Размеры приложения занимают весь экран
+        getWindow().setFlags(512, 512);
+
+        // Загрузка всех данных из сохранения в PlayerData
+        HelperClass helperClass = new HelperClass();
+        helperClass.loadAllGame(saves);
+
         day6_home_1_effect = new TypewriterEffect(mainTV, Dialogues.day6_home, 60);
         day6_home_1_effect.animateText();
         day6_home_1_effect.setListener(new TypewriterListener() {
@@ -174,7 +196,7 @@ public class SixDay extends AppCompatActivity {
         });
     }
 
-    public void skipAnimationDay4(View view) {
+    public void skipPhrase() {
         HelperClass.stopAnimation(day6_home_1_effect);
         HelperClass.stopAnimation(day6_class_1_effect);
         HelperClass.stopAnimation(day6_class_2_effect);
@@ -193,6 +215,80 @@ public class SixDay extends AppCompatActivity {
         HelperClass.stopAnimation(day6_class_stepanida_1_effect);
         HelperClass.stopAnimation(day6_class_stepanida_2_effect);
         HelperClass.stopAnimation(day6_class_stepanida_3_effect);
+    }
+
+    public void skipAnimationDay4(View view) {
+        skipPhrase();
+    }
+
+    public void openPauseMenu(View view) {
+        // Пропускаем текстик
+        skipPhrase();
+
+        // Включение визуально меню и его фона
+        pauseBackground.setVisibility(View.VISIBLE);
+        pauseMenu.setVisibility(View.VISIBLE);
+
+        // Убираем фокус с элементов меню
+        pauseBackground.setFocusable(true);
+        pauseMenu.setFocusable(true);
+
+        // Элементы меню больше не тыкательные
+        pauseBackground.setClickable(true);
+        pauseMenu.setClickable(true);
+
+        // Включение кнопочек в меню, чтобы жмакались
+        continueButton.setEnabled(true);
+        saveButton.setEnabled(true);
+
+        HelperClass.fadeIn(pauseBackground);
+        HelperClass.fadeIn(pauseMenu);
+    }
+
+    public void closePause(View view) {
+        continueButton.setEnabled(false);
+        saveButton.setEnabled(false);
+
+        AlphaAnimation fadeOut = new AlphaAnimation(1f, 0f);
+        fadeOut.setDuration(500);
+        fadeOut.setFillAfter(true);
+
+        pauseBackground.startAnimation(fadeOut);
+        pauseMenu.startAnimation(fadeOut);
+
+        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Включение визуально меню и его фона
+                pauseBackground.setVisibility(View.INVISIBLE);
+                pauseMenu.setVisibility(View.INVISIBLE);
+
+                // Убираем фокус с элементов меню
+                pauseBackground.setFocusable(false);
+                pauseMenu.setFocusable(false);
+
+                // Элементы меню больше не тыкательные
+                pauseBackground.setClickable(false);
+                pauseMenu.setClickable(false);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+    public void saveGame(View view) {
+        HelperClass helperClass = new HelperClass();
+        helperClass.saveAllGame(5, saves);
+
+        Toast.makeText(this, "Игра сохранена!", Toast.LENGTH_SHORT).show();
     }
 
     public void nextPhrase_Day6_class1(View view) {
