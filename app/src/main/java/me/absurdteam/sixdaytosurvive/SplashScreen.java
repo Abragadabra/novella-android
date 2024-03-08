@@ -30,8 +30,9 @@ public class SplashScreen extends AppCompatActivity {
         // Размеры приложения занимают весь экран
         getWindow().setFlags(512, 512);
 
-        // Музыка
-        MusicClass.startMusic();
+        HelperClass.menuSound = MediaPlayer.create(getApplicationContext(), R.raw.bg_new);
+        HelperClass.menuSound.setLooping(true);
+        HelperClass.menuSound.start();
 
         // Отложенный запуск перехода на новую активити
         new Handler().postDelayed(new Runnable() {

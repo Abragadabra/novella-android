@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class HelperClass {
+    public static MediaPlayer menuSound;        // Фоновая музыка меню
     public static MediaPlayer alarmSound;       // Звук будильника
     public static MediaPlayer titresSound;      // Звук титров
 

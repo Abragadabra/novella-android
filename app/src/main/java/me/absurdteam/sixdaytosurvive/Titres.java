@@ -50,7 +50,8 @@ public class Titres extends AppCompatActivity {
                         HelperClass.titresSound.stop();
                         HelperClass.titresSound.release();
 
-                        MusicClass.startMusic();
+                        HelperClass.menuSound = MediaPlayer.create(getApplicationContext(), R.raw.bg_new);
+                        HelperClass.menuSound.start();
                         // Новый intent для открытия главного меню
                         Intent intent = new Intent(Titres.this, MainMenu.class);
 
