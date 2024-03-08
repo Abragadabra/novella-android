@@ -247,6 +247,9 @@ public class FirstDay extends AppCompatActivity {
     }
 
     public void saveGame(View view) {
+        HelperClass helperClass = new HelperClass();
+        helperClass.saveAllGame(1);
+
         Toast.makeText(this, "Игра сохранена!", Toast.LENGTH_SHORT).show();
     }
 
