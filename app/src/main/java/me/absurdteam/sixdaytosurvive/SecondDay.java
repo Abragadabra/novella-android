@@ -493,23 +493,61 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase14(View view) {
+        // Смена фона
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dirov_class);
+        day2_class23_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_1, 60);
+
+        HelperClass.addPhrase(nextButton14, nextButton15, day2_class23_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase15(View view) {
+        day2_class23_2_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_2, 60);
+
+        HelperClass.addPhrase(nextButton15, nextButton16, day2_class23_2_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase16(View view) {
+        day2_class23_3_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_3, 60);
+
+        HelperClass.addPhrase(nextButton16, nextButton17, day2_class23_3_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase17(View view) {
+        day2_class23_4_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_4, 60);
+
+        HelperClass.addPhrase(nextButton17, nextButton18, day2_class23_4_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase18(View view) {
+        day2_class23_5_effect = new TypewriterEffect(mainTV, Dialogues.day2_class23_5, 60);
+
+        HelperClass.addPhrase(nextButton18, nextButton19, day2_class23_5_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
     public void nextPhrase19(View view) {
+        day2_home_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_home_1, 60);
+
+        HelperClass.addPhrase(nextButton19, nextButton20, day2_home_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase20(View view) {
+        // Новый intent для открытия главного меню
+        Intent intent = new Intent(SecondDay.this, SplashScreenWednesday.class);
+
+        // Открываем новое активити
+        SecondDay.this.startActivity(intent);
+
+        // Завершаем текущее активити
+        SecondDay.this.finish();
+
+        // Плавный переход между активити
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void nextPhrase21(View view) {
