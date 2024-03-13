@@ -23,28 +23,28 @@ import me.absurdteam.sixdaytosurvive.R;
 public class SecondDay extends AppCompatActivity {
 
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
-    Button day2MonologNextButton;
-    Button Day2SsoraTrue1Button;
-    Button Day2SsoraTrue2Button;
-    Button Day2SsoraTrue3Button;
-    Button Day2SsoraTrue4Button;
-    Button Day2Class1_1Button;
-    Button Day2Class2Stepanida1Button;
-    Button Day2CanteenSosiska2Button;
-    Button Day2CanteenSosiska3Button;
-    Button Day2CanteenSosiska4Button;
-    Button Day2Class2Stepanida1ButtonOrDay2Class2Evlampiy1Button;
-    Button Day2Class2Stepanida2Button;
-    Button Day2Class231Button;
-    Button Day2Class2Stepanida3Button;
-    Button Day2Class231AfterStepanidaButton;
-    Button Day2Class232Button;
-    Button Day2Class233Button;
-    Button Day2Class234Button;
-    Button Day2Class235Button;
-    Button Day2Class236Button;
-    Button Day2Home1Button;
-    Button openDay3Button;
+    Button nextButton1;
+    Button nextButton2;
+    Button nextButton3;
+    Button nextButton4;
+    Button nextButton5;
+    Button nextButton6;
+    Button nextButton7;
+    Button nextButton8;
+    Button nextButton9;
+    Button nextButton10;
+    Button nextButton11;
+    Button nextButton12;
+    Button nextButton13;
+    Button nextButton14;
+    Button nextButton15;
+    Button nextButton16;
+    Button nextButton17;
+    Button nextButton19;
+    Button nextButton20;
+    Button nextButton21;
+    Button nextButton22;
+    Button nextButton23;
 
     //    ---------------------------КНОПКИ ДАЛЕЕ---------------------------
 
@@ -195,41 +195,6 @@ public class SecondDay extends AppCompatActivity {
         // Загрузка всех данных из сохранения в PlayerData
         HelperClass helperClass = new HelperClass();
         helperClass.loadAllGame(saves);
-
-        // ------------------- Эффект печати для day2_monolog -------------------
-        day2_monolog_effect = new TypewriterEffect(mainTV, Dialogues.day2_monolog, 60);
-        day2_monolog_effect.animateText();
-        // ------------------- Эффект печати для day2_monolog -------------------
-
-
-        // ------------------- Событие для окончанию печати для day2_monolog -------------------
-        day2_monolog_effect.setListener(new TypewriterListener() {
-            @Override
-            public void onAnimationEnd() {
-                // Вызов кнопки
-                day2MonologNextButton.setVisibility(View.VISIBLE);
-                day2MonologNextButton.startAnimation(anim_button_in_right);
-
-                // Активация кнопки по окончанию анимации
-                anim_button_in_right.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        day2MonologNextButton.setEnabled(true);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-            }
-        });
-        // ------------------- Событие для окончанию печати для day2_monolog -------------------
     }
 
     public void skipPhrase() {
