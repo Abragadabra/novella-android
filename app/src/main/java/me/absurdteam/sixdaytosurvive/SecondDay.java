@@ -335,27 +335,87 @@ public class SecondDay extends AppCompatActivity {
 
         day2_stepanida_evlampiy_ssora_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora, 60);
 
-        HelperClass.addPhrase(nextButton1, nextButton2, day2_stepanida_evlampiy_ssora_effect, anim_button_in_right,
+        HelperClass.addPhrase(nextButton1, choiceButton1, choiceButton2, day2_stepanida_evlampiy_ssora_effect, anim_button_out_right,
+                anim_button_in_left, mainTV);
+    }
+
+    // ---Кнопки выбора---
+    public void createPeace(View view) {
+        PlayerData.stepanidaAndEvlampiyFight = true;
+
+        day2_stepanida_evlampiy_ssora_true_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_1, 60);
+
+        HelperClass.addPhrase(nextButton2, nextButton2, choiceButton1, choiceButton2,
+                day2_stepanida_evlampiy_ssora_true_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
+    }
+
+    public void walkPast(View view) {
+        PlayerData.stepanidaAndEvlampiyFight = false;
+        day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
+
+        // Смена фона
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        HelperClass.addPhrase(nextButton6, nextButton6, choiceButton1, choiceButton2,
+                day2_class1_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
+
+    }
+    // ---Кнопки выбора---
+    public void nextPhrase2(View view) {
+        day2_stepanida_evlampiy_ssora_true_2_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_2, 60);
+
+        HelperClass.addPhrase(nextButton2, nextButton3, day2_stepanida_evlampiy_ssora_true_2_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
     }
 
-    public void nextPhrase2(View view) {
-
-    }
-
     public void nextPhrase3(View view) {
+        day2_stepanida_evlampiy_ssora_true_3_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_3, 60);
+
+        HelperClass.addPhrase(nextButton3, nextButton4, day2_stepanida_evlampiy_ssora_true_3_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase4(View view) {
+        // Смена фона
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        day2_stepanida_evlampiy_ssora_true_4_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_4, 60);
+
+        HelperClass.addPhrase(nextButton4, nextButton5, day2_stepanida_evlampiy_ssora_true_4_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
+    // Первая пара
     public void nextPhrase5(View view) {
+        day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
+
+        HelperClass.addPhrase(nextButton5, nextButton6, day2_class1_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase6(View view) {
+        // Смена фона
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.evgey_canteen);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+
+        day2_canteen_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_1, 60);
+
+        HelperClass.addPhrase(nextButton6, choiceButton3, choiceButton4, day2_canteen_1_effect, anim_button_out_right,
+                anim_button_in_left, mainTV);
     }
 
+    public void getBaget(View view) {
+    }
+
+    public void getSosisa(View view) {
+    }
     public void nextPhrase7(View view) {
+
     }
 
     public void nextPhrase8(View view) {
@@ -416,4 +476,7 @@ public class SecondDay extends AppCompatActivity {
         // Плавный переход между активити
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
+
+
+
 }
