@@ -296,7 +296,71 @@ public class SecondDay extends AppCompatActivity {
         Toast.makeText(this, "Игра сохранена!", Toast.LENGTH_SHORT).show();
     }
 
-    
+    public void nextPhrase1(View view) {
+    }
+
+    public void nextPhrase2(View view) {
+    }
+
+    public void nextPhrase3(View view) {
+    }
+
+    public void nextPhrase4(View view) {
+    }
+
+    public void nextPhrase5(View view) {
+    }
+
+    public void nextPhrase6(View view) {
+    }
+
+    public void nextPhrase7(View view) {
+    }
+
+    public void nextPhrase8(View view) {
+    }
+
+    public void nextPhrase9(View view) {
+    }
+
+    public void nextPhrase10(View view) {
+    }
+
+    public void nextPhrase11(View view) {
+    }
+
+    public void nextPhrase12(View view) {
+    }
+
+    public void nextPhrase13(View view) {
+    }
+
+    public void nextPhrase14(View view) {
+    }
+
+    public void nextPhrase15(View view) {
+    }
+
+    public void nextPhrase16(View view) {
+    }
+
+    public void nextPhrase17(View view) {
+    }
+
+    public void nextPhrase18(View view) {
+    }
+    public void nextPhrase19(View view) {
+    }
+
+    public void nextPhrase20(View view) {
+    }
+
+    public void nextPhrase21(View view) {
+    }
+
+    public void nextPhrase22(View view) {
+    }
+
 
     public void nextPhrase_OpenDay3(View view) {
         // Новый intent для открытия главного меню
