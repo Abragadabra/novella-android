@@ -379,11 +379,6 @@ public class SecondDay extends AppCompatActivity {
     }
 
     public void nextPhrase4(View view) {
-        // Смена фона
-        Drawable bg1 = relativeLayout.getBackground();
-        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
-        HelperClass.animBackground(relativeLayout, bg1, bg2);
-
         day2_stepanida_evlampiy_ssora_true_4_effect = new TypewriterEffect(mainTV, Dialogues.day2_stepanida_evlampiy_ssora_true_4, 60);
 
         HelperClass.addPhrase(nextButton4, nextButton5, day2_stepanida_evlampiy_ssora_true_4_effect, anim_button_in_right,
@@ -392,6 +387,10 @@ public class SecondDay extends AppCompatActivity {
 
     // Первая пара
     public void nextPhrase5(View view) {
+        // Смена фона
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.dushnya_class);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
         day2_class1_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class1_1, 60);
 
         HelperClass.addPhrase(nextButton5, nextButton6, day2_class1_1_effect, anim_button_in_right,
@@ -412,16 +411,20 @@ public class SecondDay extends AppCompatActivity {
 
     public void getBaget(View view) {
         day2_canteen_baget_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_baget, 60);
-
-        HelperClass.addPhrase(nextButton10, nextButton10, choiceButton3, choiceButton4,
-                day2_class1_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
+        if (PlayerData.loveLevel > 0){
+            HelperClass.addPhrase(nextButton10, nextButton10, choiceButton3, choiceButton4,
+                    day2_canteen_baget_effect, anim_button_out_left, anim_button_in_right, mainTV);
+        }else{
+            HelperClass.addPhrase(nextButton13, nextButton13, choiceButton3, choiceButton4,
+                    day2_canteen_baget_effect, anim_button_out_left, anim_button_in_right, mainTV);
+        }
     }
 
     public void getSosisa(View view) {
         day2_canteen_sosiska_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_sosiska_1, 60);
 
         HelperClass.addPhrase(nextButton7, nextButton7, choiceButton3, choiceButton4,
-                day2_class1_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
+                day2_canteen_sosiska_1_effect, anim_button_out_left, anim_button_in_right, mainTV);
     }
     public void nextPhrase7(View view) {
         day2_canteen_sosiska_2_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_sosiska_2, 60);
@@ -440,14 +443,21 @@ public class SecondDay extends AppCompatActivity {
     public void nextPhrase9(View view) {
         day2_canteen_sosiska_4_effect = new TypewriterEffect(mainTV, Dialogues.day2_canteen_sosiska_4, 60);
 
-        HelperClass.addPhrase(nextButton9, nextButton10, day2_canteen_sosiska_3_effect, anim_button_in_right,
-                anim_button_out_right, mainTV);
+        // Условие на уровень отношений
+        if (PlayerData.loveLevel > 0){
+            HelperClass.addPhrase(nextButton9, nextButton10, day2_canteen_sosiska_4_effect, anim_button_in_right,
+                    anim_button_out_right, mainTV);
+        }else{
+            HelperClass.addPhrase(nextButton9, nextButton13, day2_canteen_sosiska_4_effect, anim_button_in_right,
+                    anim_button_out_right, mainTV);
+        }
     }
 
+    // Диалог со Степанидой
     public void nextPhrase10(View view) {
         // Смена фона
         Drawable bg1 = relativeLayout.getBackground();
-        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_class);
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_corridor);
         HelperClass.animBackground(relativeLayout, bg1, bg2);
 
         day2_class2_stepanida_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class2_stepanida_1, 60);
@@ -466,11 +476,20 @@ public class SecondDay extends AppCompatActivity {
     public void nextPhrase12(View view) {
         day2_class2_stepanida_3_effect = new TypewriterEffect(mainTV, Dialogues.day2_class2_stepanida_3, 60);
 
-        HelperClass.addPhrase(nextButton12, nextButton13, day2_class2_stepanida_3_effect, anim_button_in_right,
+        HelperClass.addPhrase(nextButton12, nextButton14, day2_class2_stepanida_3_effect, anim_button_in_right,
                 anim_button_out_right, mainTV);
     }
 
+    // Разговор с Евлампием
     public void nextPhrase13(View view) {
+        // Смена фона
+        Drawable bg1 = relativeLayout.getBackground();
+        Drawable bg2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.stepanida_evlampiy_corridor);
+        HelperClass.animBackground(relativeLayout, bg1, bg2);
+        day2_class2_evlampiy_1_effect = new TypewriterEffect(mainTV, Dialogues.day2_class2_evlampiy_1, 60);
+
+        HelperClass.addPhrase(nextButton13, nextButton14, day2_class2_evlampiy_1_effect, anim_button_in_right,
+                anim_button_out_right, mainTV);
     }
 
     public void nextPhrase14(View view) {
